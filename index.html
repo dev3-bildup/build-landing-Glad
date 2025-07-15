@@ -14,10 +14,32 @@
 
   </main>
 
-  <!-- Motion One CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/motion@10.16.2/dist/motion.min.js"></script>
 
-  <!-- Load the modular application -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@10.16.2/dist/motion.min.js"></script>
+  
+  <script>
+
+    window.addEventListener('load', () => {
+      if (typeof motion === 'undefined') {
+        console.error('Motion One failed to load, trying fallback...');
+   
+        const fallbackScript = document.createElement('script');
+        fallbackScript.src = 'https://unpkg.com/motion@10.16.2/dist/motion.min.js';
+        fallbackScript.onload = () => {
+          if (typeof motion !== 'undefined') {
+            console.log('Motion One loaded from fallback CDN');
+          } else {
+            console.error('Motion One failed to load from both CDNs');
+          }
+        };
+        document.head.appendChild(fallbackScript);
+      } else {
+        console.log('Motion One loaded successfully');
+      }
+    });
+  </script>
+
+
   <script type="module" src="app.js"></script>
 </body>
 

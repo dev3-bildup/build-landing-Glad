@@ -13,10 +13,10 @@ class FinalCTASection {
         this.section.className = 'final-cta-section';
         this.section.innerHTML = `
             <div class="final-cta-container">
-                <img src="public/logo.png" alt="Bildup AI Logo" class="final-cta-logo" />
+                <img src="public/bildupicon.png" alt="Bildup AI Logo" class="final-cta-logo" />
                 <h2 class="final-cta-title">The ultimate<br>study companion</h2>
                 <p class="final-cta-desc">
-                    Bildup isn't just powerful–it's personal. It learns how <em>you learn</em>, what you struggle with, and where you shine–without ever needing you to be perfect.<br>
+                    Bildup isn't just powerful-it's personal. It learns how <em>you learn</em>, what you struggle with, and where you shine-without ever needing you to be perfect.<br>
                     From voice interaction to visual explanations, everything Bildup AI does is designed to make studying easier, smarter and just for you. No pressure. No judgement. Just progress–one topic at a time.
                 </p>
                 <div class="final-cta-sub">Ready to learn your way?</div>

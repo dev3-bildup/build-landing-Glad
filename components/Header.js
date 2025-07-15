@@ -49,78 +49,89 @@ class Header {
         const backdrop = this.header.querySelector('.mobile-menu-backdrop');
         const closeButton = this.header.querySelector('.mobile-menu-close');
 
+        console.log('Mobile menu elements:', { hamburger, navMenu, backdrop, closeButton });
+
         if (hamburger && navMenu) {
             hamburger.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
+                console.log('Hamburger clicked');
+
                 hamburger.classList.toggle('active');
                 navMenu.classList.toggle('active');
                 backdrop.classList.toggle('active');
 
-                // Animate mobile menu with Motion One
-                if (navMenu.classList.contains('active')) {
-                    motion(navMenu, {
-                        x: [300, 0],
-                        opacity: [0, 1],
-                        transition: {
-                            duration: 0.4,
-                            easing: [0.25, 0.46, 0.45, 0.94]
-                        }
-                    });
-
-                    // Animate backdrop
-                    motion(backdrop, {
-                        opacity: [0, 1],
-                        transition: {
-                            duration: 0.3,
-                            easing: [0.25, 0.46, 0.45, 0.94]
-                        }
-                    });
-
-                    // Animate navigation links with stagger
-                    navLinks.forEach((link, index) => {
-                        motion(link, {
-                            x: [-20, 0],
+                // Check if motion is available
+                if (typeof motion !== 'undefined') {
+                    // Animate mobile menu with Motion One
+                    if (navMenu.classList.contains('active')) {
+                        motion(navMenu, {
+                            x: [300, 0],
                             opacity: [0, 1],
                             transition: {
                                 duration: 0.4,
-                                delay: 0.1 + (index * 0.1),
                                 easing: [0.25, 0.46, 0.45, 0.94]
                             }
                         });
-                    });
 
-                    // Animate close button
-                    motion(closeButton, {
-                        scale: [0.8, 1],
-                        opacity: [0, 1],
-                        transition: {
-                            duration: 0.3,
-                            delay: 0.2,
-                            easing: [0.25, 0.46, 0.45, 0.94]
-                        }
-                    });
+                        // Animate backdrop
+                        motion(backdrop, {
+                            opacity: [0, 1],
+                            transition: {
+                                duration: 0.3,
+                                easing: [0.25, 0.46, 0.45, 0.94]
+                            }
+                        });
+
+                        // Animate navigation links with stagger
+                        navLinks.forEach((link, index) => {
+                            motion(link, {
+                                x: [-20, 0],
+                                opacity: [0, 1],
+                                transition: {
+                                    duration: 0.4,
+                                    delay: 0.1 + (index * 0.1),
+                                    easing: [0.25, 0.46, 0.45, 0.94]
+                                }
+                            });
+                        });
+
+                        // Animate close button
+                        motion(closeButton, {
+                            scale: [0.8, 1],
+                            opacity: [0, 1],
+                            transition: {
+                                duration: 0.3,
+                                delay: 0.2,
+                                easing: [0.25, 0.46, 0.45, 0.94]
+                            }
+                        });
+                    } else {
+                        // Animate menu closing
+                        motion(navMenu, {
+                            x: [0, 300],
+                            opacity: [1, 0],
+                            transition: {
+                                duration: 0.3,
+                                easing: [0.25, 0.46, 0.45, 0.94]
+                            }
+                        });
+
+                        // Animate backdrop closing
+                        motion(backdrop, {
+                            opacity: [1, 0],
+                            transition: {
+                                duration: 0.3,
+                                easing: [0.25, 0.46, 0.45, 0.94]
+                            }
+                        });
+                    }
                 } else {
-                    // Animate menu closing
-                    motion(navMenu, {
-                        x: [0, 300],
-                        opacity: [1, 0],
-                        transition: {
-                            duration: 0.3,
-                            easing: [0.25, 0.46, 0.45, 0.94]
-                        }
-                    });
-
-                    // Animate backdrop closing
-                    motion(backdrop, {
-                        opacity: [1, 0],
-                        transition: {
-                            duration: 0.3,
-                            easing: [0.25, 0.46, 0.45, 0.94]
-                        }
-                    });
+                    console.log('Motion One not available, using CSS transitions');
                 }
             });
+        } else {
+            console.error('Hamburger or nav menu not found');
         }
 
         // Close button functionality

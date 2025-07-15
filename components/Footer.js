@@ -4,9 +4,8 @@ class Footer {
             companyName: "Bildup AI",
             quickLinks: [
                 { text: "Home", href: "#home" },
-                { text: "Get started with Bildup AI", href: "#features" },
                 { text: "Learn how Bildup AI empowers everyone", href: "#about" },
-                { text: "Careers", href: "#contact" },
+                { text: "Careers", href: "#careers" },
                 { text: "Contact us", href: "#contact" }
             ],
             socialLinks: [
@@ -14,10 +13,8 @@ class Footer {
                 { platform: "Instagram", icon: "public/instagram.png", href: "#" },
                 { platform: "Facebook", icon: "public/facebook.png", href: "#" },
                 { platform: "LinkedIn", icon: "public/linkedIn.png", href: "#" },
-                { platform: "TikTok", icon: "public/tiktok.png", href: "#" },
-                { platform: "Youtube", icon: "public/youtube.png", href: "#" }
+                { platform: "TikTok", icon: "public/tiktok.png", href: "#" }
             ],
-
             className: "footer",
             ...config
         };
@@ -40,32 +37,53 @@ class Footer {
         const content = document.createElement('div');
         content.className = 'footer-content';
 
+        // First column - Logo
+        const logoSection = this.createLogoSection();
+        content.appendChild(logoSection);
 
-        const leftSection = this.createLeftSection();
-        content.appendChild(leftSection);
+        const navSection = this.createNavSection();
+        content.appendChild(navSection);
+
+   
+        const legalSection = this.createLegalSection();
+        content.appendChild(legalSection);
+
+        // Fourth column - Newsletter
+        const newsletterSection = this.createNewsletterSection();
+        content.appendChild(newsletterSection);
 
         container.appendChild(content);
 
- 
-        const footerBottom = this.createFooterBottom();
-        container.appendChild(footerBottom);
+        // Separator line
+        const separator = document.createElement('hr');
+        separator.className = 'footer-separator';
+        container.appendChild(separator);
+
+        // Copyright section
+        const copyrightSection = this.createCopyrightSection();
+        container.appendChild(copyrightSection);
 
         this.footer.appendChild(container);
     }
 
-    createLeftSection() {
+    createLogoSection() {
         const section = document.createElement('div');
-        section.className = 'footer-left';
+        section.className = 'footer-logo-section';
 
-        // Logo
         const logo = document.createElement('img');
         logo.src = 'public/logo.png';
         logo.alt = this.config.companyName;
-        logo.style.height = '20px';
-        logo.style.width = '20px';
-    
+        logo.className = 'footer-logo';
 
-        // Navigation links
+        section.appendChild(logo);
+
+        return section;
+    }
+
+    createNavSection() {
+        const section = document.createElement('div');
+        section.className = 'footer-nav-section';
+
         const navLinks = document.createElement('ul');
         navLinks.className = 'footer-nav-links';
 
@@ -78,8 +96,78 @@ class Footer {
             navLinks.appendChild(li);
         });
 
-        section.appendChild(logo);
         section.appendChild(navLinks);
+
+        return section;
+    }
+
+    createNewsletterSection() {
+        const section = document.createElement('div');
+        section.className = 'footer-newsletter';
+
+        const title = document.createElement('h3');
+        title.textContent = 'Sign up to receive updates';
+        title.className = 'newsletter-title';
+
+        const form = document.createElement('form');
+        form.className = 'newsletter-form';
+
+        const inputGroup = document.createElement('div');
+        inputGroup.className = 'input-group';
+
+        const emailInput = document.createElement('input');
+        emailInput.type = 'email';
+        emailInput.placeholder = 'Enter your email';
+        emailInput.className = 'newsletter-input';
+
+        const submitBtn = document.createElement('button');
+        submitBtn.type = 'submit';
+        submitBtn.textContent = 'Submit';
+        submitBtn.className = 'newsletter-submit';
+
+        inputGroup.appendChild(emailInput);
+        inputGroup.appendChild(submitBtn);
+
+        const consentText = document.createElement('p');
+        consentText.textContent = 'By subscribing you provide consent to receive updates from our company';
+        consentText.className = 'newsletter-consent';
+
+        form.appendChild(inputGroup);
+        form.appendChild(consentText);
+
+        // Social media icons
+        const socialLinks = this.createSocialLinks();
+
+        section.appendChild(title);
+        section.appendChild(form);
+        section.appendChild(socialLinks);
+
+        return section;
+    }
+
+    createLegalSection() {
+        const section = document.createElement('div');
+        section.className = 'footer-legal';
+
+        const legalLinks = document.createElement('ul');
+        legalLinks.className = 'legal-links';
+
+        const privacyLink = document.createElement('li');
+        const privacyA = document.createElement('a');
+        privacyA.href = '#privacy';
+        privacyA.textContent = 'Privacy';
+        privacyLink.appendChild(privacyA);
+
+        const termsLink = document.createElement('li');
+        const termsA = document.createElement('a');
+        termsA.href = '#terms';
+        termsA.textContent = 'Terms of service';
+        termsLink.appendChild(termsA);
+
+        legalLinks.appendChild(privacyLink);
+        legalLinks.appendChild(termsLink);
+
+        section.appendChild(legalLinks);
 
         return section;
     }
@@ -95,9 +183,7 @@ class Footer {
             const img = document.createElement('img');
             img.src = social.icon;
             img.alt = social.platform;
-            img.style.width = '14px';
-            img.style.height = '14px';
-            img.style.objectFit = 'contain';
+            img.className = 'social-icon';
 
             a.appendChild(img);
             socialLinks.appendChild(a);
@@ -106,73 +192,17 @@ class Footer {
         return socialLinks;
     }
 
-    createQuickLinksSection() {
+    createCopyrightSection() {
         const section = document.createElement('div');
-        section.className = 'footer-section';
+        section.className = 'footer-copyright';
 
-        const list = document.createElement('ul');
+        const copyrightText = document.createElement('p');
+        copyrightText.textContent = '© 2025, All rights reserved.';
+        copyrightText.className = 'copyright-text';
 
-        this.config.quickLinks.forEach(link => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = link.href;
-            a.textContent = link.text;
-            li.appendChild(a);
-            list.appendChild(li);
-        });
-
-        section.appendChild(list);
+        section.appendChild(copyrightText);
 
         return section;
-    }
-
-    createSocialSection() {
-        const section = document.createElement('div');
-        section.className = 'footer-section';
-
-        const socialLinks = document.createElement('div');
-        socialLinks.className = 'social-links';
-
-        this.config.socialLinks.forEach(social => {
-            const a = document.createElement('a');
-            a.href = social.href;
-
-            const img = document.createElement('img');
-            img.src = social.icon;
-            img.alt = social.platform;
-
-            a.appendChild(img);
-            socialLinks.appendChild(a);
-        });
-
-        section.appendChild(socialLinks);
-
-        return section;
-    }
-
-    createFooterBottom() {
-        const footerBottom = document.createElement('div');
-        footerBottom.className = 'footer-bottom';
-
-        const leftLinks = document.createElement('div');
-        leftLinks.className = 'footer-bottom-left';
-
-        const privacyLink = document.createElement('a');
-        privacyLink.href = '#privacy';
-        privacyLink.textContent = 'Privacy';
-
-        const termsLink = document.createElement('a');
-        termsLink.href = '#terms';
-        termsLink.textContent = 'Terms of Service';
-
-        leftLinks.appendChild(privacyLink);
-        leftLinks.appendChild(termsLink);
-
-        const socialLinks = this.createSocialLinks();
-
-        footerBottom.appendChild(leftLinks);
-        footerBottom.appendChild(socialLinks);
-        return footerBottom;
     }
 
     addEventListeners() {
@@ -186,6 +216,17 @@ class Footer {
                 img.style.transform = 'scale(1)';
             });
         });
+
+        // Newsletter form submission
+        const newsletterForm = this.footer.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = newsletterForm.querySelector('.newsletter-input').value;
+                console.log('Newsletter subscription:', email);
+
+            });
+        }
     }
 
     render() {

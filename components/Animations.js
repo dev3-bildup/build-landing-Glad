@@ -4,41 +4,42 @@ class Animations {
     }
 
     init() {
-        this.setupHeroImageAnimations();
-        this.setupScrollAnimations();
-        this.setupHeroAnimations();
-        this.setupMobileMenuAnimations();
-        this.setupButtonAnimations();
-        // Removed JS scroll animation for intro section; use CSS only
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                this.setupAnimations();
+            });
+        } else {
+            this.setupAnimations();
+        }
+    }
+
+    setupAnimations() {
+        console.log('Setting up enhanced CSS animations');
+
+        // Add a small delay to ensure DOM is fully ready
+        setTimeout(() => {
+            this.setupHeroImageAnimations();
+            this.setupScrollAnimations();
+            this.setupHeroAnimations();
+            this.setupMobileMenuAnimations();
+            this.setupButtonAnimations();
+            console.log('All animations initialized');
+        }, 100);
     }
 
     setupIntroSectionAnimation() {
         const intro = document.querySelector('.intro-content');
         if (!intro) return;
-        const paragraphs = intro.querySelectorAll('p');
-        // Set initial state
-        intro.style.opacity = 0;
-        intro.style.transform = 'translateY(40px)';
-        paragraphs.forEach(p => {
-            p.style.opacity = 0;
-            p.style.transform = 'translateY(40px)';
-        });
+
+        // Add CSS animation class
+        intro.classList.add('fade-in-up');
+
         // Intersection Observer to trigger animation
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    motion.animate(
-                        intro,
-                        { opacity: 1, y: 0 },
-                        { duration: 0.7, easing: 'ease-out', fill: 'forwards' }
-                    );
-                    paragraphs.forEach((p, i) => {
-                        motion.animate(
-                            p,
-                            { opacity: 1, y: 0 },
-                            { duration: 0.6, delay: 0.1 + i * 0.1, easing: 'ease-out', fill: 'forwards' }
-                        );
-                    });
+                    entry.target.classList.add('visible');
                     observer.disconnect();
                 }
             });
@@ -47,33 +48,53 @@ class Animations {
     }
 
     setupHeroImageAnimations() {
+        console.log('Setting up hero image animations');
         // Animate each hero image into place from its respective corner
         const heroImages = [
-            { selector: '.hero-img-1', delay: 0, from: { x: '-20vw', y: '20vh' } }, // bottom-left
-            { selector: '.hero-img-2', delay: 0.15, from: { x: '20vw', y: '-20vh' } }, // top-right
-            { selector: '.hero-img-3', delay: 0.3, from: { x: '-20vw', y: '-20vh' } }, // top-left
-            { selector: '.hero-img-4', delay: 0.45, from: { x: '20vw', y: '20vh' } } // bottom-right
+            { selector: '.hero-img-1', delay: 0, from: 'bottom-left' },
+            { selector: '.hero-img-2', delay: 0.15, from: 'top-right' },
+            { selector: '.hero-img-3', delay: 0.3, from: 'top-left' },
+            { selector: '.hero-img-4', delay: 0.45, from: 'bottom-right' }
         ];
-        heroImages.forEach(img => {
+
+        heroImages.forEach((img, index) => {
             const el = document.querySelector(img.selector);
             if (el) {
-                // Set initial transform for slide-in
-                el.style.opacity = 0;
-                el.style.transform += ` translate(${img.from.x}, ${img.from.y})`;
-                // Animate to final position
-                motion(el, {
-                    opacity: [0, 1],
-                    x: [img.from.x, '0vw'],
-                    y: [img.from.y, '0vh'],
-                    scale: [1, 1],
-                    transition: {
-                        duration: 0.9,
-                        delay: img.delay,
-                        easing: [0.25, 0.46, 0.45, 0.94]
-                    }
-                });
+                console.log(`Applying animation to ${img.selector}`);
+                // Add CSS animation class with delay
+                el.style.animationDelay = `${img.delay}s`;
+                el.classList.add('hero-img-animate', `hero-img-${img.from}`);
+                console.log(`Animation classes added to ${img.selector}:`, el.classList.toString());
+
+                // Add responsive handling
+                this.handleResponsiveImage(el, img.selector);
+            } else {
+                console.warn(`Element not found: ${img.selector}`);
             }
         });
+    }
+
+    handleResponsiveImage(element, selector) {
+        // Handle window resize for responsive images
+        const handleResize = () => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+
+            // Adjust animation timing based on screen size
+            if (width < 768) {
+                element.style.animationDuration = '1.2s';
+            } else if (width < 1024) {
+                element.style.animationDuration = '1.4s';
+            } else {
+                element.style.animationDuration = '1.5s';
+            }
+        };
+
+        // Initial call
+        handleResize();
+
+        // Add resize listener
+        window.addEventListener('resize', handleResize);
     }
 
     setupScrollAnimations() {
@@ -81,78 +102,88 @@ class Animations {
         const sections = document.querySelectorAll('section');
 
         sections.forEach((section, index) => {
-            motion(section, {
-                opacity: [0, 1],
-                y: [50, 0],
-                transition: {
-                    duration: 0.8,
-                    delay: index * 0.2,
-                    easing: [0.25, 0.46, 0.45, 0.94]
-                }
-            }, {
-                target: section,
-                margin: "0px 0px -100px 0px"
-            });
+            section.style.animationDelay = `${index * 0.2}s`;
+            section.classList.add('fade-in-up');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            observer.observe(section);
         });
 
         // Animate images with a subtle scale effect
         const images = document.querySelectorAll('.section-image img, .bildup-image img');
 
         images.forEach((img) => {
-            motion(img, {
-                scale: [0.95, 1],
-                opacity: [0, 1],
-                transition: {
-                    duration: 0.6,
-                    easing: [0.25, 0.46, 0.45, 0.94]
-                }
-            }, {
-                target: img,
-                margin: "0px 0px -50px 0px"
-            });
+            img.classList.add('image-scale-in');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            observer.observe(img);
         });
     }
 
     setupHeroAnimations() {
+        console.log('Setting up hero animations');
         const heroTitle = document.querySelector('.hero-title');
         const heroSubtitle = document.querySelector('.hero-subtitle');
         const ctaButton = document.querySelector('.cta-button');
 
         if (heroTitle) {
-            motion(heroTitle, {
-                opacity: [0, 1],
-                y: [30, 0],
-                transition: {
-                    duration: 1,
-                    easing: [0.25, 0.46, 0.45, 0.94]
-                }
-            });
+            console.log('Adding animation to hero title');
+            heroTitle.classList.add('hero-title-animate');
+            this.handleResponsiveText(heroTitle, 'title');
+        } else {
+            console.warn('Hero title not found');
         }
 
         if (heroSubtitle) {
-            motion(heroSubtitle, {
-                opacity: [0, 1],
-                y: [20, 0],
-                transition: {
-                    duration: 0.8,
-                    delay: 0.3,
-                    easing: [0.25, 0.46, 0.45, 0.94]
-                }
-            });
+            console.log('Adding animation to hero subtitle');
+            heroSubtitle.style.animationDelay = '0.3s';
+            heroSubtitle.classList.add('hero-subtitle-animate');
+            this.handleResponsiveText(heroSubtitle, 'subtitle');
+        } else {
+            console.warn('Hero subtitle not found');
         }
 
         if (ctaButton) {
-            motion(ctaButton, {
-                opacity: [0, 1],
-                y: [20, 0],
-                scale: [0.9, 1],
-                transition: {
-                    duration: 0.8,
-                    delay: 0.6,
-                    easing: [0.25, 0.46, 0.45, 0.94]
-                }
-            });
+            console.log('Adding animation to CTA button');
+            ctaButton.style.animationDelay = '0.6s';
+            ctaButton.classList.add('cta-button-animate');
+            this.handleResponsiveText(ctaButton, 'button');
+        } else {
+            console.warn('CTA button not found');
         }
+    }
+
+    handleResponsiveText(element, type) {
+        const handleResize = () => {
+            const width = window.innerWidth;
+
+            // Adjust animation timing based on screen size
+            if (width < 768) {
+                element.style.animationDuration = type === 'title' ? '1.2s' : '1s';
+            } else if (width < 1024) {
+                element.style.animationDuration = type === 'title' ? '1.4s' : '1.2s';
+            } else {
+                element.style.animationDuration = type === 'title' ? '1.8s' : '1.5s';
+            }
+        };
+
+        // Initial call
+        handleResize();
+
+        // Add resize listener
+        window.addEventListener('resize', handleResize);
     }
 
     setupMobileMenuAnimations() {
@@ -160,45 +191,20 @@ class Animations {
         const navLinks = document.querySelectorAll('.nav-menu a');
         const closeButton = document.querySelector('.mobile-menu-close');
 
-        // Animate mobile menu slide-in
+        // Mobile menu animations will be handled by CSS transitions
         if (navMenu) {
-            motion(navMenu, {
-                x: [-300, 0],
-                opacity: [0, 1],
-                transition: {
-                    duration: 0.4,
-                    easing: [0.25, 0.46, 0.45, 0.94]
-                }
-            }, {
-                target: navMenu,
-                margin: "0px"
-            });
+            navMenu.classList.add('mobile-menu-ready');
         }
 
-        // Animate navigation links with stagger
+        // Add stagger animation to nav links
         navLinks.forEach((link, index) => {
-            motion(link, {
-                x: [-20, 0],
-                opacity: [0, 1],
-                transition: {
-                    duration: 0.4,
-                    delay: 0.1 + (index * 0.1),
-                    easing: [0.25, 0.46, 0.45, 0.94]
-                }
-            });
+            link.style.animationDelay = `${0.1 + (index * 0.1)}s`;
+            link.classList.add('nav-link-animate');
         });
 
-        // Animate close button
         if (closeButton) {
-            motion(closeButton, {
-                scale: [0.8, 1],
-                opacity: [0, 1],
-                transition: {
-                    duration: 0.3,
-                    delay: 0.2,
-                    easing: [0.25, 0.46, 0.45, 0.94]
-                }
-            });
+            closeButton.style.animationDelay = '0.2s';
+            closeButton.classList.add('close-button-animate');
         }
     }
 
@@ -206,13 +212,11 @@ class Animations {
     animateBackdrop(show) {
         const backdrop = document.querySelector('.mobile-menu-backdrop');
         if (backdrop) {
-            motion(backdrop, {
-                opacity: show ? [0, 1] : [1, 0],
-                transition: {
-                    duration: 0.3,
-                    easing: [0.25, 0.46, 0.45, 0.94]
-                }
-            });
+            if (show) {
+                backdrop.classList.add('active');
+            } else {
+                backdrop.classList.remove('active');
+            }
         }
     }
 
@@ -222,23 +226,11 @@ class Animations {
 
         buttons.forEach(button => {
             button.addEventListener('mouseenter', () => {
-                motion(button, {
-                    scale: 1.05,
-                    transition: {
-                        duration: 0.2,
-                        easing: [0.25, 0.46, 0.45, 0.94]
-                    }
-                });
+                button.classList.add('button-hover');
             });
 
             button.addEventListener('mouseleave', () => {
-                motion(button, {
-                    scale: 1,
-                    transition: {
-                        duration: 0.2,
-                        easing: [0.25, 0.46, 0.45, 0.94]
-                    }
-                });
+                button.classList.remove('button-hover');
             });
         });
     }
@@ -248,27 +240,8 @@ class Animations {
         const footerLinks = document.querySelectorAll('.footer-nav-links a, .social-links img');
 
         footerLinks.forEach((link, index) => {
-            link.addEventListener('mouseenter', () => {
-                motion(link, {
-                    scale: 1.1,
-                    y: -2,
-                    transition: {
-                        duration: 0.2,
-                        easing: [0.25, 0.46, 0.45, 0.94]
-                    }
-                });
-            });
-
-            link.addEventListener('mouseleave', () => {
-                motion(link, {
-                    scale: 1,
-                    y: 0,
-                    transition: {
-                        duration: 0.2,
-                        easing: [0.25, 0.46, 0.45, 0.94]
-                    }
-                });
-            });
+            link.style.animationDelay = `${index * 0.1}s`;
+            link.classList.add('footer-link-animate');
         });
     }
 }
