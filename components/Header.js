@@ -23,11 +23,10 @@ class Header {
                    
                         <button class="mobile-menu-close">X</button>
                         </div>
-                        <li><a href="#home">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="#features">Get started with Bildup AI</a></li>
                         <li><a href="#about">Learn how Bildup AI empowers everyone</a></li>
-                        <li><a href="#contact">Careers</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                         </ul>
                     <div class="hamburger">
                         <span></span>
@@ -61,9 +60,9 @@ class Header {
                 navMenu.classList.toggle('active');
                 backdrop.classList.toggle('active');
 
-                // Check if motion is available
+
                 if (typeof motion !== 'undefined') {
-                    // Animate mobile menu with Motion One
+
                     if (navMenu.classList.contains('active')) {
                         motion(navMenu, {
                             x: [300, 0],
@@ -83,7 +82,6 @@ class Header {
                             }
                         });
 
-                        // Animate navigation links with stagger
                         navLinks.forEach((link, index) => {
                             motion(link, {
                                 x: [-20, 0],
@@ -96,7 +94,7 @@ class Header {
                             });
                         });
 
-                        // Animate close button
+
                         motion(closeButton, {
                             scale: [0.8, 1],
                             opacity: [0, 1],
@@ -247,10 +245,9 @@ class Header {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
                 this.header.style.background = 'rgba(255, 255, 255, 0.98)';
-                this.header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+                ;
             } else {
                 this.header.style.background = 'rgba(255, 255, 255, 0.95)';
-                this.header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
             }
         });
     }

@@ -3,10 +3,9 @@ class Footer {
         this.config = {
             companyName: "Bildup AI",
             quickLinks: [
-                { text: "Home", href: "#home" },
+                { text: "Home", href: "index.html" },
                 { text: "Learn how Bildup AI empowers everyone", href: "#about" },
-                { text: "Careers", href: "#careers" },
-                { text: "Contact us", href: "#contact" }
+                { text: "Contact us", href: "contact.html" }
             ],
             socialLinks: [
                 { platform: "X", icon: "public/X.png", href: "#" },
@@ -37,24 +36,24 @@ class Footer {
         const content = document.createElement('div');
         content.className = 'footer-content';
 
-        // First column - Logo
+
         const logoSection = this.createLogoSection();
         content.appendChild(logoSection);
 
         const navSection = this.createNavSection();
         content.appendChild(navSection);
 
-   
+
         const legalSection = this.createLegalSection();
         content.appendChild(legalSection);
 
-        // Fourth column - Newsletter
+
         const newsletterSection = this.createNewsletterSection();
         content.appendChild(newsletterSection);
 
         container.appendChild(content);
 
-        // Separator line
+
         const separator = document.createElement('hr');
         separator.className = 'footer-separator';
         container.appendChild(separator);
@@ -135,7 +134,7 @@ class Footer {
         form.appendChild(inputGroup);
         form.appendChild(consentText);
 
-        // Social media icons
+
         const socialLinks = this.createSocialLinks();
 
         section.appendChild(title);
@@ -154,13 +153,13 @@ class Footer {
 
         const privacyLink = document.createElement('li');
         const privacyA = document.createElement('a');
-        privacyA.href = '#privacy';
+        privacyA.href = 'privacy.html';
         privacyA.textContent = 'Privacy';
         privacyLink.appendChild(privacyA);
 
         const termsLink = document.createElement('li');
         const termsA = document.createElement('a');
-        termsA.href = '#terms';
+        termsA.href = 'terms.html';
         termsA.textContent = 'Terms of service';
         termsLink.appendChild(termsA);
 
