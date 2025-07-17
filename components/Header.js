@@ -1,15 +1,19 @@
 class Header {
     constructor() {
+        console.log('Header: Initializing...'); // Debug log
         this.header = null;
         this.init();
     }
 
     init() {
+        console.log('Header: Starting initialization...'); // Debug log
         this.createHeader();
         this.addEventListeners();
+        console.log('Header: Initialization complete'); // Debug log
     }
 
     createHeader() {
+        console.log('Header: Creating header element...'); // Debug log
         this.header = document.createElement('header');
         this.header.className = 'header';
         this.header.innerHTML = `
@@ -39,22 +43,29 @@ class Header {
             </nav>
             <div class="mobile-menu-backdrop"></div>
         `;
+        console.log('Header: Header element created successfully'); // Debug log
     }
 
     addEventListeners() {
+        console.log('Header: Adding event listeners...'); // Debug log
         const hamburger = this.header.querySelector('.hamburger');
         const navMenu = this.header.querySelector('.nav-menu');
         const navLinks = this.header.querySelectorAll('.nav-menu a');
         const backdrop = this.header.querySelector('.mobile-menu-backdrop');
         const closeButton = this.header.querySelector('.mobile-menu-close');
 
-        console.log('Mobile menu elements:', { hamburger, navMenu, backdrop, closeButton });
+        console.log('Header: Mobile menu elements found:', {
+            hamburger: !!hamburger,
+            navMenu: !!navMenu,
+            backdrop: !!backdrop,
+            closeButton: !!closeButton
+        }); // Debug log
 
         if (hamburger && navMenu) {
             hamburger.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                console.log('Hamburger clicked');
+                console.log('Header: Hamburger clicked');
 
                 hamburger.classList.toggle('active');
                 navMenu.classList.toggle('active');
@@ -62,6 +73,7 @@ class Header {
 
 
                 if (typeof motion !== 'undefined') {
+                    console.log('Header: Motion library available, animating...'); // Debug log
 
                     if (navMenu.classList.contains('active')) {
                         motion(navMenu, {
@@ -125,11 +137,11 @@ class Header {
                         });
                     }
                 } else {
-                    console.log('Motion One not available, using CSS transitions');
+                    console.log('Header: Motion One not available, using CSS transitions');
                 }
             });
         } else {
-            console.error('Hamburger or nav menu not found');
+            console.error('Header: Hamburger or nav menu not found');
         }
 
         // Close button functionality
@@ -221,23 +233,23 @@ class Header {
                 backdrop.classList.remove('active');
 
                 // Animate menu closing
-                motion(navMenu, {
-                    x: [0, 300],
-                    opacity: [1, 0],
-                    transition: {
-                        duration: 0.3,
-                        easing: [0.25, 0.46, 0.45, 0.94]
-                    }
-                });
+                // motion(navMenu, {
+                //     x: [0, 300],
+                //     opacity: [1, 0],
+                //     transition: {
+                //         duration: 0.3,
+                //         easing: [0.25, 0.46, 0.45, 0.94]
+                //     }
+                // });
 
                 // Animate backdrop closing
-                motion(backdrop, {
-                    opacity: [1, 0],
-                    transition: {
-                        duration: 0.3,
-                        easing: [0.25, 0.46, 0.45, 0.94]
-                    }
-                });
+                // motion(backdrop, {
+                //     opacity: [1, 0],
+                //     transition: {
+                //         duration: 0.3,
+                //         easing: [0.25, 0.46, 0.45, 0.94]
+                //     }
+                // });
             }
         });
 
@@ -250,9 +262,12 @@ class Header {
                 this.header.style.background = 'rgba(255, 255, 255, 0.95)';
             }
         });
+
+        console.log('Header: Event listeners added successfully'); // Debug log
     }
 
     render() {
+        console.log('Header: Rendering header element'); // Debug log
         return this.header;
     }
 

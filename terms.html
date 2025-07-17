@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - Bildup AI</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,10 +19,10 @@
                         'inter': ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        'bildup-blue': '#185A9D',
-                        'bildup-dark': '#1a1a1a',
+                        'bildup-blue': '#0071E3',
+                        'bildup-dark': '#161616',
                         'bildup-gray': '#333333',
-                        'bildup-light-gray': '#666666',
+                        'bildup-light-gray': '#E8E8E8',
                     }
                 }
             }
@@ -30,90 +31,32 @@
 </head>
 
 <body class="font-inter bg-white text-gray-800">
-    <!-- Header (Tailwind CSS) -->
-    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <img src="public/logo.png" alt="Bildup AI Logo" class="h-8 w-auto">
-                </div>
-
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-900 hover:text-bildup-blue transition-colors">Home</a>
-                    <a href="#features" class="text-gray-900 hover:text-bildup-blue transition-colors">Get started with
-                        Bildup AI</a>
-                    <a href="#about" class="text-gray-900 hover:text-bildup-blue transition-colors">Learn how Bildup AI
-                        empowers everyone</a>
-                    <a href="contact.html" class="text-gray-900 hover:text-bildup-blue transition-colors">Contact Us</a>
-                </div>
-
-                <!-- CTA Button -->
-                <div class="hidden md:block">
-                    <button
-                        class="bg-bildup-blue text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors">
-                        Get Started
-                    </button>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-900 hover:text-bildup-blue">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="hidden md:hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
-                    <a href="index.html"
-                        class="block px-3 py-2 text-gray-900 hover:text-bildup-blue transition-colors">Home</a>
-                    <a href="#features"
-                        class="block px-3 py-2 text-gray-900 hover:text-bildup-blue transition-colors">Get started with
-                        Bildup AI</a>
-                    <a href="#about"
-                        class="block px-3 py-2 text-gray-900 hover:text-bildup-blue transition-colors">Learn how Bildup
-                        AI empowers everyone</a>
-                    <a href="contact.html"
-                        class="block px-3 py-2 text-gray-900 hover:text-bildup-blue transition-colors">Contact Us</a>
-                    <div class="pt-4">
-                        <button
-                            class="w-full bg-bildup-blue text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors">
-                            Get Started
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </nav>
+ 
+    <header id="header-container" class="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
+ 
     </header>
 
-    <!-- Main Content -->
     <main class="min-h-screen pt-16">
-        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-            <!-- Hero Section -->
-            <section class="text-center py-16 sm:py-20">
-                <h1 class="text-3xl sm:text-4xl text-left lg:text-5xl font-bold text-bildup-dark leading-tight mb-4">
+        <div class="max-w-7xl mx-auto px-5 pb-20 sm:px-6 lg:px-8">
+
+            <section class="text-center py-10 sm:py-15">
+                <h1 class="text-3xl sm:text-4xl text-left lg:text-5xl font-bold text-bildup-dark leading-tight">
                     Bildup AI Terms of Service
                 </h1>
 
             </section>
 
-            <!-- Terms Content -->
             <section class="pb-20">
                 <div class="space-y-10">
-                    <!-- General Section -->
+
                     <div class="terms-section">
-                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-5">
+                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-2">
                             General
                         </h2>
                         <div class="space-y-4 text-bildup-gray leading-relaxed">
                             <p>
-                               <b> Bildup AI Services Limited</b>(also referred to as ”BILDUP”, "we", "our" or "us") - is a
+                                <b> Bildup AI Services Limited</b>(also referred to as ”BILDUP”, "we", "our" or "us") -
+                                is a
                                 limited liability company registered in Nigeria at the Corporate Affairs Commission with
                                 registration number RC: 6949775.
                                 BILDUP products and services are provided by Bildup Integrated Services Limited. These
@@ -126,32 +69,52 @@
                                 customer, visitor, or user of our mobile application, website and services.
                             </p>
 
-                            <div class=" border-bildup-blue  my-6 leading-7">
-                                <p class=" text-[75px] sm:text-xl mb-2">
-                                <b class="font-bold">IMPORTANT:</b> <span class="">PLEASE REVIEW OUR TERMS OF SERVICE CAREFULLY</span>
+                            <div class="my-6 leading-7">
+                                <p class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">
+                                    <b class="font-bold">IMPORTANT:</b>
+                                    <span class="font-light">PLEASE REVIEW OUR TERMS OF SERVICE CAREFULLY</span>
                                 </p>
                             </div>
 
                             <p>
-                              By engaging in, registering for, navigating through, or utilizing the website, you affirm that you have read, comprehended, and agree to adhere to the following terms and conditions, along with any other related guidelines (collectively referred to as "the terms"). you also acknowledge that you have read bildup’s privacy policy.
-For parents/guardians/sponsors: If you permit your child to register for any of our service, you are complying with these terms of service regarding their use of the said service.
-For organisations: <br>As a member of your organization registering a user, you confirm, representing your organisation, that the user complies with these terms, unless your organisation maintains a distinct written service agreement with bildup, which concurs with these terms on behalf of the user/users. <br>
-Critical note about arbitration and legal rights: These terms contain a compulsory arbitration clause and a class action waiver. By consenting to binding arbitration, where permissible under relevant law, you forfeit your right to address disputes in court and to have a judge or jury determine your case.
+                                By engaging in, registering for, navigating through, or utilizing the website, you
+                                affirm that you have read, comprehended, and agree to adhere to the following terms and
+                                conditions, along with any other related guidelines (collectively referred to as "the
+                                terms"). you also acknowledge that you have read bildup's privacy policy.
+                                For parents/guardians/sponsors: If you permit your child to register for any of our
+                                service, you are complying with these terms of service regarding their use of the said
+                                service.
+                                For organisations: <br>As a member of your organization registering a user, you confirm,
+                                representing your organisation, that the user complies with these terms, unless your
+                                organisation maintains a distinct written service agreement with bildup, which concurs
+                                with these terms on behalf of the user/users. <br>
+                                Critical note about arbitration and legal rights: These terms contain a compulsory
+                                arbitration clause and a class action waiver. By consenting to binding arbitration,
+                                where permissible under relevant law, you forfeit your right to address disputes in
+                                court and to have a judge or jury determine your case.
                             </p>
                         </div>
                     </div>
 
                     <!-- Section 1 -->
                     <div class="terms-section">
-                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-5">
+                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-3">
                             1. User's Acknowledgement and Acceptance of Terms
                         </h2>
                         <div class="space-y-4 text-bildup-gray leading-relaxed">
                             <p>
-                                By accessing and using our services, you acknowledge that you have read, understood, and
-                                agree to be bound by these terms. If you are dissatisfied with any portion of our
-                                services, your sole and exclusive remedy is to discontinue using our services. We
-                                reserve the right to modify these terms at any time.
+                                By using our service, you agree to be bound by these terms of use. If you do not wish to
+                                be bound by these Terms of Use, please discontinue the use of our service immediately.
+                                Your remedy for dissatisfaction with any product, service, content, or other information
+                                available through us, is to stop using that particular product or service. Your
+                                agreement with us regarding compliance with these terms of use becomes effective
+                                immediately upon commencement of your use of our service. <br>
+                                We expressly reserve the right to change these Terms of Use from time to time without
+                                notice to you. You acknowledge and agree that it is your responsibility to review these
+                                Terms of Use from time to time and to familiarize yourself with any modifications. Your
+                                continued use of our service after such modifications will constitute acknowledgement of
+                                the modified Terms of Use and agreement to abide and be bound by the modified Terms of
+                                Use.
                             </p>
                         </div>
                     </div>
@@ -163,9 +126,8 @@ Critical note about arbitration and legal rights: These terms contain a compulso
                         </h2>
                         <div class="space-y-4 text-bildup-gray leading-relaxed">
                             <p>
-                                Your privacy is important to us. Please review our <a href="privacy.html"
-                                    class="text-bildup-blue hover:text-blue-800 underline font-medium">Privacy
-                                    Policy</a>, which also governs your use of our services.
+                                By using the Service, you acknowledge that you have reviewed and understood our Privacy
+                                Policy, and consent to the practices described in that policy.
                             </p>
                         </div>
                     </div>
@@ -177,124 +139,560 @@ Critical note about arbitration and legal rights: These terms contain a compulso
                         </h2>
                         <div class="space-y-4 text-bildup-gray leading-relaxed">
                             <p>
-                                You must be at least 13 years old to use our services. If you are under 18, you must
-                                have parental or guardian consent. By using our services, you represent and warrant that
-                                you meet these requirements.
+                                Users must have attained the age of majority as established by their respective state or
+                                country of residence, and if a minor, must have permission from a legal parent or
+                                guardian to make use of our Service.
                             </p>
                         </div>
                     </div>
 
                     <!-- Section 4 -->
                     <div class="terms-section">
-                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-5">
+                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-3">
                             4. Registration and Security
                         </h2>
-                        <div class="space-y-4 text-bildup-gray leading-relaxed">
+                        <div class="space-y-4 text-bildup-gray leading-tight">
                             <p>
-                                You are responsible for providing accurate and complete information during registration.
-                                You are also responsible for maintaining the security of your account credentials and
-                                for all activities that occur under your account. You must notify us immediately of any
-                                unauthorized use of your account.
+                            <ol class="list-decimal pl-5 ">
+                                <li>
+                                    To use our service, you will have to provide certain information such as your name,
+                                    contact details, delivery address and any other information that we may require when
+                                    need be. You agree to provide accurate, current, and complete information and to
+                                    promptly update this information to maintain its accuracy. You are responsible for
+                                    maintaining the confidentiality of any password and username that you have selected,
+                                    and you are responsible for all activities that occur under your password or
+                                    account. BILDUP reserves the right to suspend or terminate any account or other
+                                    registration if it suspects that such information is inaccurate or incomplete. You
+                                    agree to immediately notify BILDUP of any unauthorized use of your password or
+                                    username or any other breach of security
+                                </li>
+                                <li>
+                                    By subscribing to our service, you agree to receive pop-up notifications and
+                                    messages from us. However, where you wish to stop the reception of the messages, you
+                                    can opt out by following the “unsubscribe instructions” in our email messages or by
+                                    editing the app notification in your phone setting to effect the same.
+                                </li>
+                                <li>
+                                    We reserve the right to modify, update, interrupt or suspend our service where
+                                    necessary without prior notice to you.
+                                </li>
+                                <li>
+                                    We reserve the right to publish and distribute your content in connection with our
+                                    service and in accordance with our Privacy policy.
+                                </li>
+                                <li>The use of our service is strictly personal and non-commercial.</li>
+                                <li>The use of our service is at your risk. We will take no blame for any harm done to
+                                    your computer system, loss of data, or any other loss that may occur as an
+                                    incidental implication of making use of this service.</li>
+                            </ol>
                             </p>
                         </div>
                     </div>
 
                     <!-- Section 5 -->
                     <div class="terms-section">
-                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-5">
+                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-3">
                             5. Subscription and Payment
                         </h2>
-
+                        <p>Subscribers are responsible for the payment of subscription fees and for agreeing to our
+                            payment terms.</p>
                         <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3 mt-6">
                             5.1 Subscription Plans
                         </h3>
-                        <div class="space-y-4 text-bildup-gray leading-relaxed mb-6">
+                        <div class="space-y-4 text-bildup-gray  mb-3">
                             <p>
-                                We offer various subscription plans with different pricing and access levels. All
-                                subscription details are clearly outlined on our website.
+                                BILDUP offers various subscription plans, including but not limited to monthly,
+                                quarterly, and annually. Each plan provides different pricing and access levels to our
+                                digital content.
                             </p>
                         </div>
 
                         <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3">
                             5.2 Refund Policy
                         </h3>
-                        <div class="space-y-4 text-bildup-gray leading-relaxed mb-6">
+                        <div class="space-y-4 text-bildup-gray  mb-3">
                             <p>
-                                All purchases are final. We do not provide refunds for any of our services or products.
+                                All purchases are final and non-refundable. BILDUP does not provide refunds or credits
+                                for any partial subscription periods. All purchases are final. We do not provide refunds
+                                for any of our services or products.
                             </p>
                         </div>
 
                         <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3">
                             5.3 Price Changes
                         </h3>
-                        <div class="space-y-4 text-bildup-gray leading-relaxed">
+                        <div class="space-y-4 text-bildup-gray ">
                             <p>
-                                We reserve the right to adjust our pricing at any time. Price changes will be
-                                communicated to you in advance.
+                                We reserve the right to adjust our subscription pricing and offerings at any time.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Continue with remaining sections... -->
+
                     <div class="terms-section">
-                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-5">
+                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-3">
                             6. Coupons and Service Activation
                         </h2>
-                        <div class="space-y-4 text-bildup-gray leading-relaxed">
-                            <p>
-                                Coupons must be activated according to our specified procedures. Service activation is
-                                subject to our terms and conditions. Subscription terms, expiration dates, and renewal
-                                policies are clearly communicated. We reserve the right to modify or terminate coupon
-                                programs at any time.
-                            </p>
+                        <div class="space-y-4 text-bildup-gray ">
+                            <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3 mt-6">
+                                6.1 Coupon Activation
+                            </h3>
+                            <div class="space-y-4 text-bildup-gray leading-tight mb-6">
+                                <p>
+                                    You acknowledge and agree to the following terms and conditions regarding coupon
+                                    service activation.
+                                </p>
+                            </div>
+
+                            <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3">
+                                6.2 Service Activation
+                            </h3>
+                            <div class="space-y-4 text-bildup-gray leading-tight mb-6">
+                                <p>
+                                    Activation of your subscription is contingent upon the successful input of the
+                                    provided coupon code into the service's activation interface. Once activated, you
+                                    will have access to the service based on the terms and features of your chosen
+                                    subscription plan.
+                                </p>
+                            </div>
+
+                            <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3">
+                                6.3 Subscription Terms
+                            </h3>
+                            <div class="space-y-4 text-bildup-gray leading-tight">
+                                <p>
+                                    Your subscription to our services is subject to the terms and conditions of the
+                                    selected plan, including its duration and any associated fees.
+                                </p>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3 mt-6">
+                                6.4 Expiration and Renewal
+                            </h3>
+                            <div class="space-y-4 text-bildup-gray leading-tight mb-6">
+                                <p>
+                                    Subscriptions to our services may expire at the end of the chosen term. Upon
+                                    expiration, users have the option to purchase another coupon code to continue
+                                    enjoying the service. There are no automatic renewals.
+                                </p>
+                            </div>
+
+
+                            <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3">
+                                6.5 Payment Authorization
+                            </h3>
+                            <div class="space-y-4 text-bildup-gray leading-tight">
+                                <p>
+                                    Payment for your selected subscription plan is facilitated through a third-party
+                                    payment service provider. By utilizing this third-party service, you expressly
+                                    authorize the provider to charge you in accordance with the specified amount in your
+                                    chosen subscription plan. Please be advised that Bildup assumes no responsibility
+                                    for the success or failure of any payment made through the third-party service. It
+                                    is your responsibility to ensure that your payment method is valid and up to date.
+                                    Any issues or discrepancies related to payments should be addressed directly with
+                                    the third-party payment service provider or your bank.
+                                </p>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3 mt-6">
+                                6.6 Security and Fraud Prevention
+                            </h3>
+                            <div class="space-y-4 text-bildup-gray leading-tight mb-6">
+                                <p>
+                                    Bildup employs security measures to prevent unauthorized or fraudulent coupon usage.
+                                    Any attempts to manipulate or abuse the system may result in immediate service
+                                    suspension and investigation.
+                                </p>
+                            </div>
+
+                            <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3">
+                                6.7 Disclaimer of Liability
+                            </h3>
+                            <div class="space-y-4 text-bildup-gray leading-tight mb-6">
+                                <p>
+                                    Bildup is not liable for any losses, damages, or inconveniences resulting from
+                                    coupon code misuse, unauthorized access, or any issues arising from the use of our
+                                    services.
+                            </div>
+
+                            <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3">
+                                6.8 Modification and Termination
+                            </h3>
+                            <div class="space-y-4 text-bildup-gray leading-tight mb-6">
+                                <p>
+                                    Bildup reserves the right to modify, suspend, or terminate coupon code issuance,
+                                    subscription plans, or access to our services at its discretion.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="terms-section">
-                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-5">
+                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-3">
                             7. Subscription Disclaimer
                         </h2>
+                        <div class="space-y-4 text-bildup-gray leading-tight">
+                            <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3 mt-6">
+                                7.1 No Warranties
+                            </h3>
+                            <div class=" text-bildup-gray  mb-3">
+                                <p>
+                                    ALL OUR PRODUCTS AND SERVICES ARE PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS
+                                    WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED
+                                    TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE,
+                                    OR THE WARRANTY OF NON-INFRINGEMENT. WITHOUT LIMITING THE FOREGOING, WE MAKE NO
+                                    WARRANTY THAT (A) THE PRODUCTS AND SERVICES WILL MEET YOUR REQUIREMENTS, (B) THE
+                                    PRODUCTS AND SERVICES WILL BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE, (C) THE
+                                    QUALITY OF ANY PRODUCTS OR SERVICES, OBTAINED BY YOU FROM FROM US OR OUR AFFILIATES
+                                    WILL MEET YOUR EXPECTATIONS OR BE FREE FROM MISTAKES, ERRORS OR DEFECTS. <br>
+                                    THIS PRODUCT/SERVICE COULD INCLUDE TECHNICAL OR OTHER MISTAKES, INACCURACIES OR
+                                    TYPOGRAPHICAL ERRORS. WE MAY MAKE CHANGES TO THE PRODUCTS AND SERVICES, INCLUDING
+                                    THE PRICES AND DESCRIPTIONS OF ANY PRODUCT OR SERVICE LISTED HEREIN, AT ANY TIME
+                                    WITHOUT NOTICE. THE PRODUCTS OR SERVICES MAY BE OUT OF DATE, AND WE MAKE NO
+                                    COMMITMENT TO UPDATE SUCH PRODUCTS OR SERVICES. <br>
+                                    THE USE OF OUR SERVICES IS DONE AT YOUR OWN DISCRETION AND RISK AND WITH YOUR
+                                    AGREEMENT THAT YOU WILL BE SOLELY RESPONSIBLE FOR ANY DAMAGE TO YOUR COMPUTER SYSTEM
+                                    OR LOSS OF DATA THAT RESULTS FROM SUCH ACTIVITIES.
+                                    WE MAKE NO WARRANTY REGARDING ANY TRANSACTIONS EXECUTED THROUGH, OR IN CONNECTION
+                                    WITH OUR PRODUCT OR SERVICE, AND YOU UNDERSTAND AND AGREE THAT SUCH TRANSACTIONS ARE
+                                    CONDUCTED ENTIRELY AT YOUR OWN RISK. ANY WARRANTY THAT IS PROVIDED IN CONNECTION
+                                    WITH ANY PRODUCTS, SERVICES, MATERIALS, OR INFORMATION AVAILABLE ON OR THROUGH US
+                                    FROM A THIRD PARTY IS PROVIDED SOLELY BY SUCH A THIRD PARTY, AND NOT BY US OR ANY
+                                    OTHER OF OUR AFFILIATES. <br>
+                                    You understand and agree that temporary interruptions of the services available
+                                    through us may occur as normal events. You further understand and agree that we have
+                                    no control over third party networks you may access in the course of the use of our
+                                    service, and therefore, delays and disruption of other network transmissions are
+                                    completely beyond our control. <br>
+                                    You understand and agree that our Services are provided “AS IS” and that we assume
+                                    no responsibility for the timeliness, deletion, or failure to store any user
+                                    communications or personalization settings.
+                                </p>
+                            </div>
+
+                            <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3">
+                                7.2 Continous Learning
+                            </h3>
+                            <div class="space-y-4 text-bildup-gray  mb-3">
+                                <p>
+                                    The content and materials provided through our Services are intended for
+                                    capacity-building, continuous learning, skills and talent development, upskilling,
+                                    career development and do not confer any formal accredited qualifications upon
+                                    completion. BILDUP is a technology company not an educational institution. Our
+                                    services, while aimed at enhancing skills and knowledge, do not replace accredited
+                                    education programs.
+                                </p>
+                            </div>
+
+                            <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3">
+                                7.3 No Guarantee of Results
+                            </h3>
+                            <div class="text-bildup-gray ">
+                                <p>
+                                    You understand and agree that although our Services aim to provide valuable learning
+                                    and training, we do not guarantee any specific outcomes, results, or advancements
+                                    for subscribers.Any testimonials or examples provided on our platform or in our
+                                    materials are not guaranteed to be results that you can achieve.
+                                </p>
+                            </div>
+                            <h3 class="text-lg sm:text-xl font-semibold ">
+                                7.4 User Responsibilities
+                            </h3>
+                            <div class="text-bildup-gray ">
+                                <p>
+                                    You understand and agree that subscribers are responsible for their own learning and
+                                    the application of skills obtained through our Services. They must also comply with
+                                    all applicable laws and regulations and agree to use our services only for lawful
+                                    purposes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="terms-section">
+                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-3">
+                            8. Job Access Disclaimer
+                        </h2>
                         <div class="space-y-4 text-bildup-gray leading-relaxed">
+                            <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3 mt-6">8.1 No Guarantee of
+                                Employment</h3>
                             <p>
-                                Our products and services are provided "as is" without any warranties, express or
-                                implied. We do not guarantee employment opportunities or job placement.
+                                BILDUP endeavors to facilitate access to potential job opportunities through our
+                                platform and to equip subscribers with relevant skills and knowledge through our
+                                services. However, it is paramount for subscribers to understand and acknowledge the
+                                following:
+                            </p>
+                            <div class="ml-6 sm:ml-4">
+                                <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3 mt-6">
+                                    8.1.1 Job Market Variables
+                                </h3>
+                                <div class="space-y-4 text-bildup-gray  mb-3">
+                                    <p>
+                                        Employment success is influenced by numerous factors, including but not limited
+                                        to individual qualifications, experience, performance in interviews, and
+                                        prevailing market conditions, over which we have no control.
+                                    </p>
+                                </div>
+
+                                <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3">
+                                    8.1.2 Role of BILDUP
+                                </h3>
+                                <div class="space-y-4 text-bildup-gray  mb-3">
+                                    <p>
+                                        We provide access to job listings, resources, and potential connections in the
+                                        industry. However, we do not act as an employment agency or recruiter and are
+                                        not involved in the actual transaction between employers and candidates.
+                                    </p>
+                                </div>
+
+                                <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3">
+                                    8.1.3 No Employment Assurance
+                                </h3>
+                                <div class="space-y-4 text-bildup-gray ">
+                                    <p>
+                                        While we aim to assist subscribers in their job search and application
+                                        processes, we explicitly do not guarantee job placement, employment success, or
+                                        any specific outcomes as a result of using our Services.
+                                    </p>
+                                </div>
+
+                                <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3 mt-6">
+                                    8.1.4 User Responsibility
+                                </h3>
+                                <div class="space-y-4 text-bildup-gray  mb-3">
+                                    <p>
+                                        Subscribers are responsible for their job search, application process,
+                                        interactions with potential employers, and all steps towards employment. This
+                                        includes creating resumes, preparing for interviews, and communicating directly
+                                        with employers.
+                                    </p>
+                                </div>
+
+                                <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3 mt-6">
+                                    8.1.5 Accuracy of Job Listings
+                                </h3>
+                                <div class="space-y-4 text-bildup-gray  mb-3">
+                                    <p>
+                                        We endeavour to provide accurate and current job listings. However, we do not
+                                        guarantee the validity, timeliness, or accuracy of job-related information
+                                        provided on our platform.
+                                    </p>
+                                </div>
+
+                                <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3">
+                                    8.1.6 Third-Party Employers
+                                </h3>
+                                <div class=" text-bildup-gray  mb-3">
+                                    <p>
+                                        Job listings and opportunities provided through our platform involve third-party
+                                        employers or recruitment agents over whom we have no control or assume
+                                        responsibility. Engagements with said third parties are at the subscriber's own
+                                        risk and discretion. Subscribers should endeavour to conduct their own due
+                                        diligence on any potential employer before accepting a job offer.
+                                    </p>
+                                </div>
+
+                                <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark mb-3">
+                                    8.1.7 Career Development
+                                </h3>
+                                <div class=" text-bildup-gray mb-5">
+                                    <p>
+                                        Our platform may offer resources, advice, and tools related to career
+                                        development and job searching. However, these are provided for informational
+                                        purposes only and do not assure job acquisition or career advancement.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="terms-section">
+                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-3 mt-5">
+                            9.Intellectual Property
+                        </h2>
+                        <div class="space-y-4 text-bildup-gray leading-relaxed mb-5">
+                            <p>
+                                Unless otherwise stated, BILDUP owns the intellectual property rights and materials
+                                on our App or Website and is legally protected in a number of ways, including
+                                pursuant to copyright, trademark, service marks, patent, trade secrets, and other
+                                Nigerian and intellectual-property laws. You agree to respect all copyright and
+                                other legal notices, information, and restrictions contained in any BILDUP Content,
+                                or Services accessed through our App or Website. You agree not to change, translate,
+                                or otherwise create derivative works of the Services.
+                                BILDUP grants you a limited license (that is temporary, non-exclusive,
+                                non-sublicensable, and non-transferrable) to access and use User Content and Our
+                                Content solely for use of the Services in accordance with these T&Cs. You may not
+                                reproduce, redistribute, transmit, assign, sell, broadcast, rent, share, lend,
+                                modify, adapt, edit, create derivative works of, license, or otherwise transfer or
+                                use any User Content or BILDUP' Content unless we give you express written
+                                permission to do so. We reserve the right to revoke this limited license to access
+                                at our sole discretion.
                             </p>
                         </div>
                     </div>
 
                     <div class="terms-section">
-                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-5">
-                            8. Intellectual Property
+                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-3">
+                            10. Your Intellectual Property
                         </h2>
                         <div class="space-y-4 text-bildup-gray leading-relaxed">
+                            <ol class="list-decimal pl-5 ">
+                                <li> Your User Content remains your property. When you submit User Content to us or
+                                    via the Services, you agree to the following terms:</li>
+                                <li>You allow us to use your User Content: You grant us a worldwide, non-exclusive,
+                                    perpetual, irrevocable, royalty-free, sub-licensable, and transferable right to
+                                    use, exercise, commercialize, and exploit the copyright, publicity, trademark,
+                                    and database rights with respect to your User Content.</li>
+                                <li>We can make changes to or delete your User Content: You grant us the right to
+                                    make changes, edits, modify, translate, format, or delete your User Content.
+                                </li>
+                                <li>
+
+                                    You have all legal rights to your User Content: You represent and warrant that:
+                                    <ul class="list-disc pl-5">
+
+                                        <li>You have all licenses, rights, consents, and permissions necessary to
+                                            grant the rights set forth in these T&Cs to BILDUP with respect to your
+                                            User Content;</li>
+                                        <li>Your User Content does not and will not infringe any third party's
+                                            intellectual property rights, proprietary rights, privacy rights,
+                                            confidentiality, rights of publicity or otherwise violate these Terms or
+                                            applicable law; and</li>
+                                        <li>BILDUP does not need to obtain any licenses, rights, consents, or
+                                            permissions from, or make any payments to, any third party for any use
+                                            of your User Content, or have any liability to a User or any other party
+                                            as a result of Our use or exploitation of your User Content</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="terms-section">
+                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-3 mt-5">
+                            11. Rights Concerning User Accounts and Termination
+                        </h2>
+                        <div class="space-y-4 text-bildup-gray leading-relaxed mb-5">
                             <p>
-                                All content, features, and functionality of our services are owned by BILDUP and are
-                                protected by copyright, trademark, and other intellectual property laws.
+                                We reserve the right to monitor, terminate, suspend, or delete any User Account at
+                                any time at Our sole discretion. We have no obligation to comment on any reasons for
+                                account monitoring, termination, suspension, or deletion. We have no liability to
+                                you or third parties for any use of the Services associated with your account. Upon
+                                suspension
+                                or termination of your account, you must cease all use of the Services and User
+                                Content. Your representations and warranties shall survive termination.
                             </p>
                         </div>
                     </div>
 
                     <div class="terms-section">
-                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-5">
-                            9. Governing Laws and Jurisdiction
+                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-3 mt-5">
+                            12.Indemnity
                         </h2>
-                        <div class="space-y-4 text-bildup-gray leading-relaxed">
+                        <div class="space-y-4 text-bildup-gray leading-relaxed mb-5">
                             <p>
-                                These terms are governed by Nigerian law. Any disputes will be resolved through
-                                arbitration in Enugu, Nigeria.
+                                You agree to defend and indemnify BILDUP , Our subsidiaries and affiliated
+                                companies, and Our officers, directors, employees, partners, contractors,
+                                representatives, agents, and third-party providers from and against any and all
+                                claims, causes of action, damages, obligations, losses, liabilities, costs or debt,
+                                and expenses <br>
+                                (including reasonable attorneys' fees and costs) and all amounts paid in a
+                                settlement arising from or relating to, breach of these T&Cs or violation of any
+                                applicable laws. We reserve the right, in Our sole discretion and at Our own
+                                expense, to assume the exclusive defence and control of any matter for which you
+                                have agreed to indemnify us and you agree to assist and cooperate with us as
+                                reasonably required in the defence or settlement of any such matters.
                             </p>
                         </div>
                     </div>
 
                     <div class="terms-section">
-                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-5">
-                            10. Modification of Terms
+                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-3 mt-5">
+                            13. Electronic Communications, Transactions, and Signatures
                         </h2>
-                        <div class="space-y-4 text-bildup-gray leading-relaxed">
+                        <div class="space-y-4 text-bildup-gray leading-relaxed mb-5">
                             <p>
-                                We reserve the right to modify these terms at any time. Changes will be effective
-                                immediately upon posting. Your continued use of our services constitutes acceptance of
-                                any modifications.
+                                You agree to receive electronic communication and to the use of electronic
+                                signatures, contracts, orders, other records and to the electronic delivery of
+                                notices, policies and records of transactions initiated or completed by us or via
+                                the service. The original signature remains our property at all times and cannot be
+                                requested by you.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="terms-section">
+                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-3 mt-5">
+                            14. Governing Laws and Jurisdiction
+                        </h2>
+                        <div class="space-y-4 text-bildup-gray leading-relaxed mb-5">
+                            <p>
+                                We shall make an effort to settle all disputes amicably. Any dispute arising out of
+                                the use of our service which cannot be settled by mutual agreement/negotiation,
+                                shall within 1 (one) month be referred to arbitration by a single arbitrator at the
+                                Enugu State Multi-Door Courthouse (“EMDC”) and governed by the Arbitration and
+                                Conciliation Act, Cap A10, Laws of the Federal Republic of Nigeria. The arbitrator
+                                shall be appointed by both of us (we and you), where both of us are unable to agree
+                                on the choice of an arbitrator, the choice of arbitration shall be referred to the
+                                EMDC. The findings of the arbitrator and subsequent award shall be binding on both
+                                of us. Each of us shall bear our respective costs in connection with the
+                                Arbitration. The venue for the arbitration shall be Enugu, Nigeria.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="terms-section">
+                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-3 mt-5">
+                            15. Third-Party Links
+                        </h2>
+                        <div class="space-y-4 text-bildup-gray leading-relaxed mb-5">
+                            <p>
+                                Our Services may contain links to third-party websites or services. We are not
+                                responsible for the content, accuracy, privacy policies, or practices of any third-party
+                                websites or services.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="terms-section">
+                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-3 mt-5">
+                            16. Modification of Terms
+                        </h2>
+                        <div class="space-y-4 text-bildup-gray leading-relaxed mb-5">
+                            <p>
+                                We reserve the right to change, modify, or revise these Terms at any time. Changes will
+                                be effective immediately upon posting on our website or platform. It is your
+                                responsibility to review these Terms periodically to stay informed about our updates.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="terms-section">
+                        <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-3 mt-5">
+                            17. Full Agreement
+                        </h2>
+                        <div class="space-y-4 text-bildup-gray leading-relaxed mb-5">
+                            <p>
+                                These Terms are the entire agreement between you and BILDUP concerning the use of our
+                                service. They supersede all other communications and proposals (whether oral, written,
+                                or electronic) between you and BILDUP concerning our service and governs our
+                                relationship. If any provision of these T&Cs is deemed invalid by a court of competent
+                                jurisdiction, the invalidity of such provision shall not affect the validity of the
+                                remaining provisions of this Agreement, which shall remain in full force and effect.
+                                BILDUP's failure to assert any right or provision under this Agreement shall not
+                                constitute a waiver of such right or provision.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <h3 class="text-lg sm:text-xl font-semibold text-bildup-dark">
+                            Contact Us
+                        </h3>
+                        <div class=" text-bildup-gray leading-relaxed">
+
+                            <p><a href="mailto:support@bildup.ai"
+                                    class="text-[#0071E3] hover:text-blue-800 mb-20  font-medium">support@bildup.ai</a>
                             </p>
                         </div>
                     </div>
@@ -304,91 +702,85 @@ Critical note about arbitration and legal rights: These terms contain a compulso
     </main>
 
     <!-- Footer (Tailwind CSS) -->
-    <footer class="bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer
+        class="footer bg-[url('public/Footer background web.png')] bg-no-repeat bg-center bg-cover py-12 pt-12 pb-4 text-[#333]">
+        <div class="container">
+            <div class="footer-content grid grid-cols-[0.5fr_1fr_0.7fr_1fr] gap-4 items-start mb-8">
                 <!-- Logo Section -->
-                <div class="col-span-1">
-                    <img src="public/logo.png" alt="Bildup AI" class="h-8 w-auto mb-4">
-                    <p class="text-gray-400 text-sm">Empowering everyone with AI-driven learning solutions.</p>
+                <div class="footer-logo-section flex flex-col items-start justify-start">
+                    <img src="public/logo.png" alt="Bildup AI" class="footer-logo w-5 h-5 object-contain m-0">
                 </div>
 
-                <!-- Quick Links -->
-                <div class="col-span-1">
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                <!-- Navigation Section -->
+                <div class="footer-nav-section flex flex-col gap-4">
+                    <ul class="footer-nav-links list-none p-0 m-0 flex flex-col gap-3">
+                        <li><a href="index.html"
+                                class="text-[#161616] no-underline text-[0.95rem] transition-colors duration-200 hover:text-[#1976d2]">Home</a>
                         </li>
+                        <li><a href="#about"
+                                class="text-[#161616] no-underline text-[0.95rem] transition-colors duration-200 hover:text-[#1976d2]">Learn
+                                how Bildup AI empowers everyone</a></li>
+                        <li><a href="contact.html"
+                                class="text-[#161616] no-underline text-[0.95rem] transition-colors duration-200 hover:text-[#1976d2]">Contact
+                                us</a></li>
                     </ul>
                 </div>
 
-                <!-- Legal -->
-                <div class="col-span-1">
-                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
-                    <ul class="space-y-2">
-                        <li><a href="privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy
-                                Policy</a></li>
-                        <li><a href="terms.html" class="text-gray-400 hover:text-white transition-colors">Terms of
-                                Service</a></li>
+                <!-- Legal Section -->
+                <div class="footer-legal flex flex-col gap-4">
+                    <ul class="legal-links list-none p-0 m-0 flex flex-col gap-3">
+                        <li><a href="privacy.html"
+                                class="text-[#333] no-underline text-[0.95rem] transition-colors duration-200 hover:text-[#1976d2]">Privacy</a>
+                        </li>
+                        <li><a href="terms.html"
+                                class="text-[#333] no-underline text-[0.95rem] transition-colors duration-200 hover:text-[#1976d2]">Terms
+                                of service</a></li>
                     </ul>
                 </div>
 
-                <!-- Newsletter -->
-                <div class="col-span-1">
-                    <h3 class="text-lg font-semibold mb-4">Stay Updated</h3>
-                    <form class="space-y-3">
-                        <input type="email" placeholder="Enter your email"
-                            class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-bildup-blue">
-                        <button type="submit"
-                            class="w-full bg-bildup-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                            Subscribe
-                        </button>
+                <!-- Newsletter Section -->
+                <div class="footer-newsletter flex flex-col gap-4">
+                    <h3 class="newsletter-title text-base font-normal text-[#161616]">Sign up to receive updates</h3>
+                    <form class="newsletter-form flex flex-col gap-3">
+                        <div class="input-group flex relative items-center">
+                            <input type="email" placeholder="Enter your email"
+                                class="newsletter-input flex-1 py-3 px-4 pr-[120px] border border-[#ddd] rounded-[25px] text-[0.9rem] text-[#161616] outline-none transition-colors duration-200 focus:border-[#1976d2]">
+                            <button type="submit"
+                                class="newsletter-submit absolute right-[5px] top-1/2 transform -translate-y-1/2 bg-[#1976d2] text-white border-none rounded-[20px] py-2 px-5 text-[0.85rem] font-medium cursor-pointer transition-colors duration-200 hover:bg-[#1565c0] whitespace-nowrap">
+                                Submit
+                            </button>
+                        </div>
+                        <p class="newsletter-consent text-[0.8rem] text-[#969696] m-0 font-normal leading-[1.4]">
+                            By subscribing you provide consent to receive updates from our company
+                        </p>
                     </form>
-                    <p class="text-gray-400 text-xs mt-2">By subscribing you consent to receive updates.</p>
+                    <div class="social-links flex gap-4 mt-4">
+                        <a href="#"><img src="public/X.png" alt="X"
+                                class="social-icon w-5 h-5 object-contain transition-transform duration-200"></a>
+                        <a href="#"><img src="public/instagram.png" alt="Instagram"
+                                class="social-icon w-5 h-5 object-contain transition-transform duration-200"></a>
+                        <a href="#"><img src="public/facebook.png" alt="Facebook"
+                                class="social-icon w-5 h-5 object-contain transition-transform duration-200"></a>
+                        <a href="#"><img src="public/linkedIn.png" alt="LinkedIn"
+                                class="social-icon w-5 h-5 object-contain transition-transform duration-200"></a>
+                        <a href="#"><img src="public/tiktok.png" alt="TikTok"
+                                class="social-icon w-5 h-5 object-contain transition-transform duration-200"></a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Social Links -->
-            <div class="mt-8 pt-8 border-t border-gray-800">
-                <div class="flex justify-between items-center">
-                    <p class="text-gray-400 text-sm">© 2025 Bildup AI. All rights reserved.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <img src="public/X.png" alt="X" class="h-6 w-6">
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <img src="public/instagram.png" alt="Instagram" class="h-6 w-6">
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <img src="public/facebook.png" alt="Facebook" class="h-6 w-6">
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <img src="public/linkedIn.png" alt="LinkedIn" class="h-6 w-6">
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <img src="public/tiktok.png" alt="TikTok" class="h-6 w-6">
-                        </a>
-                    </div>
-                </div>
+            <hr class="footer-separator border-none h-px bg-[#e0e0e0] my-8 mx-0">
+
+            <!-- Copyright Section -->
+            <div class="footer-copyright text-center">
+                <p class="copyright-text text-[#666] text-[0.9rem] m-0">© 2025, All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile menu functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', function () {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/motion@10.16.2/dist/motion.min.js"></script>
+    <script src="js/footer-tailwind.js"></script>
+    <script type="module" src="js/terms.js"></script>
 </body>
 
 </html>

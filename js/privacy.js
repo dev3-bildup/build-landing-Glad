@@ -1,5 +1,7 @@
 import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
+import AnimationManager from '../utils/AnimationManager.js';
+import Animations from '../components/Animations.js';
 
 class PrivacyPage {
     constructor() {
@@ -11,8 +13,28 @@ class PrivacyPage {
     init() {
         this.createHeader();
         this.createFooter();
+         this.setupAnimationManager();
+        this.setupMotionAnimations();
         this.setupAccordion();
         this.setupEventListeners();
+    }
+
+    setupAnimationManager() {
+        this.animationManager = new AnimationManager();
+        this.animationManager.addLoadingAnimation();
+    }
+
+    setupMotionAnimations() {
+
+        setTimeout(() => {
+            if (typeof motion !== 'undefined') {
+                this.animations = new Animations();
+            } else {
+                console.warn('Motion One not available, using CSS animations only');
+
+                this.animations = new Animations();
+            }
+        }, 500);
     }
 
     createHeader() {
@@ -51,7 +73,7 @@ class PrivacyPage {
             const toggle = item.querySelector('.accordion-toggle');
             const content = item.querySelector('.accordion-content');
 
-            // Add click event to both header and toggle button
+         
             [header, toggle].forEach(element => {
                 if (element) {
                     element.addEventListener('click', (e) => {
@@ -61,7 +83,6 @@ class PrivacyPage {
                 }
             });
 
-            // Add keyboard support
             if (toggle) {
                 toggle.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
@@ -80,15 +101,15 @@ class PrivacyPage {
         const icon = item.querySelector('.toggle-icon');
 
         if (isActive) {
-            // Close accordion
+         
             item.classList.remove('active');
 
-            // Animate content closing
+           
             if (content) {
                 const contentHeight = content.scrollHeight;
                 content.style.maxHeight = contentHeight + 'px';
 
-                // Force reflow
+             
                 content.offsetHeight;
 
                 content.style.maxHeight = '0px';
@@ -100,7 +121,7 @@ class PrivacyPage {
                 }, 400);
             }
 
-            // Animate icon
+          
             if (icon) {
                 icon.style.transform = 'rotate(0deg)';
             }

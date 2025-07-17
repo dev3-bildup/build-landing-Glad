@@ -1,5 +1,8 @@
 import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
+import AnimationManager from '../utils/AnimationManager.js';
+// import Animations from '../components/Animations.js';
+
 
 class TermsPage {
     constructor() {
@@ -12,7 +15,27 @@ class TermsPage {
         this.createHeader();
         this.createFooter();
         this.setupEventListeners();
+        this.setupAnimationManager();
+        this.setupMotionAnimations();
     }
+
+    setupAnimationManager() {
+        this.animationManager = new AnimationManager();
+        this.animationManager.addLoadingAnimation();
+    }
+
+    // setupMotionAnimations() {
+
+    //     setTimeout(() => {
+    //         if (typeof motion !== 'undefined') {
+    //             this.animations = new Animations();
+    //         } else {
+    //             console.warn('Motion One not available, using CSS animations only');
+
+    //             this.animations = new Animations();
+    //         }
+    //     }, 500);
+    // }
 
     createHeader() {
         try {

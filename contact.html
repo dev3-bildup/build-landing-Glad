@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Bildup AI</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/styles.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -18,141 +20,113 @@
                         'inter': ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        'bildup-blue': '#185A9D',
-                        'bildup-dark': '#1a1a1a',
+                        'bildup-blue': '#0071E3',
+                        'bildup-dark': '#161616',
                         'bildup-gray': '#333333',
-                        'bildup-light-gray': '#666666',
+                        'bildup-light-gray': '#E8E8E8',
                     }
                 }
             }
         }
     </script>
+    
+ 
 </head>
 
 <body class="font-inter bg-white text-gray-800">
-    <!-- Header (Tailwind CSS) -->
-    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm z-50 border-b border-gray-200">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <img src="public/logo.png" alt="Bildup AI Logo" class="h-8 w-auto">
-                </div>
 
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-900 hover:text-bildup-blue transition-colors">Home</a>
-                    <a href="#features" class="text-gray-900 hover:text-bildup-blue transition-colors">Get started with
-                        Bildup AI</a>
-                    <a href="#about" class="text-gray-900 hover:text-bildup-blue transition-colors">Learn how Bildup AI
-                        empowers everyone</a>
-                    <a href="contact.html" class="text-gray-900 hover:text-bildup-blue transition-colors">Contact Us</a>
-                </div>
-
-                <!-- CTA Button -->
-                <div class="hidden md:block">
-                    <button
-                        class="bg-bildup-blue text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors">
-                        Get Started
-                    </button>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-900 hover:text-bildup-blue">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Mobile Navigation -->
-            <div id="mobile-menu" class="hidden md:hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
-                    <a href="index.html"
-                        class="block px-3 py-2 text-gray-900 hover:text-bildup-blue transition-colors">Home</a>
-                    <a href="#features"
-                        class="block px-3 py-2 text-gray-900 hover:text-bildup-blue transition-colors">Get started with
-                        Bildup AI</a>
-                    <a href="#about"
-                        class="block px-3 py-2 text-gray-900 hover:text-bildup-blue transition-colors">Learn how Bildup
-                        AI empowers everyone</a>
-                    <a href="contact.html"
-                        class="block px-3 py-2 text-gray-900 hover:text-bildup-blue transition-colors">Contact Us</a>
-                    <div class="pt-4">
-                        <button
-                            class="w-full bg-bildup-blue text-white px-4 py-2 rounded-full hover:bg-blue-700 transition-colors">
-                            Get Started
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </nav>
+    <header id="header-container" class="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
+ 
     </header>
 
     <!-- Main Content -->
-    <main class="min-h-screen pt-16">
-        <div class="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
-            <!-- Contact Information Section -->
+    <main class="min-h-screen pt-16 lg:pb-40 ">
+        <div class="max-w-[85rem] mx-auto px-5 sm:px-6 lg:px-8 l">
+
             <section class="py-16 sm:py-20">
                 <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
                     <!-- Contact Form -->
-                    <div class="contact-form-section">
-                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-bildup-dark leading-tight mb-6">
-                            Get in Touch
+                    <div class="contact-form-section ">
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-semibold text-bildup-dark leading-tight mb-6">
+                            We would love to talk with you.
                         </h1>
-                        <p class="text-lg text-bildup-gray mb-8 leading-relaxed">
-                            Have questions about Bildup AI? We'd love to hear from you. Send us a message and we'll
-                            respond as soon as possible.
-                        </p>
-
-                        <form class="contact-form space-y-6">
-                            <div class="grid sm:grid-cols-2 gap-6">
-                                <div class="form-group">
-                                    <label for="firstName" class="block text-sm font-medium text-bildup-dark mb-2">
-                                        First Name *
-                                    </label>
-                                    <input type="text" id="firstName" name="firstName" required
-                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bildup-blue focus:border-transparent transition-colors duration-200"
-                                        placeholder="Enter your first name">
-                                </div>
-                                <div class="form-group">
-                                    <label for="lastName" class="block text-sm font-medium text-bildup-dark mb-2">
-                                        Last Name *
-                                    </label>
-                                    <input type="text" id="lastName" name="lastName" required
-                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bildup-blue focus:border-transparent transition-colors duration-200"
-                                        placeholder="Enter your last name">
-                                </div>
+                        <div
+                            class="flex flex-col sm:flex-row gap-6 sm:gap-10 items-start sm:items-center leading-relaxed font-bold mb-6 w-full">
+                            <div class="w-full sm:w-1/2">
+                                <p class="text-2xl font-semibold text-bildup-dark mb-1">For General Enquiries</p>
+                                <p>
+                                    <a href="mailto:support@bildup.ai"
+                                        class="text-[#0071E3] hover:text-blue-800 text-xl flex items-center gap-1 font-medium break-all">
+                                        <img src="public/support.png" alt="support icon" class="h-4 w-4">
+                                        support@bildup.ai
+                                    </a>
+                                </p>
                             </div>
+                            <div class="w-full sm:w-1/2 mt-6 sm:mt-0">
+                                <p class="text-2xl font-semibold text-bildup-dark mb-1">
+                                    OR Call us <span class="text-[#587c9c]">(9am-6pm)</span>
+                                </p>
+                                <p>
+                                    <a href="tel:+2348135433777"
+                                        class="text-[#0071E3] hover:text-blue-800 font-medium flex items-center gap-1 text-xl break-all">
+                                        <img src="public/color-call.png" alt="call" class="h-4 w-4">+234 813 543 3777
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
 
+
+                        <div class=" lg:sticky lg:top-8">
+                            <img src="public/contact-img.png" alt="Bildup AI Team"
+                                class="w-full h-[20rem] rounded-b-3xl   shadow-lg hidden md:block">
+                            <img src="public/contact-mobile.png" alt="Bildup"
+                                class="w-full h-auto rounded-b-3xl shadow-lg md:hidden lg:hidden">
+                        </div>
+                    </div>
+
+
+                    <form
+                        class="contact-form space-y-8 border border-#E8E8E8 p-6 rounded-lg shadow bg-gradient-to-b from-white via-white to-[#f6effd]">
+                        <div class="grid sm:grid-cols-2 gap-6">
                             <div class="form-group">
-                                <label for="email" class="block text-sm font-medium text-bildup-dark mb-2">
-                                    Email Address *
+                                <label for="Name" class="block text-sm font-medium text-bildup-dark">
+                                    Name
                                 </label>
-                                <input type="email" id="email" name="email" required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bildup-blue focus:border-transparent transition-colors duration-200"
-                                    placeholder="Enter your email address">
+                                <input type="text" id="firstName" name="Name" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg  focus:border-transparent transition-colors duration-200"
+                                    placeholder=" Enter name" style="background-image: url(/public/human.png); background-repeat: no-repeat; background-position: 0.75rem center;
+    background-size: 1.5rem; padding-left:42px;">
                             </div>
-
                             <div class="form-group">
-                                <label for="phone" class="block text-sm font-medium text-bildup-dark mb-2">
+                                <label for="email" class="block text-sm font-medium text-bildup-dark">
+                                    Email
+                                </label>
+                                <input type="emmail" id="email" name="email" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg  focus:border-transparent transition-colors duration-200"
+                                    placeholder="Enter your last name" style="background-image: url(/public/mail.png); background-repeat: no-repeat; background-position: 0.75rem center;
+    background-size: 1.5rem; padding-left:42px;">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div class="form-group">
+                                <label for="email" class="block text-sm font-medium text-bildup-dark ">
                                     Phone Number
                                 </label>
-                                <input type="tel" id="phone" name="phone"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bildup-blue focus:border-transparent transition-colors duration-200"
-                                    placeholder="Enter your phone number">
+                                <input type="phone number" id="phone number" name="phone number" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg items-center focus:border-transparent transition-colors duration-200"
+                                    placeholder="Enter phone number" style="background-image: url(/public/light-call.png); background-repeat: no-repeat; background-position: 0.75rem center;
+    background-size: 1.5rem; padding-left:42px;">
                             </div>
 
                             <div class="form-group">
-                                <label for="subject" class="block text-sm font-medium text-bildup-dark mb-2">
-                                    Subject *
+                                <label for="subject" class="block text-sm font-medium text-bildup-dark">
+                                    Message Type
                                 </label>
-                                <select id="subject" name="subject" required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bildup-blue focus:border-transparent transition-colors duration-200">
-                                    <option value="">Select a subject</option>
+                                <select id="subject" name="subject" required placeholder="Select message type"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg  focus:border-transparent transition-colors duration-200">
+                                    <option class="text-bildup-light-gray" disabled selected>Select message type
+                                    </option>
                                     <option value="general">General Inquiry</option>
                                     <option value="support">Technical Support</option>
                                     <option value="billing">Billing Question</option>
@@ -161,172 +135,52 @@
                                     <option value="other">Other</option>
                                 </select>
                             </div>
+                        </div>
+
+                        <div class="form-group">
 
                             <div class="form-group">
-                                <label for="message" class="block text-sm font-medium text-bildup-dark mb-2">
-                                    Message *
+                                <label for="message" class="block text-sm font-medium text-bildup-dark">
+                                    Message
                                 </label>
                                 <textarea id="message" name="message" rows="6" required
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-bildup-blue focus:border-transparent transition-colors duration-200 resize-none"
-                                    placeholder="Tell us more about your inquiry..."></textarea>
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg  focus:border-transparent transition-colors duration-200 resize-none"
+                                    placeholder="Enter message..."></textarea>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group m-6 ">
                                 <button type="submit"
-                                    class="w-full bg-bildup-blue text-white font-semibold py-4 px-8 rounded-lg hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-bildup-blue focus:ring-offset-2">
-                                    Send Message
+                                    class=" bg-bildup-blue text-white font-semibold py-3 px-8 flex justify-center mx-auto rounded-3xl  transition-colors duration-200 focus:outline-none ">
+                                    Submit
                                 </button>
                             </div>
-                        </form>
-                    </div>
+                    </form>
 
-                    <!-- Contact Image -->
-                    <div class="contact-image-container lg:sticky lg:top-8">
-                        <img src="public/contact-img.png" alt="Bildup AI Team"
-                            class="contact-image w-full h-auto rounded-lg shadow-lg">
-                    </div>
+
                 </div>
             </section>
 
-            <!-- Additional Contact Information -->
-            <section class="py-16 bg-gray-50 rounded-xl">
-                <div class="max-w-4xl mx-auto px-6">
-                    <h2 class="text-2xl sm:text-3xl font-bold text-bildup-dark text-center mb-12">
-                        Other Ways to Reach Us
-                    </h2>
 
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="text-center">
-                            <div
-                                class="w-16 h-16 bg-bildup-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                                    </path>
-                                </svg>
-                            </div>
-                            <h3 class="text-lg font-semibold text-bildup-dark mb-2">Email</h3>
-                            <p class="text-bildup-gray">support@bildup.ai</p>
-                        </div>
-
-                        <div class="text-center">
-                            <div
-                                class="w-16 h-16 bg-bildup-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
-                                    </path>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-lg font-semibold text-bildup-dark mb-2">Location</h3>
-                            <p class="text-bildup-gray">Enugu, Nigeria</p>
-                        </div>
-
-                        <div class="text-center">
-                            <div
-                                class="w-16 h-16 bg-bildup-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-lg font-semibold text-bildup-dark mb-2">Response Time</h3>
-                            <p class="text-bildup-gray">Within 24 hours</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     </main>
 
-    <!-- Footer (Tailwind CSS) -->
-    <footer class="bg-[url('/public/Footer background web.png')] text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Logo Section -->
-                <div class="col-span-1">
-                    <img src="public/logo.png" alt="Bildup AI" class="h-8 w-auto mb-4">
-                    <p class="text-gray-400 text-sm">Empowering everyone with AI-driven learning solutions.</p>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="col-span-1">
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Legal -->
-                <div class="col-span-1">
-                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
-                    <ul class="space-y-2">
-                        <li><a href="privacy.html" class="text-gray-400 hover:text-white transition-colors">Privacy
-                                Policy</a></li>
-                        <li><a href="terms.html" class="text-gray-400 hover:text-white transition-colors">Terms of
-                                Service</a></li>
-                    </ul>
-                </div>
-
-                <!-- Newsletter -->
-                <div class="col-span-1">
-                    <h3 class="text-lg font-semibold mb-4">Stay Updated</h3>
-                    <form class="space-y-3">
-                        <input type="email" placeholder="Enter your email"
-                            class="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-bildup-blue">
-                        <button type="submit"
-                            class="w-full bg-bildup-blue text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
-                            Subscribe
-                        </button>
-                    </form>
-                    <p class="text-gray-400 text-xs mt-2">By subscribing you consent to receive updates.</p>
-                </div>
-            </div>
-
-            <!-- Social Links -->
-            <div class="mt-8 pt-8 border-t border-gray-800">
-                <div class="flex justify-between items-center">
-                    <p class="text-gray-400 text-sm">© 2025 Bildup AI. All rights reserved.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <img src="public/X.png" alt="X" class="h-6 w-6">
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <img src="public/instagram.png" alt="Instagram" class="h-6 w-6">
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <img src="public/facebook.png" alt="Facebook" class="h-6 w-6">
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <img src="public/linkedIn.png" alt="LinkedIn" class="h-6 w-6">
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
-                            <img src="public/tiktok.png" alt="TikTok" class="h-6 w-6">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+ 
+    <footer id="footer-container"
+        class="footer bg-[url('public/Footer background web.png')] bg-no-repeat bg-center bg-cover py-12 pt-12 pb-4 text-[#333]">
+    
     </footer>
 
+
+
+    <script src="https://cdn.jsdelivr.net/npm/motion@10.16.2/dist/motion.min.js"></script>
+
+
+    <script type="module" src="js/contact.js"></script>
+
+
     <script>
-        // Mobile menu functionality
+        // Form submission fallback (in case ContactPage doesn't handle it)
         document.addEventListener('DOMContentLoaded', function () {
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            if (mobileMenuButton && mobileMenu) {
-                mobileMenuButton.addEventListener('click', function () {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
-
-            // Form submission
             const form = document.querySelector('.contact-form');
             if (form) {
                 form.addEventListener('submit', function (e) {

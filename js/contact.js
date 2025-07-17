@@ -1,46 +1,73 @@
-// Contact Page JavaScript
-import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
+import Header from '../components/Header.js';
+import AnimationManager from '../utils/AnimationManager.js';
+import Animations from '../components/Animations.js';
+
 
 class ContactPage {
     constructor() {
+
         this.header = null;
         this.footer = null;
         this.init();
     }
 
     init() {
+       // Debug log
         this.createHeader();
         this.createFooter();
         this.setupFormValidation();
         this.setupEventListeners();
+        this.setupAnimationManager();
+        this.setupMotionAnimations();
     }
 
+    setupAnimationManager() {
+        this.animationManager = new AnimationManager();
+        this.animationManager.addLoadingAnimation();
+    }
+
+    setupMotionAnimations() {
+
+        setTimeout(() => {
+            if (typeof motion !== 'undefined') {
+                this.animations = new Animations();
+            } else {
+                console.warn('Motion One not available, using CSS animations only');
+
+                this.animations = new Animations();
+            }
+        }, 500);
+    }
     createHeader() {
         try {
             this.header = new Header();
             const headerContainer = document.getElementById('header-container');
             if (headerContainer) {
+                console.log('ContactPage: Header container found, appending header'); // Debug log
                 headerContainer.appendChild(this.header.render());
             } else {
-                console.error('Header container not found');
+                console.error('ContactPage: Header container not found - check if #header-container exists in HTML');
             }
         } catch (error) {
-            console.error('Failed to create header:', error);
+            console.error('ContactPage: Failed to create header:', error);
         }
     }
 
+
     createFooter() {
         try {
+       
             this.footer = new Footer();
             const footerContainer = document.getElementById('footer-container');
             if (footerContainer) {
+                console.log('ContactPage: Footer container found, appending footer'); // Debug log
                 footerContainer.appendChild(this.footer.render());
             } else {
-                console.error('Footer container not found');
+                console.error('ContactPage: Footer container not found - check if #footer-container exists in HTML');
             }
         } catch (error) {
-            console.error('Failed to create footer:', error);
+            console.error('ContactPage: Failed to create footer:', error);
         }
     }
 

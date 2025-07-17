@@ -1688,7 +1688,7 @@ section {
 
 /* Footer */
 .footer {
-    background: url('public/Footer background web.png') no-repeat center center;
+    /* background: url('public/Footer background web.png') no-repeat center center; */
     background-size: cover;
     padding: 3rem 0 1rem 0;
     color: #333;
@@ -1895,7 +1895,7 @@ section {
 /* Mobile responsive */
 @media (max-width: 768px) {
     .footer {
-        background: url('public/Footer background mobile.png') no-repeat center center;
+        /* background: url('public/Footer background mobile.png') no-repeat center center; */
         background-size: cover;
         padding: 3rem 1.5rem 1rem 1.5rem;
     }

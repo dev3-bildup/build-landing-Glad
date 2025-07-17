@@ -18,10 +18,10 @@ class LandingPage {
 
     init() {
         this.setupAnimationManager();
+        this.setupMotionAnimations();
         this.createComponents();
         this.renderPage();
         this.setupEventListeners();
-        this.setupMotionAnimations();
     }
 
     setupAnimationManager() {
@@ -87,19 +87,19 @@ class LandingPage {
                     title: "Voice-Enabled Learning",
                     description: "Bildup AI, read my notes out loud",
                     image: "public/anywherevid.png",
-                  
+
                 },
                 {
                     title: "Quick Quizzes",
                     description: "Bildup AI, quiz me while i wait",
                     image: "public/anywherenote.png",
-              
+
                 },
                 {
                     title: "Smart Summaries",
                     description: "Bildup AI, summarize this topic while i eat",
                     image: "public/anywheretopic.png",
-              
+
                 }
             ],
             className: "study-anywhere-section"
@@ -117,19 +117,19 @@ class LandingPage {
             descriptionColor: "#696969",
             cards: [
                 {
-                   
+
                     image: "public/bildrecap.png",
-                  
+
                 },
                 {
-                   
+
                     image: "public/bildhelp.png",
-                 
+
                 },
                 {
-                   
+
                     image: "public/bildaVisual.png",
-                  
+
                 }
             ],
             className: "at-home-section"
@@ -147,23 +147,23 @@ class LandingPage {
             descriptionColor: "#696969",
             cards: [
                 {
-                 
+
                     description: "Bildup AI, read my notes out loud",
                     image: "public/examvid.png",
-               
+
 
                 },
                 {
-                 
+
                     description: "Bildup AI, quiz me while i wait",
                     image: "public/exammath.png",
-                 
+
                 },
                 {
-                
+
                     description: "Bildup AI, summarize this topic while i eat",
                     image: "public/examrevision.png",
-                  
+
                 }
             ],
             className: "exam-prep-section"
@@ -186,11 +186,11 @@ class LandingPage {
                     image: "public/anywherevid.png"
                 },
                 {
-                 
+
                     image: "public/nightnotes.png"
                 },
                 {
-               
+
                     image: "public/nightatoms.png"
                 }
             ],
@@ -210,7 +210,7 @@ class LandingPage {
             descriptionColor: "#696969",
             cards: [
                 {
-                    
+
                     image: "public/bildrecap.png"
                 },
                 {
@@ -236,15 +236,15 @@ class LandingPage {
             descriptionColor: "#696969",
             cards: [
                 {
-                  
+
                     image: "public/examvid.png"
                 },
                 {
-                    
+
                     image: "public/exammath.png"
                 },
                 {
-                  
+
                     image: "public/examrevision.png"
                 }
             ],
@@ -264,15 +264,15 @@ class LandingPage {
             descriptionColor: "#696969",
             cards: [
                 {
-                   
+
                     image: "public/tutorvid.png"
                 },
                 {
-                  
+
                     image: "public/tutorprep.png"
                 },
                 {
-                   
+
                     image: "public/tutorsolve.png"
                 }
             ],
