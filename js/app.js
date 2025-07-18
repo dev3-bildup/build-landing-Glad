@@ -102,7 +102,8 @@ class LandingPage {
 
                 }
             ],
-            className: "study-anywhere-section"
+            className: "study-anywhere-section",
+            mobileTopImage: "public/quizmewhile.png" 
         });
 
         this.components.atHomeSection = new SectionComponent({
@@ -132,7 +133,8 @@ class LandingPage {
 
                 }
             ],
-            className: "at-home-section"
+            className: "at-home-section",
+            mobileTopImage: "public/recapsmall.png"
         });
 
         this.components.examPrepSection = new SectionComponent({
@@ -166,7 +168,8 @@ class LandingPage {
 
                 }
             ],
-            className: "exam-prep-section"
+            className: "exam-prep-section",
+            mobileTopImage: "public/mathsmall.png"
         });
 
 
@@ -194,7 +197,8 @@ class LandingPage {
                     image: "public/nightatoms.png"
                 }
             ],
-            className: "exam-prep-section"
+            className: "exam-prep-section",
+            mobileTopImage: "public/nightvidsmall.png"
         });
 
 
@@ -220,7 +224,8 @@ class LandingPage {
                     image: "public/bildaVisual.png"
                 }
             ],
-            className: "at-home-section"
+            className: "at-home-section",
+            mobileTopImage: "public/recapsmall.png"
         });
 
 
@@ -248,7 +253,8 @@ class LandingPage {
                     image: "public/examrevision.png"
                 }
             ],
-            className: "at-home-section"
+            className: "at-home-section",
+            mobileTopImage: "public/mathsmall.png"
         });
 
 
@@ -276,7 +282,8 @@ class LandingPage {
                     image: "public/tutorsolve.png"
                 }
             ],
-            className: "study-anywhere-section"
+            className: "study-anywhere-section",
+            mobileTopImage: "public/tutorvidsmall.png"
         });
 
 
@@ -315,8 +322,18 @@ class LandingPage {
         main.appendChild(this.components.inSchoolSection.render());
         main.appendChild(this.components.personalTutorSection.render());
 
-        //Render Final Bildup Section
-        main.appendChild(this.components.bildup.render());
+        //Render Final Bildup Section with button
+        const finalBildupSection = new BildupSection({
+            subtitle: "Bildup AI for Schools, Teachers and Parents",
+            title: "Empowering Every Role",
+            description: "Bildup AI unlocks a smarter way to teach, learn, and support education. Whether you’re a school managing performance, a teacher guiding students, or a parent tracking progress-Bildup AI gives you the tools to connect, collaborate, and thrive.",
+            image: "public/herosection.png",
+            imageAlt: "Bildup AI Platform",
+            showButton: true,
+            buttonText: "Learn how Bildup AI empowers everyone",
+            className: "bildup-section final-bildup-section"
+        });
+        main.appendChild(finalBildupSection.render());
 
         // Render Final CTA Section before Footer
         main.appendChild(new FinalCTASection().render());

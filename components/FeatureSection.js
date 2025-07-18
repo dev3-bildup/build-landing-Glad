@@ -33,6 +33,7 @@ class SectionComponent {
 
             // Responsive settings
             mobileLayout: "stack", // stack, grid, single
+            mobileTopImage: null, // Image to replace top card on mobile
 
             ...config
         };
@@ -225,6 +226,19 @@ class SectionComponent {
         if (this.config.cards.length >= 3) {
             cardsContainer.className = 'cards-special-layout';
 
+            // Create mobile image container if mobileTopImage is provided
+            if (this.config.mobileTopImage) {
+                const mobileImageContainer = document.createElement('div');
+                mobileImageContainer.className = 'mobile-top-image-container';
+
+                const mobileImg = document.createElement('img');
+                mobileImg.src = this.config.mobileTopImage;
+                mobileImg.alt = 'Mobile Top Image';
+                mobileImg.className = 'mobile-top-image';
+
+                mobileImageContainer.appendChild(mobileImg);
+                cardsContainer.appendChild(mobileImageContainer);
+            }
 
             const topCard = this.createCard(this.config.cards[0]);
             topCard.className = 'feature-card top-card';

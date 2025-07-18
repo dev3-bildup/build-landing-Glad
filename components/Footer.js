@@ -1,11 +1,12 @@
 class Footer {
     constructor(config = {}) {
-        console.log('Footer: Initializing...'); // Debug log
+
         this.config = {
             companyName: "Bildup AI",
             quickLinks: [
                 { text: "Home", href: "index.html" },
-                { text: "Learn how Bildup AI empowers everyone", href: "#about" },
+                { text: "Apprenticeship", href: "#about" },
+                { text: "Careers", href: "#about" },
                 { text: "Contact us", href: "contact.html" }
             ],
             socialLinks: [
@@ -23,19 +24,23 @@ class Footer {
     }
 
     init() {
-        console.log('Footer: Starting initialization...'); // Debug log
+
         this.createFooter();
         this.addEventListeners();
-        console.log('Footer: Initialization complete'); // Debug log
+
     }
 
     createFooter() {
-        console.log('Footer: Creating footer element...'); // Debug log
+
         this.footer = document.createElement('footer');
         this.footer.className = this.config.className;
 
         const container = document.createElement('div');
         container.className = 'container';
+
+        // Create wrapper div with white background
+        const contentWrapper = document.createElement('div');
+        contentWrapper.className = 'footer-content-wrapper';
 
         const content = document.createElement('div');
         content.className = 'footer-content';
@@ -55,19 +60,20 @@ class Footer {
         const newsletterSection = this.createNewsletterSection();
         content.appendChild(newsletterSection);
 
-        container.appendChild(content);
+        contentWrapper.appendChild(content);
 
 
         const separator = document.createElement('hr');
         separator.className = 'footer-separator';
-        container.appendChild(separator);
+        contentWrapper.appendChild(separator);
 
         // Copyright section
         const copyrightSection = this.createCopyrightSection();
-        container.appendChild(copyrightSection);
+        contentWrapper.appendChild(copyrightSection);
 
+        container.appendChild(contentWrapper);
         this.footer.appendChild(container);
-        console.log('Footer: Footer element created successfully'); // Debug log
+
     }
 
     createLogoSection() {
@@ -201,7 +207,13 @@ class Footer {
         section.className = 'footer-copyright';
 
         const copyrightText = document.createElement('p');
-        copyrightText.textContent = '© 2025, All rights reserved.';
+        const copyrightIcon = document.createElement('img');
+        copyrightIcon.src = 'public/copyright.png';
+        copyrightIcon.alt = 'Copyright';
+        copyrightIcon.className = 'copyright-icon';
+
+        copyrightText.appendChild(copyrightIcon);
+        copyrightText.appendChild(document.createTextNode(' 2025, All rights reserved.'));
         copyrightText.className = 'copyright-text';
 
         section.appendChild(copyrightText);
@@ -210,7 +222,7 @@ class Footer {
     }
 
     addEventListeners() {
-        console.log('Footer: Adding event listeners...'); // Debug log
+
         const socialLinks = this.footer.querySelectorAll('.social-links img');
         socialLinks.forEach(img => {
             img.addEventListener('mouseenter', () => {
@@ -222,7 +234,6 @@ class Footer {
             });
         });
 
-        // Newsletter form submission
         const newsletterForm = this.footer.querySelector('.newsletter-form');
         if (newsletterForm) {
             newsletterForm.addEventListener('submit', (e) => {
@@ -232,11 +243,11 @@ class Footer {
 
             });
         }
-        console.log('Footer: Event listeners added successfully'); // Debug log
+
     }
 
     render() {
-        console.log('Footer: Rendering footer element'); // Debug log
+
         return this.footer;
     }
 

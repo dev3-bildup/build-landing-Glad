@@ -1,19 +1,19 @@
 class Header {
     constructor() {
-        console.log('Header: Initializing...'); // Debug log
+      
         this.header = null;
         this.init();
     }
 
     init() {
-        console.log('Header: Starting initialization...'); // Debug log
+       
         this.createHeader();
         this.addEventListeners();
-        console.log('Header: Initialization complete'); // Debug log
+   
     }
 
     createHeader() {
-        console.log('Header: Creating header element...'); // Debug log
+      
         this.header = document.createElement('header');
         this.header.className = 'header';
         this.header.innerHTML = `
@@ -28,8 +28,8 @@ class Header {
                         <button class="mobile-menu-close">X</button>
                         </div>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="#features">Get started with Bildup AI</a></li>
-                        <li><a href="#about">Learn how Bildup AI empowers everyone</a></li>
+                        <li><a href="#features">Careers</a></li>
+                        <li><a href="#about">Apprenticeship</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                         </ul>
                     <div class="hamburger">
@@ -43,23 +43,23 @@ class Header {
             </nav>
             <div class="mobile-menu-backdrop"></div>
         `;
-        console.log('Header: Header element created successfully'); // Debug log
+       
     }
 
     addEventListeners() {
-        console.log('Header: Adding event listeners...'); // Debug log
+     
         const hamburger = this.header.querySelector('.hamburger');
         const navMenu = this.header.querySelector('.nav-menu');
         const navLinks = this.header.querySelectorAll('.nav-menu a');
         const backdrop = this.header.querySelector('.mobile-menu-backdrop');
         const closeButton = this.header.querySelector('.mobile-menu-close');
 
-        console.log('Header: Mobile menu elements found:', {
-            hamburger: !!hamburger,
-            navMenu: !!navMenu,
-            backdrop: !!backdrop,
-            closeButton: !!closeButton
-        }); // Debug log
+        // console.log('Header: Mobile menu elements found:', {
+        //     hamburger: !!hamburger,
+        //     navMenu: !!navMenu,
+        //     backdrop: !!backdrop,
+        //     closeButton: !!closeButton
+        // }); // Debug log
 
         if (hamburger && navMenu) {
             hamburger.addEventListener('click', (e) => {
@@ -73,7 +73,7 @@ class Header {
 
 
                 if (typeof motion !== 'undefined') {
-                    console.log('Header: Motion library available, animating...'); // Debug log
+                 
 
                     if (navMenu.classList.contains('active')) {
                         motion(navMenu, {
@@ -137,11 +137,11 @@ class Header {
                         });
                     }
                 } else {
-                    console.log('Header: Motion One not available, using CSS transitions');
+                    
                 }
             });
         } else {
-            console.error('Header: Hamburger or nav menu not found');
+        
         }
 
         // Close button functionality
@@ -263,11 +263,11 @@ class Header {
             }
         });
 
-        console.log('Header: Event listeners added successfully'); // Debug log
+       
     }
 
     render() {
-        console.log('Header: Rendering header element'); // Debug log
+   
         return this.header;
     }
 

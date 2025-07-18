@@ -23,71 +23,6 @@ landing-page/
 └── public/                 # Static assets (images)
 ```
 
-## 🚀 Features
-
-- **Modular Components**: Each section is a reusable component
-- **Responsive Design**: Works perfectly on all devices
-- **Smooth Animations**: Intersection Observer for scroll animations
-- **Mobile Menu**: Hamburger menu for mobile devices
-- **Progress Bar**: Scroll progress indicator
-- **Parallax Effects**: Subtle hero section parallax
-- **Hover Effects**: Interactive image scaling
-- **ES6 Modules**: Modern JavaScript module system
-
-## 📦 Components
-
-### Header Component
-```javascript
-import Header from './components/Header.js';
-const header = new Header();
-```
-
-### Hero Component
-```javascript
-import Hero from './components/Hero.js';
-const hero = new Hero({
-    title: "Your AI Tutor, Built Just for You",
-    subtitle: "Seamlessly Connected Learning Ecosystem.",
-    ctaText: "Get started with Bildup AI",
-    backgroundImage: "public/herobg.png",
-    backgroundImageMobile: "public/herobgsmall.png"
-});
-```
-
-### Feature Section Component
-```javascript
-import FeatureSection from './components/FeatureSection.js';
-const feature = new FeatureSection({
-    title: "Study Anywhere",
-    description: "Access your learning materials from any device.",
-    image: "public/studyanywherebg.png",
-    imagePosition: "right", // "left" or "right"
-    backgroundColor: "white" // "white" or "gray"
-});
-```
-
-### Footer Component
-```javascript
-import Footer from './components/Footer.js';
-const footer = new Footer({
-    companyName: "Bildup AI",
-    tagline: "Your personal AI tutor for smarter learning.",
-    quickLinks: [
-        { text: "Home", href: "#home" },
-        { text: "Features", href: "#features" }
-    ],
-    socialLinks: [
-        { platform: "Facebook", icon: "public/facebook.png", href: "#" }
-    ]
-});
-```
-
-## 🎨 Customization
-
-### Adding New Features
-1. Create a new component in the `components/` directory
-2. Import and use it in `app.js`
-3. Add any necessary styles to `styles.css`
 
 ### Modifying Existing Components
 Each component has a `updateConfig()` method:
@@ -142,12 +77,5 @@ The landing page is fully responsive with:
 
 ## 🔄 Component Reusability
 
-Components are designed to be:
-- **Configurable**: All content and styling can be customized
-- **Self-contained**: Each component manages its own state and events
-- **Composable**: Components can be combined to create complex layouts
-- **Testable**: Each component can be tested independently
 
-## 📄 License
 
-This project is open source and available under the MIT License. 

@@ -13,7 +13,7 @@ class ContactPage {
     }
 
     init() {
-       // Debug log
+    
         this.createHeader();
         this.createFooter();
         this.setupFormValidation();
@@ -44,7 +44,7 @@ class ContactPage {
             this.header = new Header();
             const headerContainer = document.getElementById('header-container');
             if (headerContainer) {
-                console.log('ContactPage: Header container found, appending header'); // Debug log
+
                 headerContainer.appendChild(this.header.render());
             } else {
                 console.error('ContactPage: Header container not found - check if #header-container exists in HTML');
@@ -61,8 +61,7 @@ class ContactPage {
             this.footer = new Footer();
             const footerContainer = document.getElementById('footer-container');
             if (footerContainer) {
-                console.log('ContactPage: Footer container found, appending footer'); // Debug log
-                footerContainer.appendChild(this.footer.render());
+             footerContainer.appendChild(this.footer.render());
             } else {
                 console.error('ContactPage: Footer container not found - check if #footer-container exists in HTML');
             }
@@ -188,7 +187,7 @@ class ContactPage {
         submitButton.disabled = true;
         submitButton.classList.add('opacity-75');
 
-        // Simulate form submission (replace with actual API call)
+        
         setTimeout(() => {
             // Reset button
             submitButton.textContent = originalText;
@@ -238,7 +237,6 @@ class ContactPage {
             }
         });
 
-        // Add fade-in animation for sections
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -294,7 +292,7 @@ class ContactPage {
         notification.className = `notification notification-${type}`;
         notification.textContent = message;
 
-        // Style the notification with Tailwind classes
+
         notification.className = `
             fixed top-5 right-5 px-5 py-3 rounded-lg text-white font-medium z-50 
             transform translate-x-full transition-transform duration-300 max-w-xs 

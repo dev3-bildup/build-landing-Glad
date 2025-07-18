@@ -18,7 +18,7 @@ class Hero {
         `;
         this.hero.innerHTML = `
             <div class="hero-content">
-                <h1 class="hero-title ">${formattedTitle}</h1>
+                <h1 class="hero-title">${formattedTitle}</h1>
                 <button class="cta-button">${this.config.ctaText}</button>
                 <p class="hero-subheadline">${this.config.subtitle}</p>
             </div>

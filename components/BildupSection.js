@@ -7,8 +7,12 @@ class BildupSection {
             image: "public/herosection.png",
             imageAlt: "Bildup AI Platform",
             className: "bildup-section",
+            showButton: false,
+            buttonText: "Get Started",
+            buttonClass: "cta-button",
             ...config
         };
+        console.log('BildupSection config:', this.config);
         this.section = null;
         this.init();
     }
@@ -65,6 +69,18 @@ class BildupSection {
         const imageDiv = document.createElement('div');
         imageDiv.className = 'bildup-image';
 
+        // Add button if showButton is true
+        if (this.config.showButton) {
+            console.log('Creating button for bildup section');
+            const button = document.createElement('button');
+            button.className = this.config.buttonClass;
+            button.textContent = this.config.buttonText;
+            button.style.display = 'block';
+            button.style.visibility = 'visible';
+            imageDiv.appendChild(button);
+            console.log('Button created and added:', button);
+        }
+
         const img = document.createElement('img');
         img.src = this.config.image;
         img.alt = this.config.imageAlt;
@@ -82,6 +98,16 @@ class BildupSection {
 
             image.addEventListener('mouseleave', () => {
                 image.style.transform = 'scale(1)';
+            });
+        }
+
+        // Add button event listener if button exists
+        const button = this.section.querySelector('.bildup-image .cta-button');
+        if (button) {
+            button.addEventListener('click', () => {
+                // You can customize this action as needed
+                console.log('Bildup CTA button clicked!');
+                // Example: scroll to a specific section or open a modal
             });
         }
     }

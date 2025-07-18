@@ -1,7 +1,6 @@
 import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
 import AnimationManager from '../utils/AnimationManager.js';
-// import Animations from '../components/Animations.js';
 
 
 class TermsPage {
@@ -24,19 +23,7 @@ class TermsPage {
         this.animationManager.addLoadingAnimation();
     }
 
-    // setupMotionAnimations() {
-
-    //     setTimeout(() => {
-    //         if (typeof motion !== 'undefined') {
-    //             this.animations = new Animations();
-    //         } else {
-    //             console.warn('Motion One not available, using CSS animations only');
-
-    //             this.animations = new Animations();
-    //         }
-    //     }, 500);
-    // }
-
+   
     createHeader() {
         try {
             this.header = new Header();
