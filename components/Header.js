@@ -1,19 +1,19 @@
 class Header {
     constructor() {
-      
+
         this.header = null;
         this.init();
     }
 
     init() {
-       
+
         this.createHeader();
         this.addEventListeners();
-   
+
     }
 
     createHeader() {
-      
+
         this.header = document.createElement('header');
         this.header.className = 'header';
         this.header.innerHTML = `
@@ -28,8 +28,8 @@ class Header {
                         <button class="mobile-menu-close">X</button>
                         </div>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="#features">Careers</a></li>
-                        <li><a href="#about">Apprenticeship</a></li>
+                        <li><a href="career.html">Careers</a></li>
+                        <li><a href="apprenticeship.html">Apprenticeship</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                         </ul>
                     <div class="hamburger">
@@ -43,11 +43,11 @@ class Header {
             </nav>
             <div class="mobile-menu-backdrop"></div>
         `;
-       
+
     }
 
     addEventListeners() {
-     
+
         const hamburger = this.header.querySelector('.hamburger');
         const navMenu = this.header.querySelector('.nav-menu');
         const navLinks = this.header.querySelectorAll('.nav-menu a');
@@ -73,7 +73,7 @@ class Header {
 
 
                 if (typeof motion !== 'undefined') {
-                 
+
 
                     if (navMenu.classList.contains('active')) {
                         motion(navMenu, {
@@ -137,11 +137,11 @@ class Header {
                         });
                     }
                 } else {
-                    
+
                 }
             });
         } else {
-        
+
         }
 
         // Close button functionality
@@ -256,18 +256,18 @@ class Header {
         // Header background on scroll
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
-                this.header.style.background = 'rgba(255, 255, 255, 0.98)';
+                this.header.style.background = '#ffffff';
                 ;
             } else {
-                this.header.style.background = 'rgba(255, 255, 255, 0.95)';
+                this.header.style.background = '#ffffff';
             }
         });
 
-       
+
     }
 
     render() {
-   
+
         return this.header;
     }
 

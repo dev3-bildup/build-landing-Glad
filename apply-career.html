@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Career - Bildup AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-white">
+    <!-- Header will be rendered here -->
+    <div id="header-content"></div>
+
+    <!-- Main Content -->
+    <main id="apply-content">
+        <!-- Apply component will be rendered here -->
+    </main>
+
+    <!-- Footer will be rendered here -->
+    <div id="footer-content"></div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import Apply from './components/Apply.js';
+        import Header from './components/Header.js';
+        import Footer from './components/Footer.js';
+
+        // Initialize Apply component with Career-specific configuration
+        const applyCareerPage = new Apply({
+            // Job Information - Career specific
+            jobTitle: "Software Developer",
+            jobDescription: "Are you a passionate and innovative developer eager to build groundbreaking products? Join our elite team in Enugu and work with the latest technologies to create solutions that will define tomorrow.",
+
+            // Location
+            location: "Enugu (Full time, On-site)",
+
+            // Required Skills - Career level
+            requiredSkills: [
+                "2+ years of professional software development experience (Backend).",
+                "Proficiency in Backend Technologies (e.g., Python, Django, APIs).",
+                "Experience with Relational and Non-Relational Databases (e.g., PostgreSQL, MySQL).",
+                "Version Control (Git), Cloud Platforms (AWS, Azure, GCP), Containerization (Docker)",
+                "Strong problem-solving and analytical skills.",
+                "A passion for learning new technologies and staying up-to-date with industry trends."
+            ],
+
+            // What We Offer - Career level
+            whatWeOffer: [
+                "Competitive Salary: Industry-standard compensation with performance bonuses.",
+                "Professional Development: Continuous learning opportunities and certification support.",
+                "Health Benefits: Comprehensive health insurance for you and your family.",
+                "Flexible Working: Hybrid work options and flexible hours.",
+                "Career Growth: Clear advancement paths and leadership opportunities.",
+                "Tech Allowance: Annual budget for personal tech equipment and tools."
+            ],
+
+            // Who Can Apply - Career level
+            whoCanApply: [
+                "Experienced developers with 2+ years of professional experience.",
+                "Computer Science graduates with relevant project experience.",
+                "Career changers with demonstrable coding skills and portfolio."
+            ],
+
+            // Form Configuration
+            formTitle: "Apply for this job",
+
+            className: "apply-career-page"
+        });
+
+        // Initialize Header and Footer
+        const header = new Header();
+        const footer = new Footer();
+
+        // Render components
+        document.getElementById('header-content').appendChild(header.render());
+        document.getElementById('apply-content').appendChild(applyCareerPage.render());
+        document.getElementById('footer-content').appendChild(footer.render());
+
+        // Update page title
+        document.title = "Apply for Career Position - Bildup AI";
+    </script>
+</body>
+
+</html>

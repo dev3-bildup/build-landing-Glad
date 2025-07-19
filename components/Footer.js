@@ -5,8 +5,8 @@ class Footer {
             companyName: "Bildup AI",
             quickLinks: [
                 { text: "Home", href: "index.html" },
-                { text: "Apprenticeship", href: "#about" },
-                { text: "Careers", href: "#about" },
+                { text: "Apprenticeship", href: "apprenticeship.html" },
+                { text: "Careers", href: "careers.html" },
                 { text: "Contact us", href: "contact.html" }
             ],
             socialLinks: [

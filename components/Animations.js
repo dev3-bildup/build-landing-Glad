@@ -98,21 +98,29 @@ class Animations {
     }
 
     setupScrollAnimations() {
-        // Animate sections as they come into view
+        // Animate sections as they come into view (excluding hero section)
         const sections = document.querySelectorAll('section');
 
         sections.forEach((section, index) => {
-            section.style.animationDelay = `${index * 0.2}s`;
-            section.classList.add('fade-in-up');
+            // Skip hero section - check for hero-related classes or if it's the first section
+            const isHeroSection = section.classList.contains('hero') ||
+                section.querySelector('.hero-title') ||
+                section.querySelector('.hero-content') ||
+                index === 0; // Usually hero is the first section
 
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-            observer.observe(section);
+            if (!isHeroSection) {
+                section.style.animationDelay = `${index * 0.2}s`;
+                section.classList.add('fade-in-up');
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.1 });
+                observer.observe(section);
+            }
         });
 
         // Animate images with a subtle scale effect
