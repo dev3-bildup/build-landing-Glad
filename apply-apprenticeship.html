@@ -10,40 +10,37 @@
 </head>
 
 <body class="bg-white">
-    <!-- Header will be rendered here -->
+
     <div id="header-content"></div>
 
     <main id="apply-content">
     
     </main>
 
-    <!-- Footer will be rendered here -->
+   
     <div id="footer-content"></div>
 
     <!-- Scripts -->
     <script type="module">
         import Apply from './components/Apply.js';
-        import Header from './components/Header.js';
-        import Footer from './components/Footer.js';
 
         
         const applyApprenticeshipPage = new Apply({
-            // Job Information - Apprenticeship specific
+        
             jobTitle: "Software Developer Apprentice",
             jobDescription: "Are you a passionate and innovative developer eager to build groundbreaking products? Join our elite team in Enugu and work with the latest technologies to create solutions that will define tomorrow.",
 
-            // Location
             location: "Enugu (Full time, On-site)",
 
            
             requiredSkills: [
-                "Basic understanding of programming concepts and software development.",
-                "Familiarity with at least one programming language (Python, JavaScript, Java, etc.).",
-                "Basic knowledge of web technologies (HTML, CSS, JavaScript).",
-                "Understanding of databases and SQL fundamentals.",
-                "Problem-solving mindset and analytical thinking skills.",
+                "2+ years of professional software development experience (Backend).",
+                "Proficiency in Backend Technologies (e.g., Python, Django, APIs).",
+                "Experience with Related and Non-Related Databases (e.g., PostgreSQL, MySQL).",
+                "Version Control (Git), Cloud Platforms (AWS, Azure, GCP), Containerization (Docker)",
+                "Strong problem-solving and analytical skills.",
                 "Eagerness to learn new technologies and grow within the field.",
-                "Good communication skills and ability to work in a team environment."
+                "A passion for learning new technologies and staying up-to-date with industry trends."
             ],
 
          
@@ -51,16 +48,13 @@
                 "Accommodation (if needed): We offer accommodation support for team members who require it. We can discuss your specific housing needs during the interview process.",
                 "Daily Office Meals: Enjoy delicious and convenient daily meals provided by the company.",
                 "Growth Opportunities: Invest in your career with us and grow alongside a team of top innovators.",
-                "Exciting Work Environment: Thrive in a dynamic, collaborative, and inspiring environment where innovation is encouraged.",
-                "Mentorship Program: Direct guidance from senior developers and industry experts.",
-                "Learning Resources: Access to online courses, books, and professional development materials."
+                "Exciting Work Environment: Thrive in a dynamic, collaborative, and inspiring environment where innovation is encouraged."
+            
             ],
 
        
             whoCanApply: [
                 "School leavers, Students, Corps member and graduates who meet the criteria.",
-                "Recent graduates seeking to start their career in software development.",
-                "Self-taught developers looking to formalize their skills in a professional environment."
             ],
 
             
@@ -69,15 +63,9 @@
             className: "apply-apprenticeship-page"
         });
 
-        const header = new Header();
-        const footer = new Footer();
-
-        // Render components
-        document.getElementById('header-content').appendChild(header.render());
+        // Render Apply component (it will handle header and footer automatically)
         document.getElementById('apply-content').appendChild(applyApprenticeshipPage.render());
-        document.getElementById('footer-content').appendChild(footer.render());
 
-        // Update page title
         document.title = "Apply for Apprenticeship - Bildup AI";
     </script>
 </body>

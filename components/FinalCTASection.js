@@ -13,7 +13,7 @@ class FinalCTASection {
         this.section.className = 'final-cta-section';
         this.section.innerHTML = `
             <div class="final-cta-container">
-                <img src="public/bildupicon.png" alt="Bildup AI Logo" class="final-cta-logo" />
+                <img src="public/bildupicon.png" alt="Bildup AI Logo" class="final-cta-logo" loading="lazy" />
                 <h2 class="final-cta-title">The ultimate<br>study companion</h2>
                 <p class="final-cta-desc">
                     Bildup isn't just powerful-it's personal. It learns how <em>you learn</em>, what you struggle with, and where you shine-without ever needing you to be perfect.<br>

@@ -84,6 +84,7 @@ class BildupSection {
         const img = document.createElement('img');
         img.src = this.config.image;
         img.alt = this.config.imageAlt;
+        img.loading = 'lazy';
 
         imageDiv.appendChild(img);
         return imageDiv;

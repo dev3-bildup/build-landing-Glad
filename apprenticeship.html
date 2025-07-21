@@ -10,11 +10,13 @@
 </head>
 
 <body class="bg-white">
-    <!-- Header will be rendered here -->
-    <div id="header-content"></div>
+  
+    <div id="header-content" ></div>
 
     <!-- Main Content -->
-    <main id="apprenticeship-content">
+    <main id="apprenticeship-content" >
+        <!-- Apprenticeship component will be rendered here -->
+      
 
     </main>
 
@@ -25,21 +27,21 @@
     <script type="module">
         import Jobs from './components/Jobs.js';
 
-        // Initialize Jobs component with Apprenticeship page configuration
+        
         const apprenticeshipPage = new Jobs({
-            // Hero Section - Apprenticeship specific
-            heroTitle: "Start your <span class='text-[#0071E3]'>Career</span>, Shape the <span class='text-[#0071E3]'>Future</span>.",
+         
+            heroTitle: "Start your <span class='text-[#0071E3]'>Career,</span> </br> Shape the <span class='text-[#0071E3]'>Future</span>",
             heroSubtitle: "Bildup AI full-time apprenticeships give you real responsibility, expert mentorship, and a direct path into the world of AI and education",
             heroCTAText: "View Apprenticeship Openings",
             heroImage: "public/contact-img.png",
             heroImageAlt: "Bildup AI Apprentices",
             heroImageCaption: "Work where passion meets purpose.",
 
-            // Mission Section - Apprenticeship specific
+       
             missionTitle: "Real Learning. Real Impact.",
             missionContent: "We don't believe in passive training. At Bildup AI, Apprentices are embedded in real teams, working on real products that impact everyday users. Whether you're writing code, designing experiences, or crafting curriculum - you'll learn by doing, guided by mentors who care.",
 
-            // Jobs Section - Apprenticeship specific
+          
             jobsSectionTitle: "Open Apprenticeship Roles at Bildup AI",
             jobsData: [
                 {
@@ -68,11 +70,11 @@
                 },
             ],
 
-            // Filters - Apprenticeship specific
-            filters: ["All", "Design", "Software Engineering", "Customer Success", "Sales", "Marketing"],
+         
+            filters: ["View all", "Design", "Software Engineering", "Customer Service", "Sales", "Marketing"],
 
-            // Form Section - Apprenticeship specific
-            formTitle: "Don't See Your Role? We Still Want to Hear From You!",
+           
+            formTitle: "Don't See Your Role? We Still Want to Hear From You.",
             formSubtitle: "We're always on the lookout for great talent. If you don't see a position that fits your skills, send us your CV and tell us how you'd contribute to Bildup AI.",
 
             className: "apprenticeship-page"
@@ -80,7 +82,7 @@
 
         document.getElementById('apprenticeship-content').appendChild(apprenticeshipPage.render());
 
-        // Update page title
+      
         document.title = "Apprenticeship - Bildup AI";
     </script>
 </body>

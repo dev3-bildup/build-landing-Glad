@@ -20,7 +20,7 @@ class Header {
             <nav class="nav">
                 <div class="nav-container">
                     <div class="logo">
-                        <img src="public/logo.png" alt="Bildup AI Logo">
+                        <img src="public/logo.png" alt="Bildup AI Logo" loading="lazy">
                     </div>
                         <ul class="nav-menu">
                         <div class="mobile-menu-header">
@@ -28,6 +28,7 @@ class Header {
                         <button class="mobile-menu-close">X</button>
                         </div>
                         <li><a href="index.html">Home</a></li>
+                        <li><a href="learner.html">Learner</a></li>
                         <li><a href="career.html">Careers</a></li>
                         <li><a href="apprenticeship.html">Apprenticeship</a></li>
                         <li><a href="contact.html">Contact Us</a></li>

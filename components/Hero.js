@@ -47,10 +47,10 @@ class Hero {
                 <button class="cta-button">${this.config.ctaText}</button>
                 <p class="hero-subheadline">${this.config.subtitle}</p>
             </div>
-            <img src="public/hero-up-left.png" class="hero-img hero-img-1" alt="MacBook dashboard" />
-            <img src="public/hero-up-right.png" class="hero-img hero-img-2" alt="Tablet dashboard 1" />
-            <img src="public/hero-down-left.png" class="hero-img hero-img-3" alt="Tablet dashboard 2" />
-            <img src="public/hero-right-down.png" class="hero-img hero-img-4" alt="Mobile dashboard" />
+            <img src="public/hero-up-left.png" class="hero-img hero-img-1" alt="MacBook dashboard" loading="lazy" />
+            <img src="public/hero-up-right.png" class="hero-img hero-img-2" alt="Tablet dashboard 1" loading="lazy" />
+            <img src="public/hero-down-left.png" class="hero-img hero-img-3" alt="Tablet dashboard 2" loading="lazy" />
+            <img src="public/hero-right-down.png" class="hero-img hero-img-4" alt="Mobile dashboard" loading="lazy" />
         `;
     }
 
@@ -64,10 +64,10 @@ class Hero {
                 <button class="cta-button cta-button-mobile">${this.config.ctaText}</button>
                 <p class="hero-subheadline hero-subheadline-mobile">Seamlessly Connected Learning Ecosystem</p>
             </div>
-            <img src="public/up-mobile-left.png" class="hero-img hero-img-mobile-1" alt="Mobile dashboard top left" />
-            <img src="public/up-mobile-right.png" class="hero-img hero-img-mobile-2" alt="Mobile dashboard top right" />
-            <img src="public/down-mobile-right.png" class="hero-img hero-img-mobile-3" alt="Mobile dashboard bottom left" />
-            <img src="public/down-mobile-left.png" class="hero-img hero-img-mobile-4" alt="Mobile dashboard bottom right" />
+            <img src="public/up-mobile-left.png" class="hero-img hero-img-mobile-1" alt="Mobile dashboard top left" loading="lazy" />
+            <img src="public/up-mobile-right.png" class="hero-img hero-img-mobile-2" alt="Mobile dashboard top right" loading="lazy" />
+            <img src="public/down-mobile-right.png" class="hero-img hero-img-mobile-3" alt="Mobile dashboard bottom left" loading="lazy" />
+            <img src="public/down-mobile-left.png" class="hero-img hero-img-mobile-4" alt="Mobile dashboard bottom right" loading="lazy" />
         `;
     }
 

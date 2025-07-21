@@ -84,6 +84,7 @@ class Footer {
         logo.src = 'public/logo.png';
         logo.alt = this.config.companyName;
         logo.className = 'footer-logo';
+        logo.loading = 'lazy';
 
         section.appendChild(logo);
 
@@ -194,6 +195,7 @@ class Footer {
             img.src = social.icon;
             img.alt = social.platform;
             img.className = 'social-icon';
+            img.loading = 'lazy';
 
             a.appendChild(img);
             socialLinks.appendChild(a);
@@ -211,6 +213,7 @@ class Footer {
         copyrightIcon.src = 'public/copyright.png';
         copyrightIcon.alt = 'Copyright';
         copyrightIcon.className = 'copyright-icon';
+        copyrightIcon.loading = 'lazy';
 
         copyrightText.appendChild(copyrightIcon);
         copyrightText.appendChild(document.createTextNode(' 2025, All rights reserved.'));

@@ -118,6 +118,7 @@ class SectionComponent {
             img.src = this.config.mainImage;
             img.alt = this.config.imageAlt;
             img.className = 'hero-main-image';
+            img.loading = 'lazy';
 
             imageContainer.appendChild(img);
             content.appendChild(imageContainer);
@@ -183,6 +184,7 @@ class SectionComponent {
             img.src = this.config.mainImage;
             img.alt = this.config.imageAlt || 'Section Image';
             img.className = 'section-main-image';
+            img.loading = 'lazy';
             imageContainer.appendChild(img);
 
             const textContainer = document.createElement('div');
@@ -235,6 +237,7 @@ class SectionComponent {
                 mobileImg.src = this.config.mobileTopImage;
                 mobileImg.alt = 'Mobile Top Image';
                 mobileImg.className = 'mobile-top-image';
+                mobileImg.loading = 'lazy';
 
                 mobileImageContainer.appendChild(mobileImg);
                 cardsContainer.appendChild(mobileImageContainer);
@@ -316,6 +319,7 @@ class SectionComponent {
             img.src = this.config.mainImage;
             img.alt = this.config.imageAlt;
             img.className = 'gradient-main-image';
+            img.loading = 'lazy';
 
             imageContainer.appendChild(img);
             content.appendChild(imageContainer);
@@ -365,6 +369,7 @@ class SectionComponent {
             img.src = this.config.mainImage;
             img.alt = this.config.imageAlt;
             img.className = 'section-main-image';
+            img.loading = 'lazy';
             imageContainer.appendChild(img);
         }
 

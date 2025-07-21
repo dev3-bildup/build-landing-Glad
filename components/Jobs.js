@@ -6,7 +6,7 @@ import Animations from './Animations.js';
 class Jobs {
     constructor(config = {}) {
         this.config = {
-            // Hero Section
+      
             heroTitle: "Shape the <span class='#005AAC'>Future</span>,</br> with <span class='#005AAC'>Bildup AI</span>",
             heroSubtitle: "If you're passionate about innovation, learning, and making a real impact, we'd love to have you on board. Explore open roles or send us your application.",
             heroCTAText: "Explore Careers",
@@ -24,16 +24,16 @@ class Jobs {
                     id: 1,
                     title: "Operations and Research Head",
                     description: "Are you passionate about driving operational excellence and conducting breakthrough research?",
-                    type: "Featured",
-                    location: "Remote",
+                    type: "Operations",
+                    location: "Full-time",
                     department: "Operations"
                 },
                 {
                     id: 2,
                     title: "Machine Learning Engineer",
                     description: "Are you passionate about building intelligent systems that solve real-world problems?",
-                    type: "Engineering",
-                    location: "Remote",
+                    type: "Software Development",
+                    location: "Full-time",
                     department: "Engineering"
                 },
                 {
@@ -41,16 +41,16 @@ class Jobs {
                     title: "Communications and Brand Strategy",
                     description: "Are you a creative storyteller passionate about building powerful brands and driving meaningful connections?",
                     type: "Marketing",
-                    location: "Remote",
+                    location: "Full-time",
                     department: "Marketing"
                 }
             ],
 
-            // Filters
-            filters: ["All", "Design", "Software Engineering", "Customer Success", "Sales", "Marketing"],
+           
+            filters: ["View all", "Design", "Software Engineering", "Customer Service", "Sales", "Marketing"],
 
-            // Form Section
-            formTitle: "Don't See Your Role? We Still Want to Hear From You!",
+       
+            formTitle: "Don't See Your Role? We Still Want to Hear From You.",
             formSubtitle: "We're always on the lookout for exceptional talent. Even if you can't see a position that fits your skills, send us over a CV or cover letter and we'd love to hear from you.",
 
             className: "jobs-page",
@@ -118,28 +118,28 @@ class Jobs {
 
     createPage() {
         this.page = document.createElement('div');
-        this.page.className = `${this.config.className} min-h-screen bg-white`;
+        this.page.className = `${this.config.className} min-h-screen bg-white `;
 
-        // Create hero section
+
         const heroSection = this.createHeroSection();
         this.page.appendChild(heroSection);
 
-        // Create mission section
+
         const missionSection = this.createMissionSection();
         this.page.appendChild(missionSection);
 
-        // Create jobs section
+
         const jobsSection = this.createJobsSection();
         this.page.appendChild(jobsSection);
 
-        // Create form section
+
         const formSection = this.createFormSection();
         this.page.appendChild(formSection);
     }
 
     createHeroSection() {
         const section = document.createElement('section');
-        section.className = 'py-12 md:py-20 lg:py-24 px-4 md:px-6 lg:px-8';
+        section.className = 'mt-10 py-12 md:py-20 lg:py-24 px-4 md:px-6 lg:px-8';
 
         const container = document.createElement('div');
         container.className = 'max-w-5xl mx-auto';
@@ -147,35 +147,45 @@ class Jobs {
         const heroContent = document.createElement('div');
         heroContent.className = 'text-center space-y-8';
 
-        // Title
+
         const title = document.createElement('h1');
         title.className = 'text-3xl md:text-4xl lg:text-6xl xl:text-8xl font-bold text-gray-900 leading-tight';
         title.innerHTML = this.config.heroTitle;
 
-        // Subtitle
+
         const subtitle = document.createElement('p');
         subtitle.className = 'text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed';
         subtitle.textContent = this.config.heroSubtitle;
 
-        // CTA Button
+
         const ctaButton = document.createElement('button');
         ctaButton.className = 'inline-flex items-center px-6 py-3 md:px-8 md:py-4 bg-[#0071E3] hover:bg-blue-600 text-white font-semibold rounded-full transition-colors duration-200 text-sm md:text-base';
         ctaButton.textContent = this.config.heroCTAText;
 
-        // Image Container
+
         const imageContainer = document.createElement('div');
         imageContainer.className = 'mt-12 md:mt-16 flex flex-col items-center space-y-4';
 
-        const image = document.createElement('img');
-        image.src = this.config.heroImage;
-        image.alt = this.config.heroImageAlt;
-        image.className = 'rounded-b-2xl shadow-2xl w-full max-w-4xl h-auto object-cover';
+
+        const desktopImage = document.createElement('img');
+        desktopImage.src = this.config.heroImage;
+        desktopImage.alt = this.config.heroImageAlt;
+        desktopImage.className = 'hidden md:block rounded-b-2xl shadow-2xl w-full max-w-4xl h-auto object-cover';
+        desktopImage.loading = 'lazy';
+
+
+        const mobileImage = document.createElement('img');
+        mobileImage.src = 'public/contact-mobile.png';
+        mobileImage.alt = this.config.heroImageAlt;
+        mobileImage.className = 'block md:hidden rounded-b-2xl shadow-2xl w-full max-w-4xl h-auto object-cover';
+        mobileImage.loading = 'lazy';
 
         const imageCaption = document.createElement('p');
         imageCaption.className = 'text-sm text-[#005AAC] font-medium';
         imageCaption.textContent = this.config.heroImageCaption;
 
-        imageContainer.appendChild(image);
+        imageContainer.appendChild(desktopImage);
+        imageContainer.appendChild(mobileImage);
         imageContainer.appendChild(imageCaption);
 
         heroContent.appendChild(title);
@@ -215,12 +225,12 @@ class Jobs {
 
     createJobsSection() {
         const section = document.createElement('section');
-        section.className = 'py-16 md:py-20 lg:py-24 px-4 md:px-6 lg:px-8 bg-white';
+        section.className = 'jobs-section py-16 md:py-20 lg:py-24 px-4 md:px-6 lg:px-8 bg-white';
 
         const container = document.createElement('div');
         container.className = 'max-w-7xl mx-auto';
 
-        // Header
+     
         const header = document.createElement('div');
         header.className = 'text-center mb-12';
 
@@ -228,14 +238,14 @@ class Jobs {
         title.className = 'text-3xl md:text-4xl lg:text-3xl font-semibold text-[#161616] mb-8';
         title.textContent = this.config.jobsSectionTitle;
 
-        // Filters
+     
         const filtersContainer = document.createElement('div');
         filtersContainer.className = 'flex flex-wrap justify-center items-center gap-4 mb-6';
 
         const filters = this.createFilters();
         filtersContainer.appendChild(filters);
 
-        // Search Section (separate, below filters)
+
         const searchContainer = this.createSearchContainer();
 
         header.appendChild(title);
@@ -264,13 +274,15 @@ class Jobs {
 
     createFilters() {
         const filtersContainer = document.createElement('div');
-        filtersContainer.className = 'flex flex-wrap justify-center gap-2 md:gap-3 bg-[#F8F8F8] p-3 rounded-lg';
+        filtersContainer.className = 'flex overflow-x-auto justify-start md:justify-center gap-2 md:gap-3 bg-[#F8F8F8] p-3 rounded-lg scrollbar-hide';
+        filtersContainer.style.scrollbarWidth = 'none'; // Firefox
+        filtersContainer.style.msOverflowStyle = 'none'; // IE/Edge
 
         this.config.filters.forEach((filter, index) => {
             const filterButton = document.createElement('button');
             filterButton.className = index === 0
-                ? 'px-4 py-2 bg-blue-500 rounded text-[#636363] font-medium text-sm transition-colors duration-200'
-                : 'px-4 py-2   text-[#636363] font-medium text-sm transition-colors duration-200';
+                ? 'px-4 py-2 bg-[#1EB0FF] rounded-lg text-[#161616] font-medium text-sm transition-colors duration-200 whitespace-nowrap flex-shrink-0'
+                : 'px-4 py-2 text-[#636363] font-medium text-sm transition-colors duration-200 whitespace-nowrap flex-shrink-0';
             filterButton.textContent = filter;
             filterButton.dataset.filter = filter;
             filtersContainer.appendChild(filterButton);
@@ -283,9 +295,8 @@ class Jobs {
         const searchContainer = document.createElement('div');
         searchContainer.className = 'flex justify-center mb-8';
 
-        // Input wrapper with button inside
         const inputWrapper = document.createElement('div');
-        inputWrapper.className = 'relative max-w-[43rem] w-full';
+        inputWrapper.className = 'relative max-w-[45rem] w-full';
 
         const searchInput = document.createElement('input');
         searchInput.type = 'text';
@@ -310,38 +321,64 @@ class Jobs {
         cardWrapper.className = 'mb-8';
 
         const card = document.createElement('div');
-        card.className = 'bg-white rounded-xl  hover:shadow-lg transition-shadow duration-300 p-6 border border-[#2995ea]';
+        card.className = 'job-card bg-white rounded-xl  hover:shadow-lg transition-shadow duration-300 p-6 border border-[#2995ea]';
+        card.dataset.jobType = job.type.toLowerCase();
+        card.dataset.jobTitle = job.title.toLowerCase();
+        card.dataset.jobDescription = job.description.toLowerCase();
+        card.dataset.jobDepartment = job.department.toLowerCase();
 
-        // Type Tag
         const typeTag = document.createElement('span');
         const typeColors = {
-            'featured': 'bg-[#1B3022] text-[#ffffff]',
-            'engineering': 'bg-[#53FF45] text-[#161616]',
+            'operations': 'bg-[#1B3022] text-[#ffffff]',
+            'software development': 'bg-[#53FF45] text-[#161616]',
             'marketing': 'bg-[#3B7080] text-[#ffffff]',
+            'sales': 'bg-[#3B7080] text-[#ffffff]',
             'design': 'bg-pink-100 text-pink-800'
         };
         typeTag.className = `inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide mb-4 ${typeColors[job.type.toLowerCase()] || 'bg-gray-100 text-gray-800'}`;
-        typeTag.textContent = job.type;
+        typeTag.textContent = `• ${job.type}`;
 
-        // Title
+
         const title = document.createElement('h3');
-        title.className = 'text-xl font-bold text-gray-900 mb-3 leading-tight';
+        title.className = 'text-xl font-semibold text-gray-900 mb-3 leading-tight';
         title.textContent = job.title;
 
-        // Description
+
         const description = document.createElement('p');
         description.className = 'text-gray-600 mb-4 leading-relaxed';
         description.textContent = job.description;
 
-        // Meta
+
         const meta = document.createElement('div');
         meta.className = 'text-sm text-gray-500 flex items-center';
-        meta.innerHTML = `<img src="public/time.png" alt="Location Icon" class="w-4 h-4 ml-2  mr-2 inline-block vertical align" />${job.location}`;
+
+        const timeIcon = document.createElement('img');
+        timeIcon.src = 'public/time.png';
+        timeIcon.alt = 'Time Icon';
+        timeIcon.className = 'w-4 h-4 ml-2 mr-2 inline-block vertical-align';
+        timeIcon.loading = 'lazy';
+
+        const locationText = document.createElement('span');
+        locationText.textContent = job.location;
+
+        meta.appendChild(timeIcon);
+        meta.appendChild(locationText);
 
         // Apply Button
         const applyButton = document.createElement('button');
         applyButton.className = 'text-left text-[#0071E3] font-semibold py-3 px-4  transition-colors duration-200 flex items-center justify-center';
-        applyButton.innerHTML = `Apply <img src="public/location.png" alt="Location Icon" class="w-3 h-3 ml-2 inline-block vertical align" />`;
+
+        const applyText = document.createElement('span');
+        applyText.textContent = 'Apply ';
+
+        const locationIcon = document.createElement('img');
+        locationIcon.src = 'public/location.png';
+        locationIcon.alt = 'Location Icon';
+        locationIcon.className = 'w-3 h-3 ml-2 inline-block vertical-align';
+        locationIcon.loading = 'lazy';
+
+        applyButton.appendChild(applyText);
+        applyButton.appendChild(locationIcon);
         applyButton.dataset.jobId = job.id;
 
         card.appendChild(typeTag);
@@ -357,34 +394,97 @@ class Jobs {
 
     createPagination() {
         const pagination = document.createElement('div');
-        pagination.className = 'flex justify-center items-center space-x-2';
+        pagination.className = 'flex justify-center items-center w-full';
 
-        // Previous Button
-        const prevButton = document.createElement('button');
-        prevButton.className = 'px-4 py-2 text-gray-500 hover:text-gray-700 font-medium transition-colors duration-200';
-        prevButton.innerHTML = '<svg class="w-4 h-4 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>Previous';
 
-        // Page Numbers
-        const pageNumbers = document.createElement('div');
-        pageNumbers.className = 'flex space-x-1';
+        const desktopPagination = document.createElement('div');
+        desktopPagination.className = 'hidden md:flex items-center justify-between w-full';
 
-        for (let i = 1; i <= 5; i++) {
+        const prevButtonDesktop = document.createElement('button');
+        prevButtonDesktop.className = 'flex items-center px-4 py-2 border border-blue-200 text-gray-700 hover:text-gray-900 hover:border-blue-300 font-medium transition-all duration-200 rounded-md';
+        prevButtonDesktop.innerHTML = '<svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>Previous';
+
+        const desktopPageNumbers = document.createElement('div');
+        desktopPageNumbers.className = 'flex items-center space-x-1';
+
+        [1, 2, 3].forEach(page => {
             const pageButton = document.createElement('button');
-            pageButton.className = i === 1
-                ? 'w-10 h-10 bg-blue-500 text-white font-semibold rounded-lg'
-                : 'w-10 h-10 text-gray-500 hover:text-gray-700 hover:bg-gray-100 font-medium rounded-lg transition-colors duration-200';
-            pageButton.textContent = i;
-            pageNumbers.appendChild(pageButton);
-        }
+            pageButton.className = page === 1
+                ? 'w-10 h-10 bg-blue-500 text-white font-semibold rounded-md'
+                : 'w-10 h-10 text-gray-700 hover:text-gray-900 hover:bg-gray-100 font-medium rounded-md transition-all duration-200';
+            pageButton.textContent = page;
+            desktopPageNumbers.appendChild(pageButton);
+        });
 
-        // Next Button
-        const nextButton = document.createElement('button');
-        nextButton.className = 'px-4 py-2 text-gray-500 hover:text-gray-700 font-medium transition-colors duration-200';
-        nextButton.innerHTML = 'Next<svg class="w-4 h-4 ml-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>';
+        // Dots
+        const dots = document.createElement('span');
+        dots.className = 'px-2 text-gray-500';
+        dots.textContent = '...';
+        desktopPageNumbers.appendChild(dots);
 
-        pagination.appendChild(prevButton);
-        pagination.appendChild(pageNumbers);
-        pagination.appendChild(nextButton);
+        // Pages 8, 9, 10
+        [8, 9, 10].forEach(page => {
+            const pageButton = document.createElement('button');
+            pageButton.className = 'w-10 h-10 text-gray-700 hover:text-gray-900 hover:bg-gray-100 font-medium rounded-md transition-all duration-200';
+            pageButton.textContent = page;
+            desktopPageNumbers.appendChild(pageButton);
+        });
+
+
+        const nextButtonDesktop = document.createElement('button');
+        nextButtonDesktop.className = 'flex items-center px-4 py-2 border border-blue-200 text-gray-700 hover:text-gray-900 hover:border-blue-300 font-medium transition-all duration-200 rounded-md';
+        nextButtonDesktop.innerHTML = 'Next<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>';
+
+        desktopPagination.appendChild(prevButtonDesktop);
+        desktopPagination.appendChild(desktopPageNumbers);
+        desktopPagination.appendChild(nextButtonDesktop);
+
+
+        const mobilePagination = document.createElement('div');
+        mobilePagination.className = 'flex md:hidden items-center space-x-1';
+
+
+        const prevButtonMobile = document.createElement('button');
+        prevButtonMobile.className = 'w-8 h-8 flex items-center justify-center border border-blue-200 text-gray-700 hover:text-gray-900 hover:border-blue-300 transition-all duration-200 rounded';
+        prevButtonMobile.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>';
+
+
+        const page1Mobile = document.createElement('button');
+        page1Mobile.className = 'w-8 h-8 bg-blue-500 text-white border border-blue-500 font-semibold rounded text-sm';
+        page1Mobile.textContent = '1';
+
+        const page2Mobile = document.createElement('button');
+        page2Mobile.className = 'w-8 h-8 text-gray-700 border border-blue-200 hover:text-gray-900 hover:border-blue-300 font-medium rounded text-sm transition-all duration-200';
+        page2Mobile.textContent = '2';
+
+
+        const dotsMobile = document.createElement('span');
+        dotsMobile.className = 'px-1 text-gray-500 text-sm';
+        dotsMobile.textContent = '...';
+
+
+        const page9Mobile = document.createElement('button');
+        page9Mobile.className = 'w-8 h-8 text-gray-700 border border-blue-200 hover:text-gray-900 hover:border-blue-300 font-medium rounded text-sm transition-all duration-200';
+        page9Mobile.textContent = '9';
+
+        const page10Mobile = document.createElement('button');
+        page10Mobile.className = 'w-8 h-8 text-gray-700 border border-blue-200 hover:text-gray-900 hover:border-blue-300 font-medium rounded text-sm transition-all duration-200';
+        page10Mobile.textContent = '10';
+
+        const nextButtonMobile = document.createElement('button');
+        nextButtonMobile.className = 'w-8 h-8 flex items-center justify-center border border-blue-200 text-gray-700 hover:text-gray-900 hover:border-blue-300 transition-all duration-200 rounded';
+        nextButtonMobile.innerHTML = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>';
+
+        mobilePagination.appendChild(prevButtonMobile);
+        mobilePagination.appendChild(page1Mobile);
+        mobilePagination.appendChild(page2Mobile);
+        mobilePagination.appendChild(dotsMobile);
+        mobilePagination.appendChild(page9Mobile);
+        mobilePagination.appendChild(page10Mobile);
+        mobilePagination.appendChild(nextButtonMobile);
+
+        pagination.appendChild(desktopPagination);
+        pagination.appendChild(mobilePagination);
 
         return pagination;
     }
@@ -396,7 +496,7 @@ class Jobs {
         const container = document.createElement('div');
         container.className = 'max-w-4xl mx-auto ';
 
-        // Header
+
         const header = document.createElement('div');
         header.className = 'text-center mb-12';
 
@@ -415,26 +515,27 @@ class Jobs {
         const form = document.createElement('form');
         form.className = 'space-y-6';
 
-        // Form Fields
+
         const fieldsContainer = document.createElement('div');
-        fieldsContainer.className = 'p-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:p-12 bg-[#f9f3fe] rounded-lg border-gray-200 border';
+        fieldsContainer.className = 'p-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:p-12 rounded-lg border-gray-200 border';
+        fieldsContainer.style.background = 'radial-gradient(circle at 50% 50%, #f5f3fb 0%, #fefcff 100%)';
 
 
-        const nameField = this.createFormField('text', 'Enter name', 'Name');
-        const emailField = this.createFormField('email', 'Enter email', 'Email');
-        const linkedinField = this.createFormField('text', 'Enter linkedin username', 'LinkedIn Profile');
-        const resumeField = this.createFormField('file', 'resume', 'CV Upload');
+        const nameField = this.createFormField('text', 'name', 'Enter name', 'Name', 'public/human.png');
+        const emailField = this.createFormField('email', 'email', 'Enter mail', 'Email', 'public/mail.png');
+        const linkedinField = this.createFormField('text', 'linkedin', 'Enter linkedin username', 'LinkedIn Profile', 'public/human.png');
+        const resumeField = this.createFormField('file', 'resume', 'Upload your CV', 'CV upload');
 
         fieldsContainer.appendChild(nameField);
         fieldsContainer.appendChild(emailField);
         fieldsContainer.appendChild(linkedinField);
         fieldsContainer.appendChild(resumeField);
 
-        const coverLetterField = this.createTextareaField('coverLetter', 'Cover Letter');
+        const coverLetterField = this.createTextareaField('coverLetter', 'Enter message');
 
-      
+
         const coverLetterWrapper = document.createElement('div');
-        coverLetterWrapper.className = 'md:col-span-2'; 
+        coverLetterWrapper.className = 'md:col-span-2';
         coverLetterWrapper.appendChild(coverLetterField);
 
         fieldsContainer.appendChild(coverLetterWrapper);
@@ -442,10 +543,9 @@ class Jobs {
 
         const submitButton = document.createElement('button');
         submitButton.type = 'submit';
-        submitButton.className = ' bg-[#0071e3] hover:bg-blue-600 text-white font-semibold py-3 px-12 rounded-3xl transition-colors duration-200 text-lg';
+        submitButton.className = 'bg-[#0071e3] hover:bg-blue-600 text-white  py-2 px-10 rounded-3xl transition-colors duration-200 text-lg';
         submitButton.textContent = 'Submit';
 
-        // Create wrapper for submit button to span full width
         const submitButtonWrapper = document.createElement('div');
         submitButtonWrapper.className = 'md:col-span-2 flex justify-center mt-4';
         submitButtonWrapper.appendChild(submitButton);
@@ -461,24 +561,98 @@ class Jobs {
         return section;
     }
 
-    createFormField(type, name, placeholder) {
+    createFormField(type, name, placeholder, labelText, iconSrc) {
         const fieldContainer = document.createElement('div');
         fieldContainer.className = 'space-y-2 ';
 
         const label = document.createElement('label');
-        label.className = 'block text-sm font-medium text-gray-700';
-        label.textContent = placeholder;
+        label.className = 'block text-sm font-medium text-[#344054]';
         label.htmlFor = name;
 
-        const input = document.createElement('input');
-        input.type = type;
-        input.name = name;
-        input.id = name;
-        input.placeholder = placeholder;
-        input.className = 'w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200';
 
-        fieldContainer.appendChild(label);
-        fieldContainer.appendChild(input);
+        if (labelText === 'LinkedIn Profile') {
+            label.innerHTML = 'LinkedIn<span class="text-xs text-[#667085] font-normal ml-1">(Optional)</span>';
+        } else {
+            label.textContent = labelText;
+        }
+
+        if (type === 'file') {
+
+            const fileWrapper = document.createElement('div');
+            fileWrapper.className = 'relative';
+
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.name = name;
+            fileInput.id = name;
+            fileInput.className = 'absolute inset-0 w-full h-full opacity-0 cursor-pointer';
+            fileInput.accept = '.pdf,.doc,.docx';
+
+            const fileDisplay = document.createElement('div');
+            fileDisplay.className = 'w-full px-4 py-3 border border-gray-300 rounded-lg bg-white flex items-center justify-between cursor-pointer hover:border-gray-400 transition-colors duration-200';
+
+            const fileText = document.createElement('span');
+            fileText.className = 'text-[#667085]';
+            fileText.textContent = 'Upload your CV';
+
+            const uploadIcon = document.createElement('div');
+            uploadIcon.className = 'text-gray-400';
+
+            const uploadImg = document.createElement('img');
+            uploadImg.src = 'public/upload.png';
+            uploadImg.alt = 'Upload Icon';
+            uploadImg.loading = 'lazy';
+
+            uploadIcon.appendChild(uploadImg);
+
+            // Handle file selection
+            fileInput.addEventListener('change', function (e) {
+                if (e.target.files && e.target.files[0]) {
+                    fileText.textContent = e.target.files[0].name;
+                    fileText.className = 'text-gray-900';
+                } else {
+                    fileText.textContent = 'Upload your CV';
+                    fileText.className = 'text-gray-500';
+                }
+            });
+
+            fileDisplay.appendChild(fileText);
+            fileDisplay.appendChild(uploadIcon);
+            fileWrapper.appendChild(fileInput);
+            fileWrapper.appendChild(fileDisplay);
+
+            fieldContainer.appendChild(label);
+            fieldContainer.appendChild(fileWrapper);
+        } else {
+
+            const inputWrapper = document.createElement('div');
+            inputWrapper.className = 'relative';
+
+            const input = document.createElement('input');
+            input.type = type;
+            input.name = name;
+            input.id = name;
+            input.placeholder = placeholder;
+
+            if (iconSrc) {
+                input.className = 'w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200';
+
+                const icon = document.createElement('img');
+                icon.src = iconSrc;
+                icon.alt = `${labelText} Icon`;
+                icon.className = 'absolute left-4 top-1/2 transform -translate-y-1/2 w-4 h-4';
+                icon.loading = 'lazy';
+
+                inputWrapper.appendChild(icon);
+            } else {
+                input.className = 'w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200';
+            }
+
+            inputWrapper.appendChild(input);
+            fieldContainer.appendChild(label);
+            fieldContainer.appendChild(inputWrapper);
+        }
+
         return fieldContainer;
     }
 
@@ -504,23 +678,22 @@ class Jobs {
     }
 
     addEventListeners() {
-        // Filter buttons
+
         const filterButtons = this.page.querySelectorAll('[data-filter]');
         filterButtons.forEach(button => {
             button.addEventListener('click', (e) => {
-                // Remove active class from all buttons
+
                 filterButtons.forEach(btn => {
-                    btn.className = 'px-4 py-2 bg-white hover:bg-gray-100 text-gray-700 font-medium text-sm transition-colors duration-200';
+                    btn.className = 'px-4 py-2 text-[#636363] font-medium text-sm transition-colors duration-200 whitespace-nowrap flex-shrink-0';
                 });
 
-                // Add active class to clicked button
-                e.target.className = 'px-4 py-2 bg-blue-500 text-white font-medium text-sm transition-colors duration-200';
 
-                this.filterJobs(e.target.dataset.filter);
+                e.target.className = 'px-4 py-2 bg-[#1EB0FF] rounded-lg text-[#161616] font-medium text-sm transition-colors duration-200 whitespace-nowrap flex-shrink-0';
+
+                this.filterJobs(e.target.dataset.filter, false);
             });
         });
 
-        // Apply buttons
         const applyButtons = this.page.querySelectorAll('[data-job-id]');
         applyButtons.forEach(button => {
             button.addEventListener('click', (e) => {
@@ -529,7 +702,36 @@ class Jobs {
             });
         });
 
-        // Form submission
+        // Search functionality
+        const searchInput = this.page.querySelector('input[placeholder="Search jobs"]');
+        const searchButton = this.page.querySelector('button[type="button"]');
+
+        if (searchInput && searchButton) {
+            const performSearch = () => {
+                const searchTerm = searchInput.value.trim();
+                if (searchTerm) {
+                    this.filterJobs(searchTerm, true);
+                } else {
+                    this.filterJobs('View all', false);
+                }
+            };
+
+            searchButton.addEventListener('click', performSearch);
+
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+
+            searchInput.addEventListener('input', () => {
+                const searchTerm = searchInput.value.trim();
+                if (searchTerm.length > 2 || searchTerm.length === 0) {
+                    performSearch();
+                }
+            });
+        }
+
         const form = this.page.querySelector('form');
         if (form) {
             form.addEventListener('submit', (e) => {
@@ -538,7 +740,7 @@ class Jobs {
             });
         }
 
-        // CTA button
+
         const ctaButton = this.page.querySelector('button');
         if (ctaButton) {
             ctaButton.addEventListener('click', () => {
@@ -547,15 +749,60 @@ class Jobs {
         }
     }
 
-    filterJobs(filter) {
-        console.log('Filtering jobs by:', filter);
-        // Implement job filtering logic
+    filterJobs(filter, isSearch = false) {
+        console.log('Filtering jobs by:', filter, isSearch ? '(search)' : '(filter)');
+        const jobCards = this.page.querySelectorAll('.job-card');
+        let visibleCount = 0;
+
+        jobCards.forEach(card => {
+            const jobType = card.dataset.jobType || '';
+            const jobTitle = card.dataset.jobTitle || '';
+            const jobDescription = card.dataset.jobDescription || '';
+            const jobDepartment = card.dataset.jobDepartment || '';
+
+
+            const searchableText = `${jobType} ${jobTitle} ${jobDescription} ${jobDepartment}`.toLowerCase();
+
+            if (filter === 'View all' || filter === 'All') {
+                card.parentElement.style.display = 'block';
+                visibleCount++;
+            } else {
+                const filterWords = filter.toLowerCase().split(' ');
+                const matches = filterWords.some(word => searchableText.includes(word));
+
+                if (matches) {
+                    card.parentElement.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.parentElement.style.display = 'none';
+                }
+            }
+        });
+
+
+        if (isSearch && filter !== 'View all') {
+            this.resetFilterButtons();
+        }
+
+        console.log(`Showing ${visibleCount} jobs`);
+        this.scrollToJobs();
+    }
+
+    resetFilterButtons() {
+        const filterButtons = this.page.querySelectorAll('[data-filter]');
+        filterButtons.forEach(btn => {
+            if (btn.dataset.filter === 'View all') {
+                btn.className = 'px-4 py-2 bg-[#1EB0FF] rounded-lg text-[#161616] font-medium text-sm transition-colors duration-200 whitespace-nowrap flex-shrink-0';
+            } else {
+                btn.className = 'px-4 py-2 text-[#636363] font-medium text-sm transition-colors duration-200 whitespace-nowrap flex-shrink-0';
+            }
+        });
     }
 
     handleJobApplication(jobId) {
         console.log('Applying for job:', jobId);
 
-        // Route to appropriate apply page based on current page
+
         const currentPage = this.config.className;
 
         if (currentPage === 'career-page') {
@@ -563,18 +810,21 @@ class Jobs {
         } else if (currentPage === 'apprenticeship-page') {
             window.location.href = 'apply-apprenticeship.html';
         } else {
-            // Default fallback
+
             window.location.href = 'apply-career.html';
         }
     }
 
     handleFormSubmission(formData) {
         console.log('Form submitted:', Object.fromEntries(formData));
-        // Implement form submission logic
+        alert('Thank you for your application! We will get back to you soon.');
+        formData.forEach((value, key) => {
+            console.log(`${key}: ${value}`);
+        });
     }
 
     scrollToJobs() {
-        const jobsSection = this.page.querySelector('.bg-gray-50');
+        const jobsSection = this.page.querySelector('.jobs-section');
         if (jobsSection) {
             jobsSection.scrollIntoView({ behavior: 'smooth' });
         }
