@@ -45,27 +45,29 @@ class LearnerHero {
 
     createDesktopLayout() {
         const formattedTitle = `
-            Connected by <span class="learner-hero-learning">Learning</span>,<br>
+            Connected by <span class="learner-hero-learning">Learning,</span><br>
             Empowered by <span class="learner-hero-bildup">Bildup AI</span>
         `;
 
         this.hero.innerHTML = `
+          <div class="learner-herosection"> 
             <div class="learner-hero-content">
                 <h1 class="learner-hero-title">${formattedTitle}</h1>
                 <p class="learner-hero-description">Whether you're guiding a classroom, supporting a child at home, or leading a school, Bildup AI gives you the tools to make learning more connected, insightful, and effective—every step of the way.</p>
                 <button class="learner-cta-button">Get started with Bildup AI</button>
-                <p class="learner-hero-subheadline">${this.config.subtitle}</p>
+            
             </div>
             <div class="learner-hero-devices">
-                <img src="public/hero-up-left.png" class="learner-hero-device learner-hero-device-left" alt="Learning analytics dashboard" loading="lazy" />
-                <img src="public/hero-up-right.png" class="learner-hero-device learner-hero-device-right" alt="Mobile learning interface" loading="lazy" />
-            </div>
+                <img src="public/herosection.png" class="learner-hero-device" alt="Learning analytics dashboard" loading="lazy" />
+                </div>
+              <p class="learner-hero-subheadline">${this.config.subtitle}</p>
+          </div>
         `;
     }
 
     createMobileLayout() {
         const mobileFormattedTitle = `
-            Connected by <span class="learner-hero-learning">Learning</span>,<br>
+            Connected by <span class="learner-hero-learning">Learning,</span><br>
             Empowered by <span class="learner-hero-bildup">Bildup AI</span>
         `;
 
@@ -74,12 +76,11 @@ class LearnerHero {
                 <h1 class="learner-hero-title learner-hero-title-mobile">${mobileFormattedTitle}</h1>
                 <p class="learner-hero-description learner-hero-description-mobile">Whether you're guiding a classroom, supporting a child at home, or leading a school, Bildup AI gives you the tools to make learning more connected, insightful, and effective—every step of the way.</p>
                 <button class="learner-cta-button learner-cta-button-mobile">Get started with Bildup AI</button>
-                <p class="learner-hero-subheadline learner-hero-subheadline-mobile">${this.config.subtitle}</p>
-            </div>
+             </div>
             <div class="learner-hero-devices-mobile">
-                <img src="public/up-mobile-left.png" class="learner-hero-device learner-hero-device-mobile-left" alt="Mobile learning analytics" loading="lazy" />
-                <img src="public/up-mobile-right.png" class="learner-hero-device learner-hero-device-mobile-right" alt="Mobile learning interface" loading="lazy" />
+                <img src="public/Hero-section.png" class="learner-hero-device " alt="Mobile learning analytics" loading="lazy" />
             </div>
+                <p class="learner-hero-subheadline learner-hero-subheadline-mobile">${this.config.subtitle}</p>
         `;
     }
 

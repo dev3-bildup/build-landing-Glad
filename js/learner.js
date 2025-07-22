@@ -43,17 +43,17 @@ class LearnerPage {
         this.components.header = new Header();
 
         this.components.hero = new LearnerHero({
-            title: "Connected<br>Learning",
+            title: "Connected by <span>Learning </span>, Empowered by <span>Bildup AI</span>",
             subtitle: "Seamlessly Connected Learning Ecosystem",
-            ctaText: "Get Started"
+            ctaText: "Get Started with Bildup AI",
         });
 
         this.components.intro = new IntroSection({
             paragraphs: [
-                "Connected for Learning, Built to meet the demands of learners striving to be the best that they can be.",
-                "Bildup AI is your personal tutor that understands how you learn, adapts to your pace, and helps you achieve your goals.",
-                "From powering smarter schools to enabling on-the-go learning, we're here to support your educational journey.",
-                "Let's transform the way you learn, together."
+                "Bildup AI is built for the full learning circle. Designed to empower schools, teachers and parents.",
+                "From the classroom to the living room. Schools, teachers and parents all get the tools, insights, and support they need to elevate every learner.",
+                "Say goodbye to frustration and hello to personalized learning designed for every learner.",
+                "Let's make learning easier, together."
             ],
             className: "learner-intro-section"
         });
@@ -63,25 +63,25 @@ class LearnerPage {
             type: 'cards',
             layout: 'cards',
             title: 'Powering Smarter Schools',
-            description: 'Bildup AI integrates seamlessly with school systems to enhance learning outcomes and provide personalized education at scale.',
-            backgroundImage: 'public/studyanywherebg.png', // Blue background
+            description: 'Bildup AI helps schools lead the way beyond digital learning. Get the capacity to track student progress in real-time, support your teachers with smart tools, and shape the future of education.',
+            backgroundImage: 'public/studyanywherebg.png', 
             mainImage: 'public/nightIphone.png',
-            imagePosition: 'right',
-            titleColor: '#FFFFFF',
-            descriptionColor: '#E8F4FD',
+            imagePosition: 'left',
+            titleColor: 'linear-gradient(to right, #185A9D, #43CEA2, #43CEA2)',
+            descriptionColor: '#696969',
             cards: [
-                {
-                    image: 'public/nightnotes.png'
-                },
-                {
-                    image: 'public/nightvid.png'
-                },
-                {
-                    image: 'public/nightatoms.png'
-                }
+            {
+                image: 'public/learner/smarter.png'
+            },
+            {
+                image: 'public/learner/smarter-AI.png'
+            },
+            {
+                image: 'public/learner/smarter-student.png'
+            }
             ],
             className: 'powering-schools-section',
-            mobileTopImage: 'public/nightIphone.png'
+            mobileTopImage: 'public/learner/smarter-mobile.png'
         });
 
         // Section 2: On The Go, Quick Updates
@@ -89,49 +89,49 @@ class LearnerPage {
             type: 'cards',
             layout: 'cards',
             title: 'On The Go, Quick Updates',
-            description: 'Stay connected to your learning journey wherever you are. Get quick updates, review progress, and access your study materials instantly.',
-            mainImage: 'public/tutorIphone.png',
+            description: "With Bildup, you're never in the dark. Get smart updates, track your child's progress, and support them-even if you're miles away.",
+            mainImage: 'public/learner/triq-update.png',
             imagePosition: 'left',
-            titleColor: 'linear-gradient(to bottom right, #185A9D, #43CEA2)',
+            titleColor: 'radial-gradient(circle, #46B83D, #111E0B, #111E0B)',
             descriptionColor: '#696969',
             cards: [
                 {
-                    image: 'public/anywherenote.png'
+                    image: 'public/learner/update-vid.png'
                 },
                 {
-                    image: 'public/anywheretopic.png'
+                    image: 'public/learner/update-AI.png'
                 },
                 {
-                    image: 'public/anywherevid.png'
+                    image: 'public/learner/update-learn.png'
                 }
             ],
             className: 'on-the-go-section',
-            mobileTopImage: 'public/tutorIphone.png'
+            mobileTopImage: 'public/learner/update-mobile.png'
         });
 
         // Section 3: Before Class, Lesson Preview
         this.components.beforeClassSection = new SectionComponent({
             type: 'cards',
             layout: 'cards',
-            title: 'Before Class, Lesson Preview',
-            description: 'Get ahead of your class with personalized lesson previews. Understand key concepts before they\'re taught to maximize your classroom experience.',
-            mainImage: 'public/examiphone.png',
-            imagePosition: 'right',
-            titleColor: 'radial-gradient(circle, #46B83D, #111E0B)',
+            title: 'Before Class, Lesson Prep',
+            description: "Bildup AI helps teachers teach better. From assigning lessons to tracking individual learner growth, you'll save time, stay informed, and stay connected.",
+            mainImage: 'public/learner/triq-update.png',
+            imagePosition: 'left',
+            titleColor: 'radial-gradient(circle at center, #EEAECA, #94BBE9, #94BBE9)',
             descriptionColor: '#696969',
             cards: [
                 {
-                    image: 'public/exammath.png'
-                },
-                {
-                    image: 'public/examrevision.png'
-                },
-                {
                     image: 'public/examvid.png'
+                },
+                {
+                    image: 'public/learner/prep-AI.png'
+                },
+                {
+                    image: 'public/learner/prep-todo.png'
                 }
             ],
             className: 'before-class-section',
-            mobileTopImage: 'public/examiphone.png'
+            mobileTopImage: 'public/mathsmall.png'
         });
 
         // Section 4: All Round Performance Tracking
@@ -139,76 +139,76 @@ class LearnerPage {
             type: 'cards',
             layout: 'cards',
             title: 'All Round Performance Tracking',
-            description: 'Monitor your learning progress with comprehensive analytics. Track your strengths, identify areas for improvement, and celebrate your achievements.',
+            description: 'Bildup AI helps schools track how students, teachers and classes are progressing in real time. Providing school-wide performance metrics, including spoting declining performances in students and suggesting insights to improve student performance.',
             backgroundImage: 'public/athomebg.png', // Light background
-            mainImage: 'public/bildiphone2.png',
+            mainImage: 'public/learner/triq-update.png',
             imagePosition: 'left',
-            titleColor: '#161616',
+            titleColor: 'linear-gradient(to right, #185A9D, #43CEA2, #43CEA2)',
             descriptionColor: '#696969',
             cards: [
                 {
-                    image: 'public/bildrecap.png'
+                    image: 'public/learner/track-vid.png'
                 },
                 {
-                    image: 'public/bildtrig.png'
+                    image: 'public/learner/track-AI.png'
                 },
                 {
-                    image: 'public/bildhelp.png'
+                    image: 'public/learner/track-report.png'
                 }
             ],
             className: 'performance-section',
-            mobileTopImage: 'public/bildiphone2.png'
+            mobileTopImage: 'public/learner/track-vid-mobile.png'
         });
 
         // Section 5: After Work, Check-in
         this.components.afterWorkSection = new SectionComponent({
             type: 'cards',
             layout: 'cards',
-            title: 'After Work, Check-in',
-            description: 'End your day with a quick learning check-in. Review what you\'ve learned, set goals for tomorrow, and maintain consistent progress.',
-            mainImage: 'public/tutorIphone.png',
-            imagePosition: 'right',
-            titleColor: 'linear-gradient(to bottom right, #185A9D, #43CEA2)',
+            title: 'After Work, Check-in Time',
+            description: "End your day with smart insights. From quick summaries to guided recaps, Bildup AI provides parents with summaries of how their child's day at school went.",
+            mainImage: 'public/learner/triq-update.png',
+            imagePosition: 'left',
+            titleColor: 'radial-gradient(circle at center, #46B83D, #111E0B)',
             descriptionColor: '#696969',
             cards: [
                 {
-                    image: 'public/tutorprep.png'
+                    image: 'public/learner/checkin-vid.png'
                 },
                 {
-                    image: 'public/tutorsolve.png'
+                    image: 'public/learner/checkin-AI.png'
                 },
                 {
-                    image: 'public/tutorvid.png'
+                    image: 'public/learner/checkin-topics.png'
                 }
             ],
             className: 'after-work-section',
-            mobileTopImage: 'public/tutorIphone.png'
+            mobileTopImage: 'public/learner/checkin-vidsmall.png'
         });
 
         // Section 6: Late Night, Creative Self Learning (Dark/Purple theme)
         this.components.lateNightSection = new SectionComponent({
             type: 'cards',
             layout: 'cards',
-            title: 'Late Night, Creative Self Learning',
-            description: 'When inspiration strikes late at night, Bildup AI is there. Explore creative learning paths, dive deep into topics that fascinate you, and learn at your own pace.',
+            title: 'Late Night, Grading and Planning',
+            description: 'Tired? Stuck? Bildup AI jumps in instantly to help you catch up on grading students or classes as well as creating and assigning study plans to students to improve their performances or prepare them for the class ahead.',
             backgroundImage: 'public/exambg.png', // Dark background
-            mainImage: 'public/quizmewhile.png',
+            mainImage: 'public/learner/triq-update.png',
             imagePosition: 'left',
-            titleColor: '#FFFFFF',
-            descriptionColor: '#C8B9E8',
+            titleColor: 'radial-gradient(circle at center, #C8B9E8,  #4A90E2)',
+            descriptionColor: '#696969',
             cards: [
                 {
-                    image: 'public/nightnotes.png'
+                    image: 'public/examvid.png'
                 },
                 {
-                    image: 'public/nightvid.png'
+                    image: 'public/learner/grading-AI.png'
                 },
                 {
-                    image: 'public/nightatoms.png'
+                    image: 'public/learner/grading-plan.png'
                 }
             ],
             className: 'late-night-section',
-            mobileTopImage: 'public/quizmewhile.png'
+            mobileTopImage: 'public/mathsmall.png'
         });
 
         this.components.finalCTA = new FinalCTASection();
@@ -231,7 +231,7 @@ class LearnerPage {
             return;
         }
 
-        // Clear the main container
+      
         main.innerHTML = '';
 
         // Render Header
@@ -259,7 +259,6 @@ class LearnerPage {
     }
 
     initializeAnimations() {
-        // Animation manager setup like in app.js
         if (this.animationManager) {
             const sections = document.querySelectorAll('section');
             this.animationManager.observeElements(sections);
@@ -276,7 +275,6 @@ class LearnerPage {
             });
         }
 
-        // Ensure CSS animations are initialized
         setTimeout(() => {
             if (this.animations) {
                 console.log('Re-initializing animations after page render');
@@ -295,7 +293,7 @@ class LearnerPage {
             }
         });
 
-        // Destroy animation manager
+    
         if (this.animationManager) {
             this.animationManager.destroy();
         }

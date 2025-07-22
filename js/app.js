@@ -80,7 +80,7 @@ class LandingPage {
             backgroundImage: "public/studyanywherebg.png",
             mainImage: "public/bildipphone.png",
             imagePosition: "left",
-            titleColor: "linear-gradient(to bottom right, #185A9D, #43CEA2)",
+            titleColor: "linear-gradient(97.17deg, #185A9D 10.8%, #43CEA2 43.73%)",
             descriptionColor: "#696969",
             cards: [
                 {
@@ -114,7 +114,7 @@ class LandingPage {
             backgroundImage: "public/athomebg.png",
             mainImage: "public/bildtrig.png",
             imagePosition: "left",
-            titleColor: "radial-gradient(circle, #46B83D, #111E0B)",
+            titleColor: "radial-gradient(18.27% 145.21% at 23.31% 58.65%, #46B83D 0%, #111E0B 100%)",
             descriptionColor: "#696969",
             cards: [
                 {
@@ -145,7 +145,7 @@ class LandingPage {
             backgroundImage: "public/exambg.png",
             mainImage: "public/ExamsCard.png",
             imagePosition: "left",
-            titleColor: "radial-gradient(circle, #EEAECA, #94BBE9)",
+            titleColor: "radial-gradient(18.27% 145.21% at 23.31% 58.65%, #EEAECA 0%, #94BBE9 100%)",
             descriptionColor: "#696969",
             cards: [
                 {
@@ -182,7 +182,7 @@ class LandingPage {
             backgroundImage: "public/studyanywherebg.png",
             mainImage: "public/bildipphone.png",
             imagePosition: "left",
-            titleColor: "linear-gradient(to bottom right, #185A9D, #43CEA2)",
+            titleColor: "linear-gradient(97.17deg, #185A9D 10.8%, #43CEA2 43.73%)",
             descriptionColor: "#696969",
             cards: [
                 {
@@ -210,7 +210,7 @@ class LandingPage {
             backgroundImage: "public/athomebg.png",
             mainImage: "public/bildtrig.png",
             imagePosition: "left",
-            titleColor: "radial-gradient(circle, #46B83D, #111E0B)",
+            titleColor: "radial-gradient(18.27% 145.21% at 23.31% 58.65%, #46B83D 0%, #111E0B 100%) ",
             descriptionColor: "#696969",
             cards: [
                 {
@@ -233,11 +233,11 @@ class LandingPage {
             type: 'cards',
             layout: 'cards',
             title: "In School, Before or After Lectures",
-            description: "Ace your exams with confidence. Bildup AI helps you revise smarter, practice with personalized quizzes, track weak spots, and stay consistent-so you’re always ready when exams come around.",
+            description: "Ace your exams with confidence. Bildup AI helps you revise smarter, practice with personalized quizzes, track weak spots, and stay consistent-so you're always ready when exams come around.",
             backgroundImage: "public/exambg.png",
             mainImage: "public/ExamsCard.png",
             imagePosition: "left",
-            titleColor: "radial-gradient(circle, #EEAECA, #94BBE9)",
+            titleColor: "radial-gradient(18.27% 145.21% at 23.31% 58.65%, #EEAECA 0%, #94BBE9 100%) ",
             descriptionColor: "#696969",
             cards: [
                 {
@@ -266,7 +266,7 @@ class LandingPage {
             backgroundImage: "public/studyanywherebg.png",
             mainImage: "public/iphone.png",
             imagePosition: "left",
-            titleColor: "linear-gradient(to bottom right, #185A9D, #43CEA2)",
+            titleColor: "linear-gradient(97.17deg, #185A9D 10.8%, #43CEA2 43.73%)",
             descriptionColor: "#696969",
             cards: [
                 {

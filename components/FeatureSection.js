@@ -144,11 +144,9 @@ class SectionComponent {
                 title.className = 'section-top-title';
                 title.textContent = this.config.title;
 
-                // Handle gradient colors
-                if (this.config.titleColor && this.config.titleColor.includes('gradient')) {
-                    console.log('Applying gradient to title:', this.config.titleColor);
 
-                    // Apply gradient with multiple fallbacks
+                if (this.config.titleColor && this.config.titleColor.includes('gradient')) {
+
                     title.style.backgroundImage = this.config.titleColor;
                     title.style.backgroundClip = 'text';
                     title.style.webkitTextFillColor = 'transparent';
@@ -157,9 +155,9 @@ class SectionComponent {
                     title.style.backgroundRepeat = 'no-repeat';
                     title.style.backgroundPosition = 'center';
                     title.style.color = 'transparent';
-                    title.style.fontWeight = 'bold';
+                    title.style.fontWeight = '600';
 
-                    // Add CSS class for additional styling
+
                     title.classList.add('gradient-text');
 
                     // Fallback for browsers that don't support background-clip: text

@@ -13,10 +13,10 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    line-height: 1.6;
+    font-family: DM Sans, sans-serif;
+    /* line-height: 1.6; */
     color: #161616;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     margin: 0;
     padding: 0;
     max-width: 100%;
@@ -27,7 +27,7 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 clamp(1rem, 3vw, 2rem);
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     box-sizing: border-box;
 }
 
@@ -524,7 +524,7 @@ body {
 }
 
 .hero-blue {
-    color: #1976d2;
+    color: #005AAC;
 }
 
 .highlight {
@@ -582,10 +582,10 @@ section {
     text-align: center;
     font-size: clamp(1.5rem, 4vw, 2rem);
     max-width: 700px;
+    font-weight: 600;
     margin: 0 auto;
-    color: #0071E3;
-    font-weight: 300;
-    background: linear-gradient(90deg, #0071E3, #3AA0F3, #0071E3);
+    color: linear-gradient(91.27deg, #0071E3 0.56%, #3AA0F3 58.01%, #0071E3 88.4%);
+    background: linear-gradient(91.27deg, #0071E3 0.56%, #3AA0F3 58.01%, #0071E3 88.4%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -687,9 +687,17 @@ section {
     align-items: center;
     gap: 2rem;
     text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .bildup-image {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
     margin-top: 2rem;
 }
 
@@ -702,15 +710,17 @@ section {
 }
 
 .bildup-title {
-    font-size: clamp(6.5rem, 5vw, 5rem);
+    font-size: clamp(6.5rem, 3.5vw, 3.5rem);
     margin-bottom: 2rem;
     line-height: 1.2;
+    font-weight: 600;
     text-align: start;
 }
 
 .bildup-description {
     font-size: 2rem;
     color: #696969;
+    font-weight: 300;
     line-height: 1.7;
     text-align: justify;
 }
@@ -718,8 +728,9 @@ section {
 .bildup-image img {
     width: 100%;
     height: auto;
+    max-width: 100%;
+    object-fit: contain;
     display: block;
-
 }
 
 
@@ -729,7 +740,8 @@ section {
     align-items: flex-start;
     gap: 2rem;
     text-align: left;
-    max-width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .final-bildup-section .bildup-subtitle {
@@ -1017,8 +1029,6 @@ section {
 section[style*="background-image"],
 section[class*="section"],
 .intro-section,
-.bildup-section,
-.final-bildup-section,
 .second-section,
 .feature-section,
 .final-cta-section,
@@ -1027,6 +1037,11 @@ section[class*="section"],
 .exam-prep-section {
     border-radius: 0 0 30px 30px !important;
     overflow: hidden;
+}
+
+.bildup-section,
+.final-bildup-section {
+    border-radius: 0 0 30px 30px !important;
 }
 
 .custom-section::before {
@@ -1092,6 +1107,8 @@ section[class*="section"],
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+
+/* FEATURE COMPONENT */
 /* Cards Layout */
 .cards-content {
     padding: 2rem 0;
@@ -1107,8 +1124,8 @@ section[class*="section"],
 }
 
 .section-top-title {
-    font-size: clamp(2.5rem, 9vw, 8rem);
-    font-weight: bold;
+    font-size: clamp(2.5rem, 9vw, 9rem);
+    font-weight: 600;
     margin-bottom: 1rem;
     margin-left: 4rem;
     text-align: left;
@@ -1124,7 +1141,7 @@ section[class*="section"],
     background-repeat: no-repeat;
     background-position: center;
     color: transparent !important;
-    font-weight: bold;
+
 }
 
 
@@ -1142,7 +1159,7 @@ section[class*="section"],
     background-size: 100% 100% !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
-    font-weight: bold !important;
+
 }
 
 /* Ensure gradient text works in all browsers */
@@ -1160,7 +1177,7 @@ section[class*="section"],
 .section-image-text-container {
     display: grid;
     grid-template-columns: 0.7fr 1fr;
-    align-items: center;
+    align-items: start;
     text-align: left;
 }
 
@@ -1173,8 +1190,8 @@ section[class*="section"],
 .section-text-container {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    margin-top: -3rem;
+    font-weight: 300;
+
 }
 
 .cards-grid {
@@ -1197,7 +1214,6 @@ section[class*="section"],
 /* Mobile top image styles */
 .mobile-top-image-container {
     display: none;
-    /* Hidden on desktop */
     width: 100%;
     margin-bottom: 1rem;
 }
@@ -1275,7 +1291,7 @@ section[class*="section"],
 
 .gradient-title {
     font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: bold;
+    font-weight: 600;
     line-height: 1.2;
     margin-bottom: 1rem;
 }
@@ -1323,15 +1339,16 @@ section[class*="section"],
 
 .section-title {
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: bold;
+    font-weight: 600;
     line-height: 1.2;
     margin-bottom: 1rem;
     text-align: left;
 }
 
 .section-description {
-    font-size: clamp(2.2rem, 2vw, 3.2rem);
-    line-height: 1.7;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    max-width: 650px;
+    line-height: 1.6;
     text-align: left;
     color: #696969;
 }
@@ -1362,10 +1379,7 @@ section[class*="section"],
         font-size: clamp(1.8rem, 3vw, 2.5rem);
     }
 
-    /* 
-    .section-description {
-        font-size: 1.1rem;
-    } */
+
 
     .cards-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1385,7 +1399,7 @@ section[class*="section"],
     }
 
     .section-description {
-        font-size: 1rem;
+        font-size: clamp(1.3rem, 2.5vw, 1.5rem);
         line-height: 1.6;
     }
 
@@ -1398,9 +1412,6 @@ section[class*="section"],
         font-size: clamp(1.8rem, 3vw, 2.5rem);
     }
 
-    /* .section-image-text-container {
-        gap: 2rem;
-    } */
 
     .cards-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1468,7 +1479,7 @@ section[class*="section"],
     }
 
     .section-description {
-        font-size: 1.1rem;
+        font-size: clamp(1.2rem, 3.5vw, 1.4rem);
         line-height: 1.5;
     }
 
@@ -1482,12 +1493,7 @@ section[class*="section"],
         font-size: clamp(1.6rem, 4vw, 2.2rem);
     }
 
-    /* 
-    .section-image-text-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
-    } */
+
 
     .cards-grid {
         grid-template-columns: 1fr;
@@ -1557,7 +1563,7 @@ section[class*="section"],
     }
 
     .section-description {
-        font-size: 1rem;
+        font-size: clamp(1.1rem, 4vw, 1.3rem);
         line-height: 1.4;
     }
 
@@ -1632,7 +1638,7 @@ section[class*="section"],
     }
 
     .section-description {
-        font-size: 0.9rem;
+        font-size: clamp(1rem, 4.5vw, 1.2rem);
         line-height: 1.3;
     }
 
@@ -2825,8 +2831,12 @@ body.loaded {
 }
 
 /* Learner Page Specific Styles */
+.learner-herosection {
+    background-color: #ffffff;
+}
+
 .learner-hero {
-    padding: clamp(6rem, 12vh, 10rem) 0 clamp(4rem, 8vh, 6rem) 0;
+    padding: clamp(2rem, 12vh, 6rem) 0 clamp(2rem, 8vh, 5rem) 0;
     background: #ffffff;
     display: flex;
     flex-direction: column;
@@ -2838,13 +2848,13 @@ body.loaded {
 
 .learner-hero-content {
     max-width: 900px;
-    margin: 0 auto 4rem auto;
+    margin: 0 auto 0rem auto;
     padding: 0 2rem;
 }
 
 .learner-hero-title {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 700;
+    font-size: clamp(1.5rem, 6vw, 4.5rem);
+    font-weight: 600;
     margin-bottom: 1.5rem;
     line-height: 1.1;
     text-align: center;
@@ -2853,28 +2863,28 @@ body.loaded {
 
 .learner-hero-learning,
 .learner-hero-bildup {
-    color: #4A90E2;
+    color: #005AAC;
     display: inline;
 }
 
 .learner-hero-description {
     font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-    color: #696969;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    max-width: 800px;
+    color: #161616;
+    line-height: 1;
+    margin-bottom: 1.2rem;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .learner-cta-button {
-    background: #4A90E2;
+    background: #0071E3;
     color: white;
     border: none;
-    padding: 1rem 2.5rem;
+    padding: 1rem 2rem;
     border-radius: 50px;
     font-size: clamp(1rem, 2vw, 1.1rem);
-    font-weight: 600;
+    font-weight: 200;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
@@ -2889,8 +2899,9 @@ body.loaded {
 
 .learner-hero-subheadline {
     font-size: clamp(1rem, 2.2vw, 1.2rem);
-    color: #4A90E2;
-    font-weight: 500;
+    color: #0071E3;
+    font-weight: 400;
+    margin-top: 0.5rem;
     margin-bottom: 0;
 }
 
@@ -2899,42 +2910,22 @@ body.loaded {
     justify-content: center;
     align-items: flex-end;
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.learner-hero-device {
-    border-radius: 12px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    padding: 0 3rem;
     transition: transform 0.3s ease;
 }
 
-.learner-hero-device:hover {
-    transform: translateY(-10px);
-}
 
-.learner-hero-device-left {
-    width: clamp(280px, 35vw, 450px);
-    height: auto;
-}
 
-.learner-hero-device-right {
-    width: clamp(240px, 30vw, 380px);
-    height: auto;
-}
 
 /* Learner Intro Section */
 .learner-intro-section {
     padding: clamp(4rem, 8vh, 6rem) 0;
     background: #FFFFFF;
+    font-size: clamp(2.1rem, 2.5vw, 4.3rem);
 }
 
-.learner-intro-section .intro-highlight {
-    color: #4A90E2;
-    font-weight: 600;
-    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-}
 
 /* Section-specific styling */
 .powering-schools-section {
@@ -2984,34 +2975,35 @@ body.loaded {
 /* Mobile Responsiveness for Learner Hero */
 @media (max-width: 768px) {
     .learner-hero {
-        padding: clamp(4rem, 10vh, 6rem) 0 clamp(3rem, 6vh, 4rem) 0;
+        padding: clamp(2rem, 10vh, 3rem) 0 clamp(3rem, 6vh, 3rem) 0;
         min-height: 100vh;
     }
 
     .learner-hero-content {
-        margin-bottom: 3rem;
-        padding: 0 1.5rem;
+        margin-bottom: 2rem;
+        padding: 0 1.2rem;
     }
 
     .learner-hero-title-mobile {
-        font-size: clamp(2rem, 8vw, 3rem);
+        font-size: clamp(1rem, 8vw, 2rem);
         margin-bottom: 1.5rem;
-        line-height: 1.2;
+        line-height: 1.5;
     }
 
     .learner-hero-description-mobile {
-        font-size: clamp(1rem, 4vw, 1.1rem);
+        font-size: clamp(1rem, 4vw, 2.1rem);
         margin-bottom: 1.5rem;
     }
 
     .learner-cta-button-mobile {
         padding: 0.8rem 2rem;
         font-size: clamp(0.9rem, 4vw, 1rem);
-        margin-bottom: 1.5rem;
+        /* margin-bottom: 1rem; */
     }
 
     .learner-hero-subheadline-mobile {
         font-size: clamp(0.9rem, 4vw, 1rem);
+        margin-top: 2rem;
     }
 
     .learner-hero-devices-mobile {
@@ -3022,28 +3014,138 @@ body.loaded {
         padding: 0 1.5rem;
     }
 
-    .learner-hero-device-mobile-left {
-        width: clamp(250px, 70vw, 350px);
+    .learner-hero-devices-mobile img {
+        max-width: 90%;
         height: auto;
+        border-radius: 10px;
     }
 
-    .learner-hero-device-mobile-right {
-        width: clamp(200px, 60vw, 280px);
-        height: auto;
-    }
+
 }
 
-    /* Mobile adjustments for gradient sections */
-    .powering-schools-section .gradient-main-image {
-        max-width: 280px;
-        margin-top: 2rem;
+/* Mobile adjustments for gradient sections */
+.powering-schools-section .gradient-main-image {
+    max-width: 280px;
+    margin-top: 2rem;
+}
+
+.powering-schools-section {
+    padding: clamp(3rem, 8vh, 5rem) 0;
+}
+
+.late-night-section {
+    padding: clamp(3rem, 8vh, 5rem) 0;
+}
+
+/* Hide main images on mobile for FeatureSection component */
+@media (max-width: 768px) {
+
+    /* Hide images completely */
+    .section-main-image,
+    .gradient-main-image {
+        display: none !important;
     }
 
-    .powering-schools-section {
-        padding: clamp(3rem, 8vh, 5rem) 0;
+    /* Hide image containers completely so they don't take up any space */
+    .section-image-container,
+    .gradient-image-container,
+    .image-container {
+        display: none !important;
     }
 
-    .late-night-section {
-        padding: clamp(3rem, 8vh, 5rem) 0;
+    /* Force single column layout and remove all spacing */
+    .text-image-content,
+    .section-image-text-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Ensure top section and its containers take full width with no padding */
+    .section-top-content,
+    .section-image-text-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Force text containers to be the only visible element taking full width */
+    .text-container,
+    .section-text-container,
+    .gradient-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        display: block !important;
+    }
+
+    /* Remove any container padding that might cause white space */
+    .cards-content,
+    .text-image-content,
+    .gradient-content {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    /* Remove left padding for text sections, keep minimal right padding for readability */
+    .section-top-content,
+    .text-image-content,
+    .gradient-content,
+    .cards-content {
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    /* Specifically ensure text content has no left padding */
+    .section-top-content .section-text-container,
+    .section-image-text-container .section-text-container,
+    .text-container,
+    .section-text-container,
+    .gradient-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: clamp(1rem, 3vw, 2rem) !important;
+    }
+
+    /* Override container padding for sections with FeatureSection */
+    .custom-section .container {
+        padding-left: 0 !important;
+        padding-right: clamp(1rem, 3vw, 2rem) !important;
+    }
+
+    /* Increase font sizes for better readability on mobile */
+    .section-title,
+    .section-top-title,
+    .gradient-title {
+        font-size: clamp(2.8rem, 8vw, 3.6rem) !important;
+        line-height: 1.2 !important;
+        text-align: left !important;
+    }
+
+    .section-description,
+    .gradient-description {
+        font-size: clamp(1.3rem, 4vw, 1.6rem) !important;
+        line-height: 1.5 !important;
+        margin-top: 1rem !important;
+    }
+
+    .section-subtitle {
+        font-size: clamp(1rem, 3vw, 1.2rem) !important;
     }
 }
