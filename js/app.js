@@ -364,10 +364,10 @@ class LandingPage {
         // Ensure CSS animations are initialized
         setTimeout(() => {
             if (this.animations) {
-                console.log('Re-initializing animations after page render');
+          
                 this.animations.setupAnimations();
             } else {
-                console.log('Creating new animations instance');
+             
                 this.animations = new Animations();
             }
         }, 100);

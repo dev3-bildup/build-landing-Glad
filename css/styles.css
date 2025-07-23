@@ -14,9 +14,7 @@ html {
 
 body {
     font-family: DM Sans, sans-serif;
-    /* line-height: 1.6; */
     color: #161616;
-    /* overflow-x: hidden; */
     margin: 0;
     padding: 0;
     max-width: 100%;
@@ -27,7 +25,6 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 clamp(1rem, 3vw, 2rem);
-    /* overflow-x: hidden; */
     box-sizing: border-box;
 }
 
@@ -147,7 +144,6 @@ body {
 
 .hero-content {
     position: relative;
-    /* z-index: 2; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -281,7 +277,7 @@ body {
     }
 
     .cta-button {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .hero-subheadline {
@@ -350,9 +346,8 @@ body {
     }
 
     .cta-button {
-        margin-bottom: 0;
-        padding: 0.8rem 2rem;
-        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        padding: 0.8rem 1.8rem;
+        font-size: clamp(0.9rem, 2vw, 1rem);
     }
 
     .hero-subheadline {
@@ -384,10 +379,11 @@ body {
     }
 
     .hero-img-3 {
-        bottom: 25vh;
+        bottom: 18vh;
         left: 8vw;
-        width: clamp(130px, 20vh, 240px);
-        transform: rotate(-8deg);
+        width: clamp(130px, 12vh, 240px);
+        height: 45dvh;
+        transform: rotate(-4deg);
         z-index: 1;
     }
 
@@ -410,7 +406,7 @@ body {
         z-index: 2;
         width: 100%;
         height: 100dvh;
-        max-width: 400px;
+        max-width: 350px;
     }
 
     .hero-title-mobile {
@@ -422,15 +418,15 @@ body {
 
     .cta-button-mobile {
         margin-bottom: 0;
-        padding: 1rem 2.5rem;
-        font-size: clamp(1rem, 3vw, 1.2rem);
-        border-radius: 25px;
-        font-weight: 600;
+        padding: 1rem 2rem;
+        font-size: clamp(0.4rem, 1vw, 0.6rem);
+        border-radius: 50px;
+        font-weight: 300;
     }
 
     .hero-subheadline-mobile {
         position: absolute;
-        bottom: 2vh;
+        bottom: 3.5vh;
         left: 50%;
         transform: translateX(-50%);
         margin: 0;
@@ -462,12 +458,12 @@ body {
     }
 
     .hero-img-mobile-3 {
-        bottom: 7vh;
+        bottom: 4.5vh;
         left: -5vw;
         width: clamp(20px, 27vh, 340px);
-        transform: rotate(1deg);
+        transform: rotate(-7deg);
         z-index: 1;
-        height: 380px;
+        height: 360px;
         position: absolute;
         opacity: 1;
     }
@@ -537,11 +533,11 @@ body {
     border: none;
     padding: 1rem 2rem;
     border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 400;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .cta-button:hover {
@@ -607,7 +603,7 @@ section {
     justify-items: center;
 }
 
-/* Responsive styles for Intro section */
+
 @media (max-width: 1399px) and (min-width: 1024px) {
     .intro-content {
         font-size: clamp(1.8rem, 3.5vw, 2.4rem);
@@ -677,6 +673,9 @@ section {
 }
 
 
+
+/* BILDUP COMPONENT & SECTION */
+
 .bildup-section {
     background: white;
 }
@@ -685,7 +684,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     text-align: center;
     max-width: 1200px;
     margin: 0 auto;
@@ -710,18 +709,18 @@ section {
 }
 
 .bildup-title {
-    font-size: clamp(6.5rem, 3.5vw, 3.5rem);
+    font-size: clamp(4.5rem, 8vw, 8rem);
     margin-bottom: 2rem;
-    line-height: 1.2;
-    font-weight: 600;
+    line-height: 1;
+    font-weight: 500;
     text-align: start;
 }
 
 .bildup-description {
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: #696969;
     font-weight: 300;
-    line-height: 1.7;
+    /* line-height: 1.5; */
     text-align: justify;
 }
 
@@ -738,10 +737,10 @@ section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 2rem;
+    gap: 1rem;
     text-align: left;
     max-width: 1200px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 .final-bildup-section .bildup-subtitle {
@@ -785,24 +784,27 @@ section {
     background: #0071E3;
     color: white;
     border: none;
-    padding: 1rem 2rem;
-    border-radius: 25px;
-    font-size: 1rem;
-    font-weight: 600;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
     align-self: flex-start;
+    display: flex;
     margin-bottom: 1rem;
-    display: block;
     z-index: 10;
+    margin-left: -3.2rem;
     position: relative;
+    opacity: 1;
+
 }
 
 .final-bildup-section .bildup-image .cta-button:hover {
-    background: #005AAC;
+    background: #0071E3;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 113, 227, 0.4);
+    box-shadow: 0 6px 20px rgba(0, 113, 227, 0.25);
 }
 
 
@@ -810,15 +812,19 @@ section {
     .final-bildup-section .bildup-image .cta-button {
         padding: 0.8rem 1.5rem;
         font-size: 0.9rem;
+        opacity: 1;
+        width: 100%;
+        align-self: center;
     }
 
     .final-bildup-section .bildup-content {
-        gap: 1.5rem;
+        gap: 0.3rem;
     }
 
     .final-bildup-section .bildup-image {
         gap: 1rem;
         margin-top: 1.5rem;
+        align-items: center;
     }
 }
 
@@ -829,7 +835,7 @@ section {
     }
 
     .bildup-title {
-        font-size: clamp(4rem, 4vw, 4.5rem);
+        font-size: clamp(6rem, 7vw, 6.5rem);
     }
 
     .bildup-description {
@@ -858,7 +864,7 @@ section {
     }
 
     .bildup-subtitle {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
 
     .bildup-image img {
@@ -871,6 +877,7 @@ section {
     .bildup-content {
         gap: 1rem;
         padding: 0 1rem;
+        max-width: 95%;
     }
 
     .bildup-title {
@@ -886,7 +893,7 @@ section {
     }
 
     .bildup-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         text-align: left;
         margin-bottom: 0.8rem;
     }
@@ -906,6 +913,7 @@ section {
     .bildup-content {
         gap: 0.8rem;
         padding: 0 0.5rem;
+        max-width: 98%;
     }
 
     .bildup-title {
@@ -921,7 +929,7 @@ section {
     }
 
     .bildup-subtitle {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         text-align: left;
         margin-bottom: 0.6rem;
     }
@@ -941,6 +949,7 @@ section {
     .bildup-content {
         gap: 0.6rem;
         padding: 0 0.3rem;
+        max-width: 100%;
     }
 
     .bildup-title {
@@ -1015,7 +1024,7 @@ section {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Section Component Styles */
+
 .custom-section {
     padding: 4rem 0;
     position: relative;
@@ -1112,13 +1121,14 @@ section[class*="section"],
 /* Cards Layout */
 .cards-content {
     padding: 2rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 
 .section-top-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     margin-bottom: 3rem;
     text-align: center;
 }
@@ -1127,7 +1137,6 @@ section[class*="section"],
     font-size: clamp(2.5rem, 9vw, 9rem);
     font-weight: 600;
     margin-bottom: 1rem;
-    margin-left: 4rem;
     text-align: left;
     line-height: 1.2;
 }
@@ -1236,7 +1245,6 @@ section[class*="section"],
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    /* width: 100%; */
 }
 
 .bottom-cards-row .bottom-card {
@@ -1287,6 +1295,8 @@ section[class*="section"],
     text-align: center;
     gap: 2rem;
     padding: 3rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .gradient-title {
@@ -1299,7 +1309,7 @@ section[class*="section"],
 .gradient-description {
     font-size: clamp(1.1rem, 2vw, 1.3rem);
     line-height: 1.6;
-    max-width: 700px;
+    max-width: 650px;
     margin: 0 auto;
 }
 
@@ -1319,9 +1329,10 @@ section[class*="section"],
 .text-image-content {
     display: grid;
     grid-template-columns: 0.5fr 2fr;
-    /* gap: 2rem; */
     align-items: center;
     padding: 3rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .text-container {
@@ -1348,7 +1359,6 @@ section[class*="section"],
 .section-description {
     font-size: clamp(1.4rem, 3vw, 2rem);
     max-width: 650px;
-    line-height: 1.6;
     text-align: left;
     color: #696969;
 }
@@ -1387,7 +1397,7 @@ section[class*="section"],
     }
 }
 
-@media (max-width: 1023px) and (min-width: 768px) {
+@media (max-width: 1023px) and (min-width: 902px) {
     .text-image-content {
         gap: 2.5rem;
         padding: 2rem 0;
@@ -1400,16 +1410,14 @@ section[class*="section"],
 
     .section-description {
         font-size: clamp(1.3rem, 2.5vw, 1.5rem);
-        line-height: 1.6;
     }
 
     .section-top-content {
-        gap: 2rem;
         margin-bottom: 2rem;
     }
 
     .section-top-title {
-        font-size: clamp(1.8rem, 3vw, 2.5rem);
+        font-size: clamp(5.8rem, 6vw, 7rem);
     }
 
 
@@ -1452,12 +1460,7 @@ section[class*="section"],
     /* Apply rounded bottom corners to all sections on tablet */
     section[style*="background-image"],
     section[style*="background"],
-    .intro-section,
-    .bildup-section,
-    .final-bildup-section,
-    .second-section,
     .feature-section,
-    .final-cta-section,
     .study-anywhere-section,
     .at-home-section,
     .exam-prep-section {
@@ -1465,10 +1468,10 @@ section[class*="section"],
     }
 }
 
-@media (max-width: 767px) and (min-width: 368px) {
+@media (max-width: 901px) and (min-width: 368px) {
     .text-image-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        /* gap: 2rem; */
         text-align: center;
         padding: 2rem 0;
     }
@@ -1480,20 +1483,20 @@ section[class*="section"],
 
     .section-description {
         font-size: clamp(1.2rem, 3.5vw, 1.4rem);
-        line-height: 1.5;
+        /* line-height: 1.5; */
     }
 
     .section-top-content {
-        gap: 2rem;
+        /* gap: 2rem; */
         text-align: center;
         margin-bottom: 2rem;
     }
 
     .section-top-title {
         font-size: clamp(1.6rem, 4vw, 2.2rem);
+        margin-right: 0 !important;
+        padding-right: 0 !important;
     }
-
-
 
     .cards-grid {
         grid-template-columns: 1fr;
@@ -1564,7 +1567,7 @@ section[class*="section"],
 
     .section-description {
         font-size: clamp(1.1rem, 4vw, 1.3rem);
-        line-height: 1.4;
+        /* line-height: 1.4; */
     }
 
     .cards-grid {
@@ -1600,13 +1603,8 @@ section[class*="section"],
     /* Apply rounded bottom corners to all sections on mobile */
     section[style*="background-image"],
     section[style*="background"],
-    .intro-section,
-    .bildup-section,
-    .final-bildup-section,
     .second-section,
     .feature-section,
-    .final-cta-section,
-    .hero,
     .study-anywhere-section,
     .at-home-section,
     .exam-prep-section {
@@ -1639,7 +1637,6 @@ section[class*="section"],
 
     .section-description {
         font-size: clamp(1rem, 4.5vw, 1.2rem);
-        line-height: 1.3;
     }
 
     .cards-grid {
@@ -1675,13 +1672,8 @@ section[class*="section"],
     /* Apply rounded bottom corners to all sections on very small mobile */
     section[style*="background-image"],
     section[style*="background"],
-    .intro-section,
-    .bildup-section,
-    .final-bildup-section,
     .second-section,
     .feature-section,
-    .final-cta-section,
-    .hero,
     .study-anywhere-section,
     .at-home-section,
     .exam-prep-section {
@@ -1698,6 +1690,61 @@ section[class*="section"],
 
     .gradient-main-image {
         max-width: 95%;
+    }
+}
+
+/* Mobile width adjustments for feature sections */
+@media (max-width: 901px) and (min-width: 368px) {
+
+    .cards-content,
+    .text-image-content,
+    .gradient-content {
+        max-width: 95% !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .cards-content,
+    .text-image-content,
+    .gradient-content {
+        max-width: 98% !important;
+    }
+}
+
+@media (max-width: 368px) {
+
+    .cards-content,
+    .text-image-content,
+    .gradient-content {
+        max-width: 100% !important;
+    }
+}
+
+/* For screen sizes below 366px, make bottom cards vertical */
+@media (max-width: 366px) {
+    .bottom-cards-row {
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .bottom-cards-row .bottom-card {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .feature-card {
+        padding: 0.8rem;
+        min-height: 140px;
+        width: 100%;
+    }
+
+    .card-image {
+        width: 100%;
+        max-height: none;
     }
 }
 
@@ -1721,7 +1768,7 @@ section[class*="section"],
     }
 }
 
-@media (max-width: 767px) and (min-width: 368px) {
+@media (max-width: 901px) and (min-width: 368px) {
     .section-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -1747,6 +1794,86 @@ section[class*="section"],
         margin: 0 auto;
         display: block;
     }
+}
+
+/* Hide main images on mobile for FeatureSection component */
+@media (max-width: 901px) {
+
+    /* Hide images completely */
+    .section-main-image,
+    .gradient-main-image {
+        display: none !important;
+    }
+
+    /* Hide image containers completely so they don't take up any space */
+    .section-image-container,
+    .gradient-image-container,
+    .image-container {
+        display: none !important;
+    }
+
+    /* Force single column layout and remove all spacing */
+    .text-image-content,
+    .section-image-text-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+
+    /* Force text containers to be the only visible element taking full width */
+    .text-container,
+    .section-text-container,
+    .gradient-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        display: block !important;
+    }
+
+
+
+    /* Increase font sizes for better readability on mobile */
+    .section-title,
+    .section-top-title,
+    .gradient-title {
+        font-size: clamp(3.2rem, 9vw, 4rem) !important;
+        line-height: 1.2 !important;
+        text-align: left !important;
+    }
+
+    .section-top-title {
+        margin-right: 0 !important;
+        padding-right: 0 !important;
+    }
+
+
+
+    /* Force section-top-title to ignore parent container padding */
+    .section-top-title {
+        margin-right: calc(-1 * clamp(1rem, 3vw, 2rem)) !important;
+        padding-right: 0 !important;
+    }
+
+    .section-description,
+    .gradient-description {
+        font-size: clamp(1.3rem, 3.5vw, 1.3rem) !important;
+        margin-top: 1rem !important;
+        text-align: justify !important;
+    }
+
+    .section-subtitle {
+        font-size: clamp(1rem, 3vw, 1.2rem) !important;
+        text-align: center !important;
+    }
+
+
 }
 
 @media (max-width: 480px) {
@@ -2315,6 +2442,7 @@ section[class*="section"],
     }
 }
 
+
 /* CSS Animations */
 @keyframes fadeInUp {
     from {
@@ -2491,9 +2619,7 @@ section[class*="section"],
     transform: scale(1);
 }
 
-/* .button-hover {
-    animation: buttonHover 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-} */
+
 
 .nav-link-animate {
     opacity: 0;
@@ -2501,11 +2627,7 @@ section[class*="section"],
     animation: fadeInUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
-/* .close-button-animate {
-    opacity: 0;
-    transform: scale(0.8);
-    animation: scaleIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-} */
+
 
 .footer-link-animate {
     opacity: 0;
@@ -2517,19 +2639,17 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Button hover effects */
 .cta-button:active {
     transform: translateY(0);
 }
 
-/* Image hover effects */
+
 .section-image img:hover,
 .bildup-image img:hover {
     transform: scale(1.02);
     transition: transform 0.3s ease;
 }
 
-/* Loading animation */
 body {
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -2598,9 +2718,12 @@ body.loaded {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
+
 .footer .container {
     padding: 0;
 }
+
+
 
 /* Mobile menu styles */
 @media (max-width: 768px) {
@@ -2738,35 +2861,48 @@ body.loaded {
 }
 
 @media (max-width: 768px) {
+    .final-cta-container {
+        display: flex;
+        justify-content: start;
+        align-items: flex-start;
+
+    }
+
+
     .final-cta-section {
         padding: 3rem 1rem;
+
     }
 
     .final-cta-container {
-        max-width: 95%;
-        padding: 2.5rem 1.5rem 2rem 1.5rem;
+        max-width: 90%;
+        padding: 4.5rem 1.5rem 2.5rem 1.5rem;
         min-height: 450px;
     }
 
     .final-cta-title {
         font-size: 2rem;
         margin-bottom: 1.5rem;
+        text-align: left;
     }
 
     .final-cta-desc {
         font-size: 1.1rem;
         margin-bottom: 1.5rem;
+        text-align: left;
     }
 
     .final-cta-sub {
         font-size: 1rem;
         margin-bottom: 1.5rem;
+        text-align: left;
     }
 
     .final-cta-btn {
         padding: 0.8rem 2rem;
         font-size: 1rem;
         margin-top: 1.5rem;
+        width: 100%;
     }
 }
 
@@ -2777,30 +2913,34 @@ body.loaded {
 
     .final-cta-container {
         max-width: 98%;
-        padding: 2rem 1rem 1.5rem 1rem;
+        padding: 4rem 1rem 3.5rem 1.5rem;
         min-height: 400px;
     }
 
     .final-cta-title {
         font-size: 1.8rem;
         margin-bottom: 1rem;
+        text-align: left;
     }
 
     .final-cta-desc {
         font-size: 1rem;
         margin-bottom: 1rem;
         line-height: 1.4;
+        text-align: left;
     }
 
     .final-cta-sub {
         font-size: 0.9rem;
         margin-bottom: 1rem;
+        text-align: left;
     }
 
     .final-cta-btn {
         padding: 0.7rem 1.8rem;
         font-size: 0.9rem;
         margin-top: 1rem;
+        width: 100%;
     }
 
     .final-cta-logo {
@@ -3035,117 +3175,4 @@ body.loaded {
 
 .late-night-section {
     padding: clamp(3rem, 8vh, 5rem) 0;
-}
-
-/* Hide main images on mobile for FeatureSection component */
-@media (max-width: 768px) {
-
-    /* Hide images completely */
-    .section-main-image,
-    .gradient-main-image {
-        display: none !important;
-    }
-
-    /* Hide image containers completely so they don't take up any space */
-    .section-image-container,
-    .gradient-image-container,
-    .image-container {
-        display: none !important;
-    }
-
-    /* Force single column layout and remove all spacing */
-    .text-image-content,
-    .section-image-text-container {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        width: 100% !important;
-    }
-
-    /* Ensure top section and its containers take full width with no padding */
-    .section-top-content,
-    .section-image-text-container {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-sizing: border-box !important;
-    }
-
-    /* Force text containers to be the only visible element taking full width */
-    .text-container,
-    .section-text-container,
-    .gradient-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        flex: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-sizing: border-box !important;
-        display: block !important;
-    }
-
-    /* Remove any container padding that might cause white space */
-    .cards-content,
-    .text-image-content,
-    .gradient-content {
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        box-sizing: border-box !important;
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
-    }
-
-    /* Remove left padding for text sections, keep minimal right padding for readability */
-    .section-top-content,
-    .text-image-content,
-    .gradient-content,
-    .cards-content {
-        padding-left: 0 !important;
-        margin-left: 0 !important;
-    }
-
-    /* Specifically ensure text content has no left padding */
-    .section-top-content .section-text-container,
-    .section-image-text-container .section-text-container,
-    .text-container,
-    .section-text-container,
-    .gradient-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        padding-left: 0 !important;
-        padding-right: clamp(1rem, 3vw, 2rem) !important;
-    }
-
-    /* Override container padding for sections with FeatureSection */
-    .custom-section .container {
-        padding-left: 0 !important;
-        padding-right: clamp(1rem, 3vw, 2rem) !important;
-    }
-
-    /* Increase font sizes for better readability on mobile */
-    .section-title,
-    .section-top-title,
-    .gradient-title {
-        font-size: clamp(2.8rem, 8vw, 3.6rem) !important;
-        line-height: 1.2 !important;
-        text-align: left !important;
-    }
-
-    .section-description,
-    .gradient-description {
-        font-size: clamp(1.3rem, 4vw, 1.6rem) !important;
-        line-height: 1.5 !important;
-        margin-top: 1rem !important;
-    }
-
-    .section-subtitle {
-        font-size: clamp(1rem, 3vw, 1.2rem) !important;
-    }
 }

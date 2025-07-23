@@ -78,7 +78,7 @@ class BildupSection {
             button.style.display = 'block';
             button.style.visibility = 'visible';
             imageDiv.appendChild(button);
-            console.log('Button created and added:', button);
+           
         }
 
         const img = document.createElement('img');
@@ -102,13 +102,11 @@ class BildupSection {
             });
         }
 
-        // Add button event listener if button exists
+    
         const button = this.section.querySelector('.bildup-image .cta-button');
         if (button) {
             button.addEventListener('click', () => {
-                // You can customize this action as needed
-                console.log('Bildup CTA button clicked!');
-                // Example: scroll to a specific section or open a modal
+               
             });
         }
     }
