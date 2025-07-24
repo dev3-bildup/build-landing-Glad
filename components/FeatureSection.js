@@ -1,10 +1,10 @@
 class SectionComponent {
     constructor(config = {}) {
         this.config = {
-            // Section type: 'hero', 'feature', 'card', 'gradient'
+           
             type: 'feature',
 
-            // Background settings
+       
             backgroundImage: null,
             backgroundColor: 'white',
             backgroundGradient: null,
@@ -14,26 +14,26 @@ class SectionComponent {
             subtitle: "",
             description: "",
 
-            // Card settings (for card-type sections)
+        
             cards: [],
 
             // Image settings
             mainImage: null,
             imageAlt: "Section Image",
-            imagePosition: "right", // left, right, center
+            imagePosition: "right", 
 
             // Layout settings
-            layout: "text-image", // text-image, cards, hero, gradient
+            layout: "text-image", 
             textAlignment: "left", // left, center, right
 
-            // Styling
+        
             className: "custom-section",
             titleColor: "#161616",
             descriptionColor: "#696969",
 
             // Responsive settings
-            mobileLayout: "stack", // stack, grid, single
-            mobileTopImage: null, // Image to replace top card on mobile
+            mobileLayout: "stack", 
+            mobileTopImage: null, 
 
             ...config
         };
@@ -50,7 +50,6 @@ class SectionComponent {
         this.section = document.createElement('section');
         this.section.className = `${this.config.className} section-${this.config.type}`;
 
-        // Set background
         this.setBackground();
 
         const container = document.createElement('div');

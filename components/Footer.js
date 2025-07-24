@@ -38,7 +38,6 @@ class Footer {
         const container = document.createElement('div');
         container.className = 'container';
 
-        // Create wrapper div with white background
         const contentWrapper = document.createElement('div');
         contentWrapper.className = 'footer-content-wrapper';
 

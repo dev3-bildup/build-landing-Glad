@@ -89,7 +89,7 @@ class Hero {
         if (this.hero && this.hero.parentNode) {
             this.hero.parentNode.removeChild(this.hero);
         }
-        
+
         window.removeEventListener('resize', this.updateLayout.bind(this));
     }
 }

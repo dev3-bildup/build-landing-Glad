@@ -6,14 +6,12 @@ import Animations from '../components/Animations.js';
 
 class ContactPage {
     constructor() {
-
-        this.header = null;
-        this.footer = null;
+        this.components = {};
         this.init();
     }
 
     init() {
-    
+
         this.createHeader();
         this.createFooter();
         this.setupFormValidation();
@@ -41,11 +39,11 @@ class ContactPage {
     }
     createHeader() {
         try {
-            this.header = new Header();
+            this.components.header = new Header();
             const headerContainer = document.getElementById('header-container');
             if (headerContainer) {
 
-                headerContainer.appendChild(this.header.render());
+                headerContainer.appendChild(this.components.header.render());
             } else {
                 console.error('ContactPage: Header container not found - check if #header-container exists in HTML');
             }
@@ -57,14 +55,10 @@ class ContactPage {
 
     createFooter() {
         try {
-       
-            this.footer = new Footer();
-            const footerContainer = document.getElementById('footer-container');
-            if (footerContainer) {
-             footerContainer.appendChild(this.footer.render());
-            } else {
-                console.error('ContactPage: Footer container not found - check if #footer-container exists in HTML');
-            }
+
+            this.components.footer = new Footer();
+            // Render footer directly to document body like index and learner pages
+            document.body.appendChild(this.components.footer.render());
         } catch (error) {
             console.error('ContactPage: Failed to create footer:', error);
         }
@@ -187,7 +181,7 @@ class ContactPage {
         submitButton.disabled = true;
         submitButton.classList.add('opacity-75');
 
-        
+
         setTimeout(() => {
             // Reset button
             submitButton.textContent = originalText;
@@ -321,12 +315,11 @@ class ContactPage {
     }
 
     destroy() {
-        if (this.header && typeof this.header.destroy === 'function') {
-            this.header.destroy();
-        }
-        if (this.footer && typeof this.footer.destroy === 'function') {
-            this.footer.destroy();
-        }
+        Object.values(this.components).forEach(component => {
+            if (component && typeof component.destroy === 'function') {
+                component.destroy();
+            }
+        });
     }
 }
 

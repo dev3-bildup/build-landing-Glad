@@ -320,7 +320,7 @@ body {
 @media (max-width: 700px) {
     .hero {
         height: 110vh;
-        height: 110dvh;
+        /* height: 110dvh; */
         position: relative;
         display: flex;
         align-items: center;
@@ -444,7 +444,7 @@ body {
         transform: rotate(-10deg);
         z-index: 1;
         position: absolute;
-        opacity: 1;
+        opacity: 0;
     }
 
     .hero-img-mobile-2 {
@@ -454,7 +454,7 @@ body {
         transform: rotate(-10deg);
         z-index: 1;
         position: absolute;
-        opacity: 1;
+        opacity: 0;
     }
 
     .hero-img-mobile-3 {
@@ -465,7 +465,7 @@ body {
         z-index: 1;
         height: 360px;
         position: absolute;
-        opacity: 1;
+        opacity: 0;
     }
 
     .hero-img-mobile-4 {
@@ -475,7 +475,7 @@ body {
         transform: rotate(12deg);
         z-index: 1;
         position: absolute;
-        opacity: 1;
+        opacity: 0;
     }
 }
 
@@ -554,7 +554,6 @@ body {
 
 
 main {
-    overflow-x: hidden;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -709,9 +708,9 @@ section {
 }
 
 .bildup-title {
-    font-size: clamp(4.5rem, 8vw, 8rem);
+    font-size: clamp(4.5rem, 9vw, 7.5rem);
     margin-bottom: 2rem;
-    line-height: 1;
+    line-height: 0.9;
     font-weight: 500;
     text-align: start;
 }
@@ -720,7 +719,6 @@ section {
     font-size: 1.7rem;
     color: #696969;
     font-weight: 300;
-    /* line-height: 1.5; */
     text-align: justify;
 }
 
@@ -1134,11 +1132,11 @@ section[class*="section"],
 }
 
 .section-top-title {
-    font-size: clamp(2.5rem, 9vw, 9rem);
+    font-size: clamp(2.5rem, 8.5vw, 9rem);
     font-weight: 600;
     margin-bottom: 1rem;
     text-align: left;
-    line-height: 1.2;
+    line-height: 1;
 }
 
 /* Gradient text support */
@@ -1308,7 +1306,7 @@ section[class*="section"],
 
 .gradient-description {
     font-size: clamp(1.1rem, 2vw, 1.3rem);
-    line-height: 1.6;
+    line-height: 1;
     max-width: 650px;
     margin: 0 auto;
 }
@@ -1357,7 +1355,7 @@ section[class*="section"],
 }
 
 .section-description {
-    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-size: clamp(1.4rem, 1.8vw, 1.8rem);
     max-width: 650px;
     text-align: left;
     color: #696969;
@@ -1483,11 +1481,9 @@ section[class*="section"],
 
     .section-description {
         font-size: clamp(1.2rem, 3.5vw, 1.4rem);
-        /* line-height: 1.5; */
     }
 
     .section-top-content {
-        /* gap: 2rem; */
         text-align: center;
         margin-bottom: 2rem;
     }
@@ -1567,7 +1563,6 @@ section[class*="section"],
 
     .section-description {
         font-size: clamp(1.1rem, 4vw, 1.3rem);
-        /* line-height: 1.4; */
     }
 
     .cards-grid {
@@ -1866,6 +1861,7 @@ section[class*="section"],
         font-size: clamp(1.3rem, 3.5vw, 1.3rem) !important;
         margin-top: 1rem !important;
         text-align: justify !important;
+        line-height: 1;
     }
 
     .section-subtitle {
@@ -1933,17 +1929,16 @@ section[class*="section"],
 .footer {
     background: url('../public/Footer background web.png') no-repeat center center;
     background-size: cover;
-    padding: 3rem 0 1rem 0;
+    padding: 3rem 0 2rem 0;
     color: #333;
-    border-radius: 0 0 30px 30px;
     overflow: hidden;
 }
 
 .footer-content-wrapper {
     background: white;
     border-radius: 0 0 20px 20px;
-    margin: 0 0.5rem 0.5rem 0.5rem;
-    padding: 4rem 3rem 3rem 3rem;
+    margin: 0 0.15rem 0.25rem 0.15rem;
+    padding: 4rem 2rem 3rem 2rem;
 }
 
 .footer-content {
@@ -2134,8 +2129,8 @@ section[class*="section"],
 
 @media (max-width: 1024px) and (min-width: 901px) {
     .footer-content-wrapper {
-        margin: 0 0.5rem 0.5rem 0.5rem;
-        padding: 4rem 3rem 3rem 3rem;
+        margin: 0 0.15rem 0.25rem 0.15rem;
+        padding: 4rem 2rem 3rem 2rem;
         border-radius: 0 0 20px 20px;
     }
 
@@ -2209,8 +2204,8 @@ section[class*="section"],
 /* Medium Tablet responsive */
 @media (max-width: 900px) and (min-width: 769px) {
     .footer-content-wrapper {
-        margin: 0 0.5rem 0.5rem 0.5rem;
-        padding: 4rem 3rem 3rem 3rem;
+        margin: 0 0.15rem 0.25rem 0.15rem;
+        padding: 4rem 1.5rem 3rem 1.5rem;
         border-radius: 0 0 20px 20px;
     }
 
@@ -2282,8 +2277,8 @@ section[class*="section"],
 /* Tablet Portrait responsive */
 @media (max-width: 900px) and (min-width: 769px) {
     .footer-content-wrapper {
-        margin: 0 0.5rem 0.5rem 0.5rem;
-        padding: 4rem 3rem 3rem 3rem;
+        margin: 0 0.15rem 0.25rem 0.15rem;
+        padding: 4rem 1.2rem 3rem 1.2rem;
         border-radius: 0 0 20px 20px;
     }
 
@@ -2345,13 +2340,13 @@ section[class*="section"],
     .footer {
         background: url('../public/Footer background mobile.png') no-repeat center center;
         background-size: cover;
-        padding: 3rem 1.5rem 1rem 1.5rem;
+        padding: 3rem 0.5rem 1rem 0.5rem;
         border-radius: 0 0 20px 20px;
     }
 
     .footer-content-wrapper {
-        margin: 0 0.5rem 0.5rem 0.5rem;
-        padding: 4rem 3rem 3rem 3rem;
+        margin: 0 0.15rem 0.25rem 0.15rem;
+        padding: 4rem 1rem 3rem 1rem;
         border-radius: 0 0 15px 15px;
     }
 
@@ -2590,6 +2585,23 @@ section[class*="section"],
 }
 
 .hero-img-bottom-right {
+    animation: slideInFromBottomRight 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Mobile hero image animations */
+.hero-img-mobile-1.hero-img-animate {
+    animation: slideInFromCorner 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.hero-img-mobile-2.hero-img-animate {
+    animation: slideInFromTopRight 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.hero-img-mobile-3.hero-img-animate {
+    animation: slideInFromTopLeft 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.hero-img-mobile-4.hero-img-animate {
     animation: slideInFromBottomRight 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
@@ -2988,7 +3000,7 @@ body.loaded {
 
 .learner-hero-content {
     max-width: 900px;
-    margin: 0 auto 0rem auto;
+    /* margin: 0 auto 0rem auto; */
     padding: 0 2rem;
 }
 
@@ -3027,7 +3039,7 @@ body.loaded {
     font-weight: 200;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.25);
     margin-bottom: 1.5rem;
 }
 
@@ -3057,8 +3069,6 @@ body.loaded {
 }
 
 
-
-
 /* Learner Intro Section */
 .learner-intro-section {
     padding: clamp(4rem, 8vh, 6rem) 0;
@@ -3071,7 +3081,7 @@ body.loaded {
 .powering-schools-section {
     background: linear-gradient(135deg, #4A90E2 0%, #357ABD 100%);
     color: white;
-    padding: clamp(5rem, 10vh, 8rem) 0;
+    padding: clamp(3rem, 9vh, 8rem) 0;
 }
 
 .powering-schools-section .gradient-title {
@@ -3084,7 +3094,7 @@ body.loaded {
 .powering-schools-section .gradient-description {
     color: #E8F4FD;
     text-align: center;
-    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    font-size: clamp(1rem, 1vw, 1.3rem);
     max-width: 600px;
     margin: 0 auto 3rem auto;
 }
@@ -3120,14 +3130,15 @@ body.loaded {
     }
 
     .learner-hero-content {
-        margin-bottom: 2rem;
+        margin-top: 3.5rem;
+        margin-bottom: 1.5rem;
         padding: 0 1.2rem;
     }
 
     .learner-hero-title-mobile {
-        font-size: clamp(1rem, 8vw, 2rem);
+        font-size: clamp(1rem, 7vw, 2rem);
         margin-bottom: 1.5rem;
-        line-height: 1.5;
+        line-height: 1.2;
     }
 
     .learner-hero-description-mobile {
@@ -3136,21 +3147,20 @@ body.loaded {
     }
 
     .learner-cta-button-mobile {
-        padding: 0.8rem 2rem;
+        padding: 0.8rem 1.2rem;
         font-size: clamp(0.9rem, 4vw, 1rem);
-        /* margin-bottom: 1rem; */
+        margin-bottom: 0.5rem;
     }
 
     .learner-hero-subheadline-mobile {
-        font-size: clamp(0.9rem, 4vw, 1rem);
-        margin-top: 2rem;
+        font-size: clamp(0.75rem, 4vw, 1rem);
+        margin-top: 1rem;
     }
 
     .learner-hero-devices-mobile {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 2rem;
         padding: 0 1.5rem;
     }
 
@@ -3163,10 +3173,17 @@ body.loaded {
 
 }
 
+@media (max-width: 768px) {
+    .section-image img {
+
+        display: block;
+    }
+}
+
 /* Mobile adjustments for gradient sections */
 .powering-schools-section .gradient-main-image {
     max-width: 280px;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .powering-schools-section {
@@ -3175,4 +3192,55 @@ body.loaded {
 
 .late-night-section {
     padding: clamp(3rem, 8vh, 5rem) 0;
+}
+
+/* Mobile responsiveness for learner sections */
+@media (max-width: 901px) {
+
+    .powering-schools-section .gradient-main-image,
+    .on-the-go-section .section-main-image,
+    .before-class-section .section-main-image,
+    .performance-section .section-main-image,
+    .after-work-section .section-main-image,
+    .late-night-section .section-main-image {
+        display: none !important;
+    }
+
+    .powering-schools-section .section-image-container,
+    .on-the-go-section .section-image-container,
+    .before-class-section .section-image-container,
+    .performance-section .section-image-container,
+    .after-work-section .section-image-container,
+    .late-night-section .section-image-container {
+        display: none !important;
+    }
+
+    .powering-schools-section .section-image-text-container,
+    .on-the-go-section .section-image-text-container,
+    .before-class-section .section-image-text-container,
+    .performance-section .section-image-text-container,
+    .after-work-section .section-image-text-container,
+    .late-night-section .section-image-text-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    .powering-schools-section .section-text-container,
+    .on-the-go-section .section-text-container,
+    .before-class-section .section-text-container,
+    .performance-section .section-text-container,
+    .after-work-section .section-text-container,
+    .late-night-section .section-text-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+        display: block !important;
+    }
 }

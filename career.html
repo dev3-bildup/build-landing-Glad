@@ -8,15 +8,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
 </head>
 
 <body class="bg-white">
 
-    <div id="header-content" ></div>
+    <div id="header-content"></div>
 
- 
+
     <main id="career-content">
         <!-- Jobs component will be rendered here -->
     </main>
@@ -28,9 +30,9 @@
     <script type="module">
         import Jobs from './components/Jobs.js';
 
-      
+
         const careerPage = new Jobs({
-     
+
             heroTitle: "Shape the <span class='text-[#005AAC]'>Future,</span> </br> with <span class=' text-[#005AAC]'>Bildup AI</span>",
             heroSubtitle: "If you're passionate about innovation, learning, and making a real impact, we'd love to have you on board. Explore open roles or send us your application.",
             heroCTAText: "Explore Careers",
@@ -38,7 +40,7 @@
             heroImageAlt: "Bildup AI Team",
             heroImageCaption: "Work where passion meets purpose.",
 
-          
+
             missionTitle: "Driven by Purpose. United by Impact.",
             missionContent: "At Bildup AI, we're on a mission to make personalized, high quality education accessible to every learner – anytime, anywhere. Our AI-powered platform empowers students, teachers, schools and parents globally by blending cutting-edge technology with educational expertise.",
 
@@ -49,7 +51,7 @@
                     id: 1,
                     title: "Operations and Research Head",
                     description: "Are you passionate about driving operational excellence and conducting breakthrough research?",
-                    type: "Featured",
+                    type: "Operations",
                     location: "Full-time",
                     department: "Operations"
                 },
@@ -57,7 +59,7 @@
                     id: 2,
                     title: "Machine Learning Engineer",
                     description: "Are you passionate about building intelligent systems that solve real-world problems?",
-                    type: "Engineering",
+                    type: "Software Development",
                     location: "Full-time",
                     department: "Engineering"
                 },
@@ -69,23 +71,23 @@
                     location: "Full-time",
                     department: "Marketing"
                 },
-            
+
             ],
 
-           
+
             filters: ["View all", "Design", "Software Engineering", "Customer Service", "Sales", "Marketing"],
 
-           
+
             formTitle: "Don't See Your Role? We Still Want to Hear From You!",
             formSubtitle: "We're always on the lookout for great talent. If you don't see a position that fits your skills, send us your CV and tell us how you'd contribute to Bildup AI.",
 
             className: "career-page"
         });
 
-       
+
         document.getElementById('career-content').appendChild(careerPage.render());
 
-   
+
         document.title = "Careers - Bildup AI";
     </script>
 </body>

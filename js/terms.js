@@ -5,8 +5,7 @@ import AnimationManager from '../utils/AnimationManager.js';
 
 class TermsPage {
     constructor() {
-        this.header = null;
-        this.footer = null;
+        this.components = {};
         this.init();
     }
 
@@ -23,13 +22,13 @@ class TermsPage {
         this.animationManager.addLoadingAnimation();
     }
 
-   
+
     createHeader() {
         try {
-            this.header = new Header();
+            this.components.header = new Header();
             const headerContainer = document.getElementById('header-container');
             if (headerContainer) {
-                headerContainer.appendChild(this.header.render());
+                headerContainer.appendChild(this.components.header.render());
             } else {
                 console.error('Header container not found');
             }
@@ -40,13 +39,9 @@ class TermsPage {
 
     createFooter() {
         try {
-            this.footer = new Footer();
-            const footerContainer = document.getElementById('footer-container');
-            if (footerContainer) {
-                footerContainer.appendChild(this.footer.render());
-            } else {
-                console.error('Footer container not found');
-            }
+            this.components.footer = new Footer();
+            // Render footer directly to document body like index and learner pages
+            document.body.appendChild(this.components.footer.render());
         } catch (error) {
             console.error('Failed to create footer:', error);
         }
@@ -166,12 +161,11 @@ class TermsPage {
     }
 
     destroy() {
-        if (this.header && typeof this.header.destroy === 'function') {
-            this.header.destroy();
-        }
-        if (this.footer && typeof this.footer.destroy === 'function') {
-            this.footer.destroy();
-        }
+        Object.values(this.components).forEach(component => {
+            if (component && typeof component.destroy === 'function') {
+                component.destroy();
+            }
+        });
     }
 }
 

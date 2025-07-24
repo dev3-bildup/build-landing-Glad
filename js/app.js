@@ -35,7 +35,6 @@ class LandingPage {
             if (typeof motion !== 'undefined') {
                 this.animations = new Animations();
             } else {
-                console.warn('Motion One not available, using CSS animations only');
 
                 this.animations = new Animations();
             }

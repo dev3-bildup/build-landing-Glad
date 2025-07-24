@@ -63,26 +63,28 @@ class Apply {
             if (headerContainer) {
                 headerContainer.appendChild(this.header.render());
             } else {
-                console.error('Jobs: Header container not found - check if #header-content exists in HTML');
+              
             }
         } catch (error) {
-            console.error('Jobs: Failed to create header:', error);
+          
         }
     }
 
-    createFooter() {
+    createFooter() {   
         try {
             this.footer = new Footer();
             const footerContainer = document.getElementById('footer-content');
             if (footerContainer) {
                 footerContainer.appendChild(this.footer.render());
             } else {
-                console.error('Jobs: Footer container not found - check if #footer-content exists in HTML');
+              
             }
         } catch (error) {
-            console.error('Jobs: Failed to create footer:', error);
+           
         }
     }
+
+  
 
     setupAnimationManager() {
         this.animationManager = new AnimationManager();
@@ -497,7 +499,7 @@ class Apply {
         yesContainer.appendChild(yesInput);
         yesContainer.appendChild(yesLabel);
 
-        // No checkbox
+        // checkbox
         const noContainer = document.createElement('div');
         noContainer.className = 'flex items-center';
 
@@ -574,6 +576,8 @@ class Apply {
         alert('Application submitted successfully! We will get back to you soon.');
 
     }
+
+   
 
     render() {
         return this.page;

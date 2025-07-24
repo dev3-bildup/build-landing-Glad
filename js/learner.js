@@ -67,7 +67,7 @@ class LearnerPage {
             backgroundImage: 'public/studyanywherebg.png', 
             mainImage: 'public/nightIphone.png',
             imagePosition: 'left',
-            titleColor: 'linear-gradient(to right, #185A9D, #43CEA2, #43CEA2)',
+            titleColor: 'linear-gradient(97.17deg, #185A9D 10.8%, #43CEA2 43.73%)',
             descriptionColor: '#696969',
             cards: [
             {
@@ -92,7 +92,7 @@ class LearnerPage {
             description: "With Bildup, you're never in the dark. Get smart updates, track your child's progress, and support them-even if you're miles away.",
             mainImage: 'public/learner/triq-update.png',
             imagePosition: 'left',
-            titleColor: 'radial-gradient(circle, #46B83D, #111E0B, #111E0B)',
+            titleColor: 'radial-gradient(18.27% 145.21% at 23.31% 58.65%, #46B83D 0%, #111E0B 100%)',
             descriptionColor: '#696969',
             cards: [
                 {
@@ -109,7 +109,7 @@ class LearnerPage {
             mobileTopImage: 'public/learner/update-mobile.png'
         });
 
-        // Section 3: Before Class, Lesson Preview
+        // Section 3: Before Class, Lesson Prep
         this.components.beforeClassSection = new SectionComponent({
             type: 'cards',
             layout: 'cards',
@@ -117,7 +117,7 @@ class LearnerPage {
             description: "Bildup AI helps teachers teach better. From assigning lessons to tracking individual learner growth, you'll save time, stay informed, and stay connected.",
             mainImage: 'public/learner/triq-update.png',
             imagePosition: 'left',
-            titleColor: 'radial-gradient(circle at center, #EEAECA, #94BBE9, #94BBE9)',
+            titleColor: 'radial-gradient(18.27% 145.21% at 23.31% 58.65%, #EEAECA 0%, #94BBE9 100%)',
             descriptionColor: '#696969',
             cards: [
                 {
@@ -143,7 +143,7 @@ class LearnerPage {
             backgroundImage: 'public/athomebg.png', // Light background
             mainImage: 'public/learner/triq-update.png',
             imagePosition: 'left',
-            titleColor: 'linear-gradient(to right, #185A9D, #43CEA2, #43CEA2)',
+            titleColor: 'linear-gradient(97.17deg, #185A9D 10.8%, #43CEA2 43.73%)',
             descriptionColor: '#696969',
             cards: [
                 {
@@ -168,7 +168,7 @@ class LearnerPage {
             description: "End your day with smart insights. From quick summaries to guided recaps, Bildup AI provides parents with summaries of how their child's day at school went.",
             mainImage: 'public/learner/triq-update.png',
             imagePosition: 'left',
-            titleColor: 'radial-gradient(circle at center, #46B83D, #111E0B)',
+            titleColor: 'radial-gradient(18.27% 145.21% at 23.31% 58.65%, #46B83D 0%, #111E0B 100%)',
             descriptionColor: '#696969',
             cards: [
                 {
@@ -194,7 +194,7 @@ class LearnerPage {
             backgroundImage: 'public/exambg.png', // Dark background
             mainImage: 'public/learner/triq-update.png',
             imagePosition: 'left',
-            titleColor: 'radial-gradient(circle at center, #C8B9E8,  #4A90E2)',
+            titleColor: 'radial-gradient(18.27% 145.21% at 23.31% 58.65%, #EEAECA 0%, #94BBE9 100%)',
             descriptionColor: '#696969',
             cards: [
                 {
@@ -213,15 +213,7 @@ class LearnerPage {
 
         this.components.finalCTA = new FinalCTASection();
 
-        this.components.footer = new Footer({
-            quickLinks: [
-                { text: "Home", href: "index.html" },
-                { text: "Learner", href: "learner.html" },
-                { text: "Apprenticeship", href: "apprenticeship.html" },
-                { text: "Careers", href: "career.html" },
-                { text: "Contact us", href: "contact.html" }
-            ]
-        });
+        this.components.footer = new Footer();
     }
 
     renderPage() {
@@ -251,10 +243,8 @@ class LearnerPage {
     }
 
     setupEventListeners() {
-        // Add smooth scroll behavior
-        document.documentElement.style.scrollBehavior = 'smooth';
 
-        // Initialize animations after DOM is ready
+        document.documentElement.style.scrollBehavior = 'smooth';
         this.initializeAnimations();
     }
 
@@ -268,7 +258,7 @@ class LearnerPage {
                 this.animationManager.addParallaxEffect(hero);
             }
 
-            // Add hover effects to images
+            // hover effects to images
             const images = document.querySelectorAll('.section-image img, .section-main-image, .card-image');
             images.forEach(img => {
                 this.animationManager.addHoverEffect(img);

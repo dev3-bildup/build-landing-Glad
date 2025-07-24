@@ -6,7 +6,7 @@ import Animations from './Animations.js';
 class Jobs {
     constructor(config = {}) {
         this.config = {
-      
+
             heroTitle: "Shape the <span class='#005AAC'>Future</span>,</br> with <span class='#005AAC'>Bildup AI</span>",
             heroSubtitle: "If you're passionate about innovation, learning, and making a real impact, we'd love to have you on board. Explore open roles or send us your application.",
             heroCTAText: "Explore Careers",
@@ -46,10 +46,10 @@ class Jobs {
                 }
             ],
 
-           
+
             filters: ["View all", "Design", "Software Engineering", "Customer Service", "Sales", "Marketing"],
 
-       
+
             formTitle: "Don't See Your Role? We Still Want to Hear From You.",
             formSubtitle: "We're always on the lookout for exceptional talent. Even if you can't see a position that fits your skills, send us over a CV or cover letter and we'd love to hear from you.",
 
@@ -230,7 +230,7 @@ class Jobs {
         const container = document.createElement('div');
         container.className = 'max-w-7xl mx-auto';
 
-     
+
         const header = document.createElement('div');
         header.className = 'text-center mb-12';
 
@@ -238,7 +238,7 @@ class Jobs {
         title.className = 'text-3xl md:text-4xl lg:text-3xl font-semibold text-[#161616] mb-8';
         title.textContent = this.config.jobsSectionTitle;
 
-     
+
         const filtersContainer = document.createElement('div');
         filtersContainer.className = 'flex flex-wrap justify-center items-center gap-4 mb-6';
 
@@ -256,7 +256,9 @@ class Jobs {
         const jobsGrid = document.createElement('div');
         jobsGrid.className = 'gap-24 mb-12';
 
+        console.log('Jobs data:', this.config.jobsData);
         this.config.jobsData.forEach(job => {
+            console.log('Creating job card for:', job.title, 'Type:', job.type);
             const jobCard = this.createJobCard(job);
             jobsGrid.appendChild(jobCard);
         });
@@ -329,15 +331,18 @@ class Jobs {
 
         const typeTag = document.createElement('span');
         const typeColors = {
-            'operations': 'bg-[#1B3022] text-[#ffffff]',
-            'software development': 'bg-[#53FF45] text-[#161616]',
-            'marketing': 'bg-[#3B7080] text-[#ffffff]',
-            'sales': 'bg-[#3B7080] text-[#ffffff]',
+            'operations': 'bg-[#1B3022] text-white',
+            'engineering': 'bg-[#53FF45] text-black',
+            'software development': 'bg-[#53FF45] text-black',
+            'marketing': 'bg-[#3B7080] text-white',
+            'sales': 'bg-blue-600 text-white',
             'design': 'bg-pink-100 text-pink-800'
         };
-        typeTag.className = `inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide mb-4 ${typeColors[job.type.toLowerCase()] || 'bg-gray-100 text-gray-800'}`;
+        const jobTypeLower = job.type.toLowerCase();
+        const colorClass = typeColors[jobTypeLower] || 'bg-gray-100 text-gray-800';
+        typeTag.className = `inline-block px-3 py-3 rounded-full text-xs font-semibold uppercase tracking-wide mb-4 ${colorClass}`;
         typeTag.textContent = `• ${job.type}`;
-
+      
 
         const title = document.createElement('h3');
         title.className = 'text-xl font-semibold text-gray-900 mb-3 leading-tight';
@@ -382,6 +387,7 @@ class Jobs {
         applyButton.dataset.jobId = job.id;
 
         card.appendChild(typeTag);
+        console.log('Type tag appended to card. Card children count:', card.children.length);
         card.appendChild(title);
         card.appendChild(description);
         card.appendChild(meta);
@@ -750,7 +756,7 @@ class Jobs {
     }
 
     filterJobs(filter, isSearch = false) {
-        console.log('Filtering jobs by:', filter, isSearch ? '(search)' : '(filter)');
+
         const jobCards = this.page.querySelectorAll('.job-card');
         let visibleCount = 0;
 
@@ -784,7 +790,6 @@ class Jobs {
             this.resetFilterButtons();
         }
 
-        console.log(`Showing ${visibleCount} jobs`);
         this.scrollToJobs();
     }
 
@@ -800,8 +805,6 @@ class Jobs {
     }
 
     handleJobApplication(jobId) {
-        console.log('Applying for job:', jobId);
-
 
         const currentPage = this.config.className;
 
@@ -816,7 +819,6 @@ class Jobs {
     }
 
     handleFormSubmission(formData) {
-        console.log('Form submitted:', Object.fromEntries(formData));
         alert('Thank you for your application! We will get back to you soon.');
         formData.forEach((value, key) => {
             console.log(`${key}: ${value}`);

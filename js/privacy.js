@@ -5,15 +5,14 @@ import Animations from '../components/Animations.js';
 
 class PrivacyPage {
     constructor() {
-        this.header = null;
-        this.footer = null;
+        this.components = {};
         this.init();
     }
 
     init() {
         this.createHeader();
         this.createFooter();
-         this.setupAnimationManager();
+        this.setupAnimationManager();
         this.setupMotionAnimations();
         this.setupAccordion();
         this.setupEventListeners();
@@ -39,10 +38,10 @@ class PrivacyPage {
 
     createHeader() {
         try {
-            this.header = new Header();
+            this.components.header = new Header();
             const headerContainer = document.getElementById('header-container');
             if (headerContainer) {
-                headerContainer.appendChild(this.header.render());
+                headerContainer.appendChild(this.components.header.render());
             } else {
                 console.error('Header container not found');
             }
@@ -53,13 +52,9 @@ class PrivacyPage {
 
     createFooter() {
         try {
-            this.footer = new Footer();
-            const footerContainer = document.getElementById('footer-container');
-            if (footerContainer) {
-                footerContainer.appendChild(this.footer.render());
-            } else {
-                console.error('Footer container not found');
-            }
+            this.components.footer = new Footer();
+          
+            document.body.appendChild(this.components.footer.render());
         } catch (error) {
             console.error('Failed to create footer:', error);
         }
@@ -73,7 +68,7 @@ class PrivacyPage {
             const toggle = item.querySelector('.accordion-toggle');
             const content = item.querySelector('.accordion-content');
 
-         
+
             [header, toggle].forEach(element => {
                 if (element) {
                     element.addEventListener('click', (e) => {
@@ -101,15 +96,15 @@ class PrivacyPage {
         const icon = item.querySelector('.toggle-icon');
 
         if (isActive) {
-         
+
             item.classList.remove('active');
 
-           
+
             if (content) {
                 const contentHeight = content.scrollHeight;
                 content.style.maxHeight = contentHeight + 'px';
 
-             
+
                 content.offsetHeight;
 
                 content.style.maxHeight = '0px';
@@ -121,7 +116,7 @@ class PrivacyPage {
                 }, 400);
             }
 
-          
+
             if (icon) {
                 icon.style.transform = 'rotate(0deg)';
             }
@@ -290,12 +285,11 @@ class PrivacyPage {
     }
 
     destroy() {
-        if (this.header && typeof this.header.destroy === 'function') {
-            this.header.destroy();
-        }
-        if (this.footer && typeof this.footer.destroy === 'function') {
-            this.footer.destroy();
-        }
+        Object.values(this.components).forEach(component => {
+            if (component && typeof component.destroy === 'function') {
+                component.destroy();
+            }
+        });
     }
 }
 

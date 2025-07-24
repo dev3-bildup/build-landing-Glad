@@ -15,9 +15,7 @@ class Animations {
     }
 
     setupAnimations() {
-        console.log('Setting up enhanced CSS animations');
 
-        // Add a small delay to ensure DOM is fully ready
         setTimeout(() => {
             this.setupHeroImageAnimations();
             this.setupScrollAnimations();
@@ -57,7 +55,18 @@ class Animations {
             { selector: '.hero-img-4', delay: 0.45, from: 'bottom-right' }
         ];
 
-        heroImages.forEach((img, index) => {
+        // Mobile hero images
+        const mobileHeroImages = [
+            { selector: '.hero-img-mobile-1', delay: 0, from: 'bottom-left' },
+            { selector: '.hero-img-mobile-2', delay: 0.15, from: 'top-right' },
+            { selector: '.hero-img-mobile-3', delay: 0.3, from: 'top-left' },
+            { selector: '.hero-img-mobile-4', delay: 0.45, from: 'bottom-right' }
+        ];
+
+        // Process both desktop and mobile images
+        const allImages = [...heroImages, ...mobileHeroImages];
+
+        allImages.forEach((img, index) => {
             const el = document.querySelector(img.selector);
             if (el) {
                 console.log(`Applying animation to ${img.selector}`);
@@ -83,6 +92,10 @@ class Animations {
             // Adjust animation timing based on screen size
             if (width < 768) {
                 element.style.animationDuration = '1.2s';
+                // For mobile, ensure animations are more visible
+                if (selector.includes('mobile')) {
+                    element.style.animationDuration = '1.0s';
+                }
             } else if (width < 1024) {
                 element.style.animationDuration = '1.4s';
             } else {
@@ -155,7 +168,7 @@ class Animations {
         }
 
         if (heroSubtitle) {
-            console.log('Adding animation to hero subtitle');
+
             heroSubtitle.style.animationDelay = '0.3s';
             heroSubtitle.classList.add('hero-subtitle-animate');
             this.handleResponsiveText(heroSubtitle, 'subtitle');
@@ -164,7 +177,6 @@ class Animations {
         }
 
         if (ctaButton) {
-            console.log('Adding animation to CTA button');
             ctaButton.style.animationDelay = '0.6s';
             ctaButton.classList.add('cta-button-animate');
             this.handleResponsiveText(ctaButton, 'button');
@@ -199,7 +211,6 @@ class Animations {
         const navLinks = document.querySelectorAll('.nav-menu a');
         const closeButton = document.querySelector('.mobile-menu-close');
 
-        // Mobile menu animations will be handled by CSS transitions
         if (navMenu) {
             navMenu.classList.add('mobile-menu-ready');
         }

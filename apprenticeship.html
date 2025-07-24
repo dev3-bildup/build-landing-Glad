@@ -8,31 +8,33 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
 </head>
 
 <body class="bg-white">
-  
-    <div id="header-content" ></div>
+
+    <div id="header-content"></div>
 
     <!-- Main Content -->
-    <main id="apprenticeship-content" >
+    <main id="apprenticeship-content">
         <!-- Apprenticeship component will be rendered here -->
-      
+
 
     </main>
 
-  
+
     <div id="footer-content"></div>
 
     <!-- Scripts -->
     <script type="module">
         import Jobs from './components/Jobs.js';
 
-        
+
         const apprenticeshipPage = new Jobs({
-         
+
             heroTitle: "Start your <span class='text-[#0071E3]'>Career,</span> </br> Shape the <span class='text-[#0071E3]'>Future</span>",
             heroSubtitle: "Bildup AI full-time apprenticeships give you real responsibility, expert mentorship, and a direct path into the world of AI and education",
             heroCTAText: "View Apprenticeship Openings",
@@ -40,18 +42,18 @@
             heroImageAlt: "Bildup AI Apprentices",
             heroImageCaption: "Work where passion meets purpose.",
 
-       
+
             missionTitle: "Real Learning. Real Impact.",
             missionContent: "We don't believe in passive training. At Bildup AI, Apprentices are embedded in real teams, working on real products that impact everyday users. Whether you're writing code, designing experiences, or crafting curriculum - you'll learn by doing, guided by mentors who care.",
 
-          
+
             jobsSectionTitle: "Open Apprenticeship Roles at Bildup AI",
             jobsData: [
                 {
                     id: 1,
                     title: "Operations and Research Head Apprentice",
                     description: "Are you passionate about driving operational excellence and conducting breakthrough research?",
-                    type: "Featured",
+                    type: "Operations",
                     location: "Full-time",
                     department: "Operations"
                 },
@@ -59,8 +61,8 @@
                     id: 2,
                     title: "Machine Learning Engineer Apprentice",
                     description: "Are you passionate about building intelligent systems that solve real-world problems?",
-                    type: "Engineering",
-                      location: "Full-time",
+                    type: "Software Development",
+                    location: "Full-time",
                     department: "Engineering"
                 },
                 {
@@ -73,10 +75,10 @@
                 },
             ],
 
-         
+
             filters: ["View all", "Design", "Software Engineering", "Customer Service", "Sales", "Marketing"],
 
-           
+
             formTitle: "Don't See Your Role? We Still Want to Hear From You.",
             formSubtitle: "We're always on the lookout for great talent. If you don't see a position that fits your skills, send us your CV and tell us how you'd contribute to Bildup AI.",
 
@@ -85,7 +87,7 @@
 
         document.getElementById('apprenticeship-content').appendChild(apprenticeshipPage.render());
 
-      
+
         document.title = "Apprenticeship - Bildup AI";
     </script>
 </body>
