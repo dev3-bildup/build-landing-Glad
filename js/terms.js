@@ -40,7 +40,6 @@ class TermsPage {
     createFooter() {
         try {
             this.components.footer = new Footer();
-            // Render footer directly to document body like index and learner pages
             document.body.appendChild(this.components.footer.render());
         } catch (error) {
             console.error('Failed to create footer:', error);

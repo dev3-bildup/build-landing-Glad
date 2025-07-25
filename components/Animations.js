@@ -4,7 +4,7 @@ class Animations {
     }
 
     init() {
-        // Wait for DOM to be ready
+     
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => {
                 this.setupAnimations();
@@ -30,7 +30,7 @@ class Animations {
         const intro = document.querySelector('.intro-content');
         if (!intro) return;
 
-        // Add CSS animation class
+      
         intro.classList.add('fade-in-up');
 
         // Intersection Observer to trigger animation
@@ -69,13 +69,12 @@ class Animations {
         allImages.forEach((img, index) => {
             const el = document.querySelector(img.selector);
             if (el) {
-                console.log(`Applying animation to ${img.selector}`);
-                // Add CSS animation class with delay
+             
                 el.style.animationDelay = `${img.delay}s`;
                 el.classList.add('hero-img-animate', `hero-img-${img.from}`);
                 console.log(`Animation classes added to ${img.selector}:`, el.classList.toString());
 
-                // Add responsive handling
+           
                 this.handleResponsiveImage(el, img.selector);
             } else {
                 console.warn(`Element not found: ${img.selector}`);
@@ -84,15 +83,14 @@ class Animations {
     }
 
     handleResponsiveImage(element, selector) {
-        // Handle window resize for responsive images
+
         const handleResize = () => {
             const width = window.innerWidth;
             const height = window.innerHeight;
 
-            // Adjust animation timing based on screen size
             if (width < 768) {
                 element.style.animationDuration = '1.2s';
-                // For mobile, ensure animations are more visible
+              
                 if (selector.includes('mobile')) {
                     element.style.animationDuration = '1.0s';
                 }
@@ -103,10 +101,10 @@ class Animations {
             }
         };
 
-        // Initial call
+
         handleResize();
 
-        // Add resize listener
+  
         window.addEventListener('resize', handleResize);
     }
 
@@ -115,7 +113,7 @@ class Animations {
         const sections = document.querySelectorAll('section');
 
         sections.forEach((section, index) => {
-            // Skip hero section - check for hero-related classes or if it's the first section
+ 
             const isHeroSection = section.classList.contains('hero') ||
                 section.querySelector('.hero-title') ||
                 section.querySelector('.hero-content') ||
@@ -136,7 +134,7 @@ class Animations {
             }
         });
 
-        // Animate images with a subtle scale effect
+   
         const images = document.querySelectorAll('.section-image img, .bildup-image img');
 
         images.forEach((img) => {
@@ -154,13 +152,13 @@ class Animations {
     }
 
     setupHeroAnimations() {
-        console.log('Setting up hero animations');
+      
         const heroTitle = document.querySelector('.hero-title');
         const heroSubtitle = document.querySelector('.hero-subtitle');
         const ctaButton = document.querySelector('.cta-button');
 
         if (heroTitle) {
-            console.log('Adding animation to hero title');
+        
             heroTitle.classList.add('hero-title-animate');
             this.handleResponsiveText(heroTitle, 'title');
         } else {
@@ -189,7 +187,6 @@ class Animations {
         const handleResize = () => {
             const width = window.innerWidth;
 
-            // Adjust animation timing based on screen size
             if (width < 768) {
                 element.style.animationDuration = type === 'title' ? '1.2s' : '1s';
             } else if (width < 1024) {
@@ -227,7 +224,7 @@ class Animations {
         }
     }
 
-    // Animate mobile menu backdrop
+
     animateBackdrop(show) {
         const backdrop = document.querySelector('.mobile-menu-backdrop');
         if (backdrop) {

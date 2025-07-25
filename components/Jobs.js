@@ -158,9 +158,12 @@ class Jobs {
         subtitle.textContent = this.config.heroSubtitle;
 
 
-        const ctaButton = document.createElement('button');
+        const ctaButton = document.createElement('a');
+        ctaButton.href = '#jobs-section';
         ctaButton.className = 'inline-flex items-center px-6 py-3 md:px-8 md:py-4 bg-[#0071E3] hover:bg-blue-600 text-white font-semibold rounded-full transition-colors duration-200 text-sm md:text-base';
         ctaButton.textContent = this.config.heroCTAText;
+        ctaButton.style.textDecoration = 'none';
+        ctaButton.style.display = 'inline-block';
 
 
         const imageContainer = document.createElement('div');
@@ -226,6 +229,7 @@ class Jobs {
     createJobsSection() {
         const section = document.createElement('section');
         section.className = 'jobs-section py-16 md:py-20 lg:py-24 px-4 md:px-6 lg:px-8 bg-white';
+        section.id = 'jobs-section';
 
         const container = document.createElement('div');
         container.className = 'max-w-7xl mx-auto';
@@ -342,7 +346,7 @@ class Jobs {
         const colorClass = typeColors[jobTypeLower] || 'bg-gray-100 text-gray-800';
         typeTag.className = `inline-block px-3 py-3 rounded-full text-xs font-semibold uppercase tracking-wide mb-4 ${colorClass}`;
         typeTag.textContent = `• ${job.type}`;
-      
+
 
         const title = document.createElement('h3');
         title.className = 'text-xl font-semibold text-gray-900 mb-3 leading-tight';
@@ -747,12 +751,7 @@ class Jobs {
         }
 
 
-        const ctaButton = this.page.querySelector('button');
-        if (ctaButton) {
-            ctaButton.addEventListener('click', () => {
-                this.scrollToJobs();
-            });
-        }
+        // CTA button is now an anchor tag, so no need for click event listener
     }
 
     filterJobs(filter, isSearch = false) {
@@ -819,10 +818,49 @@ class Jobs {
     }
 
     handleFormSubmission(formData) {
-        alert('Thank you for your application! We will get back to you soon.');
-        formData.forEach((value, key) => {
-            console.log(`${key}: ${value}`);
-        });
+        const submitButton = this.page.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        submitButton.textContent = 'Submitting...';
+        submitButton.disabled = true;
+
+        // Convert FormData to object
+        const data = Object.fromEntries(formData);
+
+        // TODO: Replace with your actual job application endpoint
+        const endpoint = 'YOUR_JOB_APPLICATION_ENDPOINT_HERE';
+
+        fetch(endpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(result => {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+
+                alert('Thank you for your application! We will get back to you soon.');
+
+                // Reset form
+                const form = this.page.querySelector('form');
+                if (form) {
+                    form.reset();
+                }
+            })
+            .catch(error => {
+                console.error('Error submitting job application:', error);
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+
+                alert('Error submitting application. Please try again.');
+            });
     }
 
     scrollToJobs() {

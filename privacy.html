@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Bildup AI</title>
+   <title>Bildup AI - Your personal tutor</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/styles.css">
-
+      <link rel="icon" href="public/bildupicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
 </head>
 
 <body class="font-inter bg-white text-gray-800">
-    <!-- Header (Tailwind CSS) -->
+
     <header id="header-container" class="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-all duration-300">
 
     </header>
@@ -45,14 +45,14 @@
     <!-- Main Content -->
     <main class="min-h-screen pt-12">
         <div class="max-w-7xl mx-auto  pb-20 sm:px-4">
-            <!-- Hero Section -->
+        
             <div class="text-left m-3 pt-20 sm:py-10 sm:pt-16">
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-bildup-dark leading-tight">
                     Bildup AI Customer Privacy Policy
                 </h1>
             </div>
 
-            <!-- About Section -->
+           
             <div class="pb-5 m-6">
                 <h2 class="text-xl sm:text-2xl font-semibold text-bildup-dark mb-5">
                     About Bildup
@@ -75,7 +75,7 @@
                 </div>
             </div>
 
-            <!-- Privacy Content -->
+         
             <section class="pb-20">
                 <div class="space-y-0">
                     <!-- Accordion Item 1 -->
@@ -481,46 +481,6 @@
     <script src="https://cdn.jsdelivr.net/npm/motion@10.16.2/dist/motion.min.js"></script>
 
     <script type="module" src="js/privacy.js"></script>
-    <script>
-        // Accordion functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const accordionItems = document.querySelectorAll('.accordion-item');
-            accordionItems.forEach(item => {
-                const toggle = item.querySelector('.accordion-toggle');
-                const content = item.querySelector('.accordion-content');
-                const icon = item.querySelector('.toggle-icon');
-
-                if (toggle) {
-                    toggle.addEventListener('click', function (e) {
-                        e.stopPropagation(); // Prevent event bubbling
-                        const isActive = item.classList.contains('active');
-
-                        // Close all other accordion items
-                        accordionItems.forEach(otherItem => {
-                            if (otherItem !== item) {
-                                const otherContent = otherItem.querySelector('.accordion-content');
-                                const otherIcon = otherItem.querySelector('.toggle-icon');
-                                otherItem.classList.remove('active');
-                                otherContent.style.maxHeight = '0px';
-                                otherIcon.textContent = '+';
-                            }
-                        });
-
-                        // Toggle current item
-                        if (isActive) {
-                            item.classList.remove('active');
-                            content.style.maxHeight = '0px';
-                            icon.textContent = '+';
-                        } else {
-                            item.classList.add('active');
-                            content.style.maxHeight = content.scrollHeight + 'px';
-                            icon.textContent = '×';
-                        }
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>

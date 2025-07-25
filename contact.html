@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Bildup AI</title>
+    <title>Bildup AI - Your personal tutor</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/styles.css">
-
+    <link rel="icon" href="public/bildupicon.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,6 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
         rel="stylesheet">
+    <link rel="icon" href="public/bildupicon.png" type="image/png">
 
     <script>
         tailwind.config = {
@@ -97,7 +98,7 @@
                                 <label for="Name" class="block text-sm font-medium text-bildup-dark">
                                     Name
                                 </label>
-                                <input type="text" id="firstName" name="Name" required
+                                <input type="text" id="firstName" name="name" required
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg  focus:border-transparent transition-colors duration-200"
                                     placeholder=" Enter name" style="background-image: url(/public/human.png); background-repeat: no-repeat; background-position: 0.75rem center;
     background-size: 1.5rem; padding-left:42px;">
@@ -113,17 +114,17 @@
                             </div>
                         </div>
 
-                        <div class="grid sm:grid-cols-2 gap-6">
+                        <div class=" sm:grid-cols-2 ">
                             <div class="form-group">
                                 <label for="email" class="block text-sm font-medium text-bildup-dark ">
                                     Phone Number
                                 </label>
-                                <input type="phone number" id="phone number" name="phone number" required
+                                <input type="phone number" id="phone number" name="phone" required
                                     class="w-full px-4 py-3 border border-gray-300 rounded-lg items-center focus:border-transparent transition-colors duration-200"
                                     placeholder="Enter phone number" style="background-image: url(/public/light-call.png); background-repeat: no-repeat; background-position: 0.75rem center;
     background-size: 1.5rem; padding-left:42px;">
                             </div>
-
+                            <!-- 
                             <div class="form-group">
                                 <label for="subject" class="block text-sm font-medium text-bildup-dark">
                                     Message Type
@@ -139,7 +140,7 @@
                                     <option value="feedback">Feedback</option>
                                     <option value="other">Other</option>
                                 </select>
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="form-group">
@@ -181,17 +182,7 @@
 
 
     <script>
-        // Form submission fallback (in case ContactPage doesn't handle it)
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.querySelector('.contact-form');
-            if (form) {
-                form.addEventListener('submit', function (e) {
-                    e.preventDefault();
-                    alert('Thank you! Your message has been sent successfully.');
-                    form.reset();
-                });
-            }
-        });
+  
     </script>
 </body>
 

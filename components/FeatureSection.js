@@ -1,10 +1,10 @@
 class SectionComponent {
     constructor(config = {}) {
         this.config = {
-           
+
             type: 'feature',
 
-       
+
             backgroundImage: null,
             backgroundColor: 'white',
             backgroundGradient: null,
@@ -14,26 +14,26 @@ class SectionComponent {
             subtitle: "",
             description: "",
 
-        
+
             cards: [],
 
             // Image settings
             mainImage: null,
             imageAlt: "Section Image",
-            imagePosition: "right", 
+            imagePosition: "right",
 
             // Layout settings
-            layout: "text-image", 
+            layout: "text-image",
             textAlignment: "left", // left, center, right
 
-        
+
             className: "custom-section",
             titleColor: "#161616",
             descriptionColor: "#696969",
 
             // Responsive settings
-            mobileLayout: "stack", 
-            mobileTopImage: null, 
+            mobileLayout: "stack",
+            mobileTopImage: null,
 
             ...config
         };
@@ -192,7 +192,6 @@ class SectionComponent {
                 description.className = 'section-description';
                 description.textContent = this.config.description;
 
-                // Handle gradient colors for description
                 if (this.config.descriptionColor && this.config.descriptionColor.includes('gradient')) {
                     description.style.backgroundImage = this.config.descriptionColor;
                     description.style.backgroundClip = 'text';

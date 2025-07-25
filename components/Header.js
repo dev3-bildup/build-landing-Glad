@@ -24,14 +24,13 @@ class Header {
                     </div>
                         <ul class="nav-menu">
                         <div class="mobile-menu-header">
-                   
-                        <button class="mobile-menu-close">X</button>
+                                       
                         </div>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="learner.html">Learner</a></li>
-                        <li><a href="career.html">Careers</a></li>
-                        <li><a href="apprenticeship.html">Apprenticeship</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="index.html" style="text-decoration: none;">Home</a></li>
+                        <li><a href="learner.html" style="text-decoration: none;">Students</a></li>
+                        <li><a href="career.html" style="text-decoration: none;">Careers</a></li>
+                        <li><a href="apprenticeship.html" style="text-decoration: none;">Apprenticeship</a></li>
+                        <li><a href="contact.html" style="text-decoration: none;">Contact Us</a></li>
                         </ul>
                     <div class="hamburger">
                         <span></span>
@@ -39,7 +38,7 @@ class Header {
                         <span></span>
                     </div>
 
-                     <button class="header-cta-button">Get Started</button>
+                 <a href="https://www.bildup.ai/" class="header-cta-button" style="text-decoration: none;">Get Started</a>
                 </div>
             </nav>
             <div class="mobile-menu-backdrop"></div>
@@ -55,18 +54,11 @@ class Header {
         const backdrop = this.header.querySelector('.mobile-menu-backdrop');
         const closeButton = this.header.querySelector('.mobile-menu-close');
 
-        // console.log('Header: Mobile menu elements found:', {
-        //     hamburger: !!hamburger,
-        //     navMenu: !!navMenu,
-        //     backdrop: !!backdrop,
-        //     closeButton: !!closeButton
-        // }); // Debug log
 
         if (hamburger && navMenu) {
             hamburger.addEventListener('click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                console.log('Header: Hamburger clicked');
 
                 hamburger.classList.toggle('active');
                 navMenu.classList.toggle('active');

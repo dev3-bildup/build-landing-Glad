@@ -20,7 +20,7 @@ class FinalCTASection {
                     From voice interaction to visual explanations, everything Bildup AI does is designed to make studying easier, smarter and just for you. No pressure. No judgement. Just progress–one topic at a time.
                 </p>
                 <div class="final-cta-sub">Ready to learn your way?</div>
-                <button class="final-cta-btn">Get started with Bildup AI</button>
+                <button class="final-cta-btn"><a href="https://www.bildup.ai/" class="final-cta-btn-link" style="text-decoration: none;">Get started with Bildup AI</a></button>
             </div>
         `;
     }

@@ -63,28 +63,28 @@ class Apply {
             if (headerContainer) {
                 headerContainer.appendChild(this.header.render());
             } else {
-              
+
             }
         } catch (error) {
-          
+
         }
     }
 
-    createFooter() {   
+    createFooter() {
         try {
             this.footer = new Footer();
             const footerContainer = document.getElementById('footer-content');
             if (footerContainer) {
                 footerContainer.appendChild(this.footer.render());
             } else {
-              
+
             }
         } catch (error) {
-           
+
         }
     }
 
-  
+
 
     setupAnimationManager() {
         this.animationManager = new AnimationManager();
@@ -319,7 +319,7 @@ class Apply {
             labelElement.appendChild(asterisk);
         }
 
-        // icon to use based on field type/name
+        // icon to be used based on field type/name
         let iconSrc = '';
         let placeholder = '';
 
@@ -561,7 +561,7 @@ class Apply {
     }
 
     addEventListeners() {
-        // Form submission
+      
         const form = this.page.querySelector('form');
         if (form) {
             form.addEventListener('submit', (e) => {
@@ -572,12 +572,52 @@ class Apply {
     }
 
     handleFormSubmission(formData) {
+        const submitButton = this.page.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        submitButton.textContent = 'Submitting...';
+        submitButton.disabled = true;
 
-        alert('Application submitted successfully! We will get back to you soon.');
+    
+        const data = Object.fromEntries(formData);
 
+        // consume endpoint for application submission
+        const endpoint = 'placeholder-endpoint';
+
+        fetch(endpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(result => {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+
+                alert('Application submitted successfully! We will get back to you soon.');
+
+                // Reset form
+                const form = this.page.querySelector('form');
+                if (form) {
+                    form.reset();
+                }
+            })
+            .catch(error => {
+                console.error('Error submitting application:', error);
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+
+                alert('Error submitting application. Please try again.');
+            });
     }
 
-   
+
 
     render() {
         return this.page;

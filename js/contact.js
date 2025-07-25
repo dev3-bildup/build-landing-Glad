@@ -57,7 +57,7 @@ class ContactPage {
         try {
 
             this.components.footer = new Footer();
-            // Render footer directly to document body like index and learner pages
+
             document.body.appendChild(this.components.footer.render());
         } catch (error) {
             console.error('ContactPage: Failed to create footer:', error);
@@ -84,16 +84,15 @@ class ContactPage {
         let isValid = true;
         let errorMessage = '';
 
-        // Remove existing error styling
+
         this.clearFieldError(field);
 
-        // Required field validation
         if (field.hasAttribute('required') && !value) {
             isValid = false;
             errorMessage = `${this.getFieldLabel(field)} is required`;
         }
 
-        // Email validation
+
         if (fieldName === 'email' && value) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(value)) {
@@ -102,7 +101,7 @@ class ContactPage {
             }
         }
 
-        // Phone validation
+
         if (fieldName === 'phone' && value) {
             const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
             if (!phoneRegex.test(value)) {
@@ -111,7 +110,7 @@ class ContactPage {
             }
         }
 
-        // Show error if validation failed
+
         if (!isValid) {
             this.showFieldError(field, errorMessage);
         } else if (value) {
@@ -129,7 +128,6 @@ class ContactPage {
     showFieldError(field, message) {
         field.classList.add('border-red-500', 'focus:border-red-500', 'focus:ring-red-500');
 
-        // Create or update error message
         let errorElement = field.parentNode.querySelector('.error-message');
         if (!errorElement) {
             errorElement = document.createElement('p');
@@ -156,7 +154,6 @@ class ContactPage {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
 
-        // Validate all fields
         const inputs = form.querySelectorAll('input, textarea, select');
         let isValid = true;
 
@@ -174,36 +171,59 @@ class ContactPage {
     }
 
     submitForm(data) {
-        // Show loading state
         const submitButton = document.querySelector('button[type="submit"]');
         const originalText = submitButton.textContent;
         submitButton.textContent = 'Sending...';
         submitButton.disabled = true;
         submitButton.classList.add('opacity-75');
 
+      
+        const endpoint = 'https://api-dev.bildup.ai/contact-us'; 
 
-        setTimeout(() => {
-            // Reset button
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
-            submitButton.classList.remove('opacity-75');
+        fetch(endpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(result => {
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+                submitButton.classList.remove('opacity-75');
 
-            // Show success message
-            this.showNotification('Thank you! Your message has been sent successfully.', 'success');
+                this.showNotification('Thank you! Your message has been sent successfully.', 'success');
 
-            // Reset form
-            document.querySelector('.contact-form').reset();
+                document.querySelector('.contact-form').reset();
 
-            // Clear all field styling
-            const inputs = document.querySelectorAll('input, textarea, select');
-            inputs.forEach(input => {
-                input.classList.remove('border-green-500');
+                const inputs = document.querySelectorAll('input, textarea, select');
+                inputs.forEach(input => {
+                
+                    input.classList.remove('border-green-500', 'border-red-500', 'focus:border-red-500', 'focus:ring-red-500');
+                
+                    input.classList.add('border-gray-300', 'focus:border-transparent', 'focus:ring-bildup-blue');
+                });
+
+           
+                const errorMessages = document.querySelectorAll('.error-message');
+                errorMessages.forEach(msg => msg.remove());
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+                submitButton.classList.remove('opacity-75');
+                this.showNotification('Failed to send message. Please try again.', 'error');
             });
-        }, 2000);
     }
 
     setupEventListeners() {
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -217,7 +237,6 @@ class ContactPage {
             });
         });
 
-        // Add scroll effect to header
         window.addEventListener('scroll', () => {
             const header = document.querySelector('.header');
             if (header) {
@@ -253,7 +272,7 @@ class ContactPage {
             observer.observe(section);
         });
 
-        // Newsletter form handling
+
         const newsletterForm = document.querySelector('.newsletter-form');
         if (newsletterForm) {
             newsletterForm.addEventListener('submit', (e) => {
@@ -277,11 +296,9 @@ class ContactPage {
     }
 
     showNotification(message, type = 'info') {
-        // Remove existing notifications
         const existingNotifications = document.querySelectorAll('.notification');
         existingNotifications.forEach(notification => notification.remove());
 
-        // Create notification element
         const notification = document.createElement('div');
         notification.className = `notification notification-${type}`;
         notification.textContent = message;
@@ -293,7 +310,7 @@ class ContactPage {
             ${type === 'success' ? 'bg-green-500' : type === 'error' ? 'bg-red-500' : 'bg-bildup-blue'}
         `;
 
-        // Add to page
+
         document.body.appendChild(notification);
 
         // Animate in

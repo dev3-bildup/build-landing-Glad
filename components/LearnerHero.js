@@ -54,7 +54,7 @@ class LearnerHero {
             <div class="learner-hero-content">
                 <h1 class="learner-hero-title">${formattedTitle}</h1>
                 <p class="learner-hero-description">Whether you're guiding a classroom, supporting a child at home, or leading a school, Bildup AI gives you the tools to make learning more connected, insightful, and effective—every step of the way.</p>
-                <button class="learner-cta-button">Get started with Bildup AI</button>
+                <a href="https://www.bildup.ai/" class="learner-cta-button" style="text-decoration: none; display: inline-block;">Get started with Bildup AI</a>
             
             </div>
             <div class="learner-hero-devices">
@@ -75,7 +75,7 @@ class LearnerHero {
             <div class="learner-hero-content learner-hero-content-mobile">
                 <h1 class="learner-hero-title learner-hero-title-mobile">${mobileFormattedTitle}</h1>
                 <p class="learner-hero-description learner-hero-description-mobile">Whether you're guiding a classroom, supporting a child at home, or leading a school, Bildup AI gives you the tools to make learning more connected, insightful, and effective—every step of the way.</p>
-                <button class="learner-cta-button learner-cta-button-mobile">Get started with Bildup AI</button>
+                <a href="https://www.bildup.ai/" class="learner-cta-button learner-cta-button-mobile" style="text-decoration: none; display: inline-block;">Get started with Bildup AI</a>
              </div>
             <div class="learner-hero-devices-mobile">
                 <img src="public/Hero-section.png" class="learner-hero-device " alt="Mobile learning analytics" loading="lazy" />

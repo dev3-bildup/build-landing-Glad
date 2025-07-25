@@ -69,16 +69,17 @@ class BildupSection {
         const imageDiv = document.createElement('div');
         imageDiv.className = 'bildup-image';
 
-        // Add button if showButton is true
+
         if (this.config.showButton) {
-            console.log('Creating button for bildup section');
-            const button = document.createElement('button');
-            button.className = this.config.buttonClass;
-            button.textContent = this.config.buttonText;
-            button.style.display = 'block';
-            button.style.visibility = 'visible';
-            imageDiv.appendChild(button);
-           
+            const link = document.createElement('a');
+            link.href = 'learner.html';
+            link.className = this.config.buttonClass;
+            link.textContent = this.config.buttonText;
+            link.style.display = 'block';
+            link.style.visibility = 'visible';
+            link.style.textDecoration = 'none';
+            imageDiv.appendChild(link);
+
         }
 
         const img = document.createElement('img');
@@ -99,14 +100,6 @@ class BildupSection {
 
             image.addEventListener('mouseleave', () => {
                 image.style.transform = 'scale(1)';
-            });
-        }
-
-    
-        const button = this.section.querySelector('.bildup-image .cta-button');
-        if (button) {
-            button.addEventListener('click', () => {
-               
             });
         }
     }

@@ -44,7 +44,7 @@ class Hero {
         this.hero.innerHTML = `
             <div class="hero-content">
                 <h1 class="hero-title">${formattedTitle}</h1>
-                <button class="cta-button">${this.config.ctaText}</button>
+                <a href="${this.config.ctaLink || 'https://www.bildup.ai/'}" class="cta-button" style="text-decoration: none;">${this.config.ctaText}</a>
                 <p class="hero-subheadline">${this.config.subtitle}</p>
             </div>
             <img src="public/hero-up-left.png" class="hero-img hero-img-1" alt="MacBook dashboard" loading="lazy" />
@@ -61,7 +61,7 @@ class Hero {
         this.hero.innerHTML = `
             <div class="hero-content hero-content-mobile">
                 <h1 class="hero-title hero-title-mobile">${mobileFormattedTitle}</h1>
-                <button class="cta-button cta-button-mobile">${this.config.ctaText}</button>
+                <a href="${this.config.ctaLink || 'https://www.bildup.ai/'}" class="cta-button cta-button-mobile" style="text-decoration: none;">${this.config.ctaText}</a>
                 <p class="hero-subheadline hero-subheadline-mobile">Seamlessly Connected Learning Ecosystem</p>
             </div>
             <img src="public/up-mobile-left.png" class="hero-img hero-img-mobile-1" alt="Mobile dashboard top left" loading="lazy" />

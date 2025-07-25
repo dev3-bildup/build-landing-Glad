@@ -53,7 +53,7 @@ class PrivacyPage {
     createFooter() {
         try {
             this.components.footer = new Footer();
-          
+
             document.body.appendChild(this.components.footer.render());
         } catch (error) {
             console.error('Failed to create footer:', error);
@@ -68,16 +68,18 @@ class PrivacyPage {
             const toggle = item.querySelector('.accordion-toggle');
             const content = item.querySelector('.accordion-content');
 
-
+            // Add click event listeners to both header and toggle button
             [header, toggle].forEach(element => {
                 if (element) {
                     element.addEventListener('click', (e) => {
                         e.preventDefault();
+                        e.stopPropagation();
                         this.toggleAccordion(item);
                     });
                 }
             });
 
+            // Add keyboard support for toggle button
             if (toggle) {
                 toggle.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
@@ -96,35 +98,27 @@ class PrivacyPage {
         const icon = item.querySelector('.toggle-icon');
 
         if (isActive) {
-
+            // Close accordion
             item.classList.remove('active');
-
 
             if (content) {
                 const contentHeight = content.scrollHeight;
                 content.style.maxHeight = contentHeight + 'px';
 
-
+                // Force reflow
                 content.offsetHeight;
 
                 content.style.maxHeight = '0px';
-
-                setTimeout(() => {
-                    if (!item.classList.contains('active')) {
-                        content.style.maxHeight = '';
-                    }
-                }, 400);
             }
 
-
             if (icon) {
+                icon.textContent = '+';
                 icon.style.transform = 'rotate(0deg)';
             }
         } else {
             // Open accordion
             item.classList.add('active');
 
-            // Animate content opening
             if (content) {
                 const contentHeight = content.scrollHeight;
                 content.style.maxHeight = '0px';
@@ -133,21 +127,15 @@ class PrivacyPage {
                 content.offsetHeight;
 
                 content.style.maxHeight = contentHeight + 'px';
-
-                setTimeout(() => {
-                    if (item.classList.contains('active')) {
-                        content.style.maxHeight = '';
-                    }
-                }, 400);
             }
 
-            // Animate icon
             if (icon) {
-                icon.style.transform = 'rotate(45deg)';
+                icon.textContent = '×';
+                icon.style.transform = 'rotate(0deg)';
             }
         }
 
-        // Update ARIA attributes for accessibility
+        // Update aria-expanded attribute
         if (toggle) {
             const isExpanded = item.classList.contains('active');
             toggle.setAttribute('aria-expanded', isExpanded);
@@ -232,13 +220,7 @@ class PrivacyPage {
             });
         }
 
-        // Auto-expand first accordion item on page load
-        setTimeout(() => {
-            const firstAccordionItem = document.querySelector('.accordion-item');
-            if (firstAccordionItem) {
-                this.toggleAccordion(firstAccordionItem);
-            }
-        }, 500);
+
     }
 
     validateEmail(email) {
@@ -247,7 +229,7 @@ class PrivacyPage {
     }
 
     showNotification(message, type = 'info') {
-        // Remove existing notifications
+      
         const existingNotifications = document.querySelectorAll('.notification');
         existingNotifications.forEach(notification => notification.remove());
 
@@ -256,14 +238,14 @@ class PrivacyPage {
         notification.className = `notification notification-${type}`;
         notification.textContent = message;
 
-        // Style the notification with Tailwind classes
+     
         notification.className = `
             fixed top-5 right-5 px-5 py-3 rounded-lg text-white font-medium z-50 
             transform translate-x-full transition-transform duration-300 max-w-xs 
             ${type === 'success' ? 'bg-green-500' : type === 'error' ? 'bg-red-500' : 'bg-bildup-blue'}
         `;
 
-        // Add to page
+
         document.body.appendChild(notification);
 
         // Animate in
@@ -272,7 +254,7 @@ class PrivacyPage {
             notification.classList.add('translate-x-0');
         }, 100);
 
-        // Remove after 3 seconds
+
         setTimeout(() => {
             notification.classList.remove('translate-x-0');
             notification.classList.add('translate-x-full');
@@ -293,7 +275,6 @@ class PrivacyPage {
     }
 }
 
-// Initialize the page when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     window.privacyPage = new PrivacyPage();
 });

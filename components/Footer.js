@@ -5,6 +5,7 @@ class Footer {
             companyName: "Bildup AI",
             quickLinks: [
                 { text: "Home", href: "index.html" },
+                { text: "Students", href: "learner.html" },
                 { text: "Apprenticeship", href: "apprenticeship.html" },
                 { text: "Careers", href: "careers.html" },
                 { text: "Contact us", href: "contact.html" }
@@ -36,7 +37,6 @@ class Footer {
         this.footer.className = this.config.className;
 
         const container = document.createElement('div');
-        container.className = 'container';
 
         const contentWrapper = document.createElement('div');
         contentWrapper.className = 'footer-content-wrapper';
@@ -208,14 +208,7 @@ class Footer {
         section.className = 'footer-copyright';
 
         const copyrightText = document.createElement('p');
-        const copyrightIcon = document.createElement('img');
-        copyrightIcon.src = 'public/copyright.png';
-        copyrightIcon.alt = 'Copyright';
-        copyrightIcon.className = 'copyright-icon';
-        copyrightIcon.loading = 'lazy';
-
-        copyrightText.appendChild(copyrightIcon);
-        copyrightText.appendChild(document.createTextNode(' 2025, All rights reserved.'));
+        copyrightText.innerHTML = '&copy; 2025, All rights reserved.';
         copyrightText.className = 'copyright-text';
 
         section.appendChild(copyrightText);
@@ -241,8 +234,33 @@ class Footer {
             newsletterForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 const email = newsletterForm.querySelector('.newsletter-input').value;
-                console.log('Footer: Newsletter subscription:', email);
 
+                // submitnewsletter subscription
+                const wsUrl = 'wss://your-newsletter';
+                const ws = new WebSocket(wsUrl);
+
+                ws.onopen = () => {
+                    ws.send(JSON.stringify({ email: email }));
+                };
+
+                ws.onmessage = (event) => {
+
+                    console.log('Newsletter subscription successful:', event.data);
+                    newsletterForm.querySelector('.newsletter-input').value = '';
+
+                    if (typeof this.showNotification === 'function') {
+                        this.showNotification('Thank you for subscribing!', 'success');
+                    }
+                    ws.close();
+                };
+
+                ws.onerror = (error) => {
+                    console.error('Error subscribing to newsletter:', error);
+                    if (typeof this.showNotification === 'function') {
+                        this.showNotification('There was an error subscribing. Please try again.', 'error');
+                    }
+                    ws.close();
+                };
             });
         }
 

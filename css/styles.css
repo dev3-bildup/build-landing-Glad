@@ -195,6 +195,7 @@ body {
     z-index: 1;
     pointer-events: none;
     transform: scale(0.5);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-img-1 {
@@ -203,6 +204,7 @@ body {
     transform: rotate(-15deg);
     width: clamp(250px, 30vw, 450px);
     max-width: 450px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -212,6 +214,7 @@ body {
     transform: rotate(-12deg);
     width: clamp(250px, 30vw, 450px);
     max-width: 400px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -221,6 +224,7 @@ body {
     transform: rotate(-8deg);
     width: clamp(260px, 32vw, 500px);
     max-width: 500px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Bottom-right: Phone */
@@ -230,6 +234,7 @@ body {
     transform: rotate(10deg);
     width: clamp(150px, 28vw, 400px);
     max-width: 400px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Large Desktop (1400px and up) */
@@ -310,7 +315,7 @@ body {
         font-size: clamp(0.6rem, 1.5vw, 0.7rem);
     }
 
-    /* Container adjustments */
+
     .container {
         padding: 0 clamp(1rem, 2.5vw, 1.5rem);
     }
@@ -320,7 +325,6 @@ body {
 @media (max-width: 700px) {
     .hero {
         height: 110vh;
-        /* height: 110dvh; */
         position: relative;
         display: flex;
         align-items: center;
@@ -417,16 +421,28 @@ body {
     }
 
     .cta-button-mobile {
-        margin-bottom: 0;
-        padding: 1rem 2rem;
-        font-size: clamp(0.4rem, 1vw, 0.6rem);
+        padding: clamp(0.6rem, 1.5vw, 0.8rem) clamp(0.9rem, 1.6vw, 1rem);
+        font-size: clamp(0.6rem, 1.5vw, 0.8rem);
         border-radius: 50px;
         font-weight: 300;
+        background: #0071E3;
+        color: white;
+        border: none;
+        box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2);
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        margin-bottom: 3rem;
+    }
+
+    .cta-button-mobile:hover {
+        background: #005AAC;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0, 113, 227, 0.3);
     }
 
     .hero-subheadline-mobile {
         position: absolute;
-        bottom: 3.5vh;
+        bottom: 5.8vh;
         left: 50%;
         transform: translateX(-50%);
         margin: 0;
@@ -445,6 +461,7 @@ body {
         z-index: 1;
         position: absolute;
         opacity: 0;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .hero-img-mobile-2 {
@@ -455,17 +472,19 @@ body {
         z-index: 1;
         position: absolute;
         opacity: 0;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .hero-img-mobile-3 {
-        bottom: 4.5vh;
-        left: -5vw;
-        width: clamp(20px, 27vh, 340px);
-        transform: rotate(-7deg);
+        bottom: 12.5vh;
+        left: -9vw;
+        width: clamp(20px, 23vh, 340px);
+        transform: rotate(-8deg);
         z-index: 1;
         height: 360px;
         position: absolute;
         opacity: 0;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .hero-img-mobile-4 {
@@ -476,6 +495,7 @@ body {
         z-index: 1;
         position: absolute;
         opacity: 0;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 }
 
@@ -579,8 +599,8 @@ section {
     max-width: 700px;
     font-weight: 600;
     margin: 0 auto;
-    color: linear-gradient(91.27deg, #0071E3 0.56%, #3AA0F3 58.01%, #0071E3 88.4%);
-    background: linear-gradient(91.27deg, #0071E3 0.56%, #3AA0F3 58.01%, #0071E3 88.4%);
+    color: linear-gradient(245.34deg, #0071E3 17.85%, #3AA0F3 64.46%, #0071E3 83.74%);
+    background: linear-gradient(245.34deg, #0071E3 17.85%, #3AA0F3 64.46%, #0071E3 83.74%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -594,7 +614,7 @@ section {
     text-align: center;
     margin-bottom: 1.5rem;
     line-height: 1.4;
-    background: linear-gradient(90deg, #0071E3, #3AA0F3, #0071E3);
+    background: linear-gradient(245.34deg, #0071E3 17.85%, #3AA0F3 64.46%, #0071E3 83.74%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1929,7 +1949,7 @@ section[class*="section"],
 .footer {
     background: url('../public/Footer background web.png') no-repeat center center;
     background-size: cover;
-    padding: 3rem 0 2rem 0;
+    padding: 3rem 1.5rem 2rem 1.5rem;
     color: #333;
     overflow: hidden;
 }
@@ -1938,7 +1958,7 @@ section[class*="section"],
     background: white;
     border-radius: 0 0 20px 20px;
     margin: 0 0.15rem 0.25rem 0.15rem;
-    padding: 4rem 2rem 3rem 2rem;
+    padding: 4rem 2.5rem 3rem 2.5rem;
 }
 
 .footer-content {
@@ -1946,6 +1966,7 @@ section[class*="section"],
     grid-template-columns: 0.5fr 1fr 0.7fr 1fr;
     gap: 1rem;
     align-items: start;
+    padding: 0 0.15rem 0 0.15rem;
     margin-bottom: 2rem;
 }
 
@@ -2109,6 +2130,7 @@ section[class*="section"],
     text-align: center;
     align-items: center;
     justify-content: center;
+    justify-items: center;
     display: flex;
     margin-top: 1.5rem;
     margin-bottom: 3rem;
@@ -2420,12 +2442,13 @@ section[class*="section"],
     }
 
     .hero-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     .cta-button {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
+        padding: 0.8rem 1.2rem;
+        font-size: 0.8rem;
+        margin-top: -1.2rem;
     }
 
     .bildup-title {
@@ -3033,14 +3056,16 @@ body.loaded {
     background: #0071E3;
     color: white;
     border: none;
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 50px;
-    font-size: clamp(1rem, 2vw, 1.1rem);
-    font-weight: 200;
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-weight: 300;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(74, 144, 226, 0.25);
     margin-bottom: 1.5rem;
+    display: inline-block;
+    text-decoration: none;
 }
 
 .learner-cta-button:hover {
