@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* border: 1px solid red; */
 }
 
 html {
@@ -209,11 +208,13 @@ body {
 
 
 .hero-img-2 {
-    top: clamp(20px, 5vh, 60px);
+    top: clamp(20px, 4vh, 80px);
     right: 0;
-    transform: rotate(-12deg);
+    transform: rotate(-16deg);
     width: clamp(250px, 30vw, 450px);
     max-width: 400px;
+    height: auto;
+    max-height: 430px;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -3220,7 +3221,7 @@ body.loaded {
 }
 
 /* Mobile responsiveness for learner sections */
-@media (max-width: 901px) {
+/* @media (max-width: 901px) {
 
     .powering-schools-section .gradient-main-image,
     .on-the-go-section .section-main-image,
@@ -3268,4 +3269,4 @@ body.loaded {
         box-sizing: border-box !important;
         display: block !important;
     }
-}
+} */
