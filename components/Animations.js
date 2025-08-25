@@ -153,9 +153,18 @@ class Animations {
 
     setupHeroAnimations() {
       
+        const heroLogo = document.querySelector('.hero-logo');
         const heroTitle = document.querySelector('.hero-title');
         const heroSubtitle = document.querySelector('.hero-subtitle');
         const ctaButton = document.querySelector('.cta-button');
+
+        if (heroLogo) {
+            heroLogo.style.animationDelay = '0s';
+            heroLogo.classList.add('hero-logo-animate');
+            this.handleResponsiveLogo(heroLogo);
+        } else {
+            console.warn('Hero logo not found');
+        }
 
         if (heroTitle) {
         
@@ -193,6 +202,26 @@ class Animations {
                 element.style.animationDuration = type === 'title' ? '1.4s' : '1.2s';
             } else {
                 element.style.animationDuration = type === 'title' ? '1.8s' : '1.5s';
+            }
+        };
+
+        // Initial call
+        handleResize();
+
+        // Add resize listener
+        window.addEventListener('resize', handleResize);
+    }
+
+    handleResponsiveLogo(element) {
+        const handleResize = () => {
+            const width = window.innerWidth;
+
+            if (width < 768) {
+                element.style.animationDuration = '1s';
+            } else if (width < 1024) {
+                element.style.animationDuration = '1.2s';
+            } else {
+                element.style.animationDuration = '1.5s';
             }
         };
 

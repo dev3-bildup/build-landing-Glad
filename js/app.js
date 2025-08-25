@@ -46,6 +46,7 @@ class LandingPage {
         this.components.header = new Header();
 
         this.components.hero = new Hero({
+            logo: "public/hero-icon.png",
             title: "Your AI Tutor, Built Just for You",
             subtitle: "Seamlessly Connected Learning Ecosystem.",
             ctaText: "Get started with Bildup AI",
@@ -54,14 +55,13 @@ class LandingPage {
         this.components.intro = new IntroSection({
             paragraphs: [
                 "Master concepts effortlessly with a personal AI tutor that understands how you learn.",
-                "Aligned with your school curriculum, it adapts continuously to meet your evolving needs—making studying smarter, faster and more effective.",
-                "Say goodbye to frustration and hello to personalized learning designed just for you.",
-                "Let's make learning easier, together."
+                // "Aligned with your school curriculum, it adapts continuously to meet your evolving needs—making studying smarter, faster and more effective.",
+                // "Say goodbye to frustration and hello to personalized learning designed just for you.",
+                // "Let's make learning easier, together."
             ]
         });
 
         this.components.bildup = new BildupSection({
-            subtitle: "Bildup AI - Built for Smarter Learning",
             title: "Powering the Future of Education",
             description: "Bildup AI is your all-in-one intelligent learning companion. Built to help students learn better, teachers teach smarter, and schools grow stronger. With adaptive learning, voice-enabled learning lessons, instant feedback, and personalized progress tracking, Bildup AI makes education more connected, and more accessible than ever before.",
             image: "public/herosection.png",
@@ -75,7 +75,7 @@ class LandingPage {
             type: 'cards',
             layout: 'cards',
             title: "Study Anywhere",
-            description: "Whether you're on the bus, walking home, or in between classes, Bildup AI turns everyday moments into a learning opportunity. No notebooks. No classrooms. Just your voice, your device and personalized learning-wherever you are.",
+            description: "Whether you’re on the bus, walking home, or in between classes, Bildup AI turns everyday moments into a learning opportunity. No notebooks. No classrooms. Just your voice, your device and personalized learning-wherever you are.",
             backgroundImage: "public/studyanywherebg.png",
             mainImage: "public/bildipphone.png",
             imagePosition: "left",
@@ -102,14 +102,14 @@ class LandingPage {
                 }
             ],
             className: "study-anywhere-section",
-            mobileTopImage: "public/quizmewhile.png" 
+            mobileTopImage: "public/quizmewhile.png"
         });
 
         this.components.atHomeSection = new SectionComponent({
             type: 'cards',
             layout: 'cards',
-            title: "At Home After School",
-            description: "Home is your new classroom, Bildup AI makes home study stress-free. Get help with assignments, review lessons out loud, or prep for class-all from the comfort of your home.",
+            title: "Achieve more with AI Mastery",
+            description: "With the AI Mastery Program, your learning space is wherever you are. Build a solid foundation in AI with lessons that adapt to your pace, simplify complex ideas, and makes AI accessible to everyone..",
             backgroundImage: "public/athomebg.png",
             mainImage: "public/bildtrig.png",
             imagePosition: "left",
@@ -139,8 +139,8 @@ class LandingPage {
         this.components.examPrepSection = new SectionComponent({
             type: 'cards',
             layout: 'cards',
-            title: "Exams, Stay Ahead",
-            description: "Ace your exams with confidence. Bildup AI helps you revise smarter, practice with personalized quizzes, track weak spots, and stay consistent—so you're always ready when exams come around.",
+            title: "Accelerate your Business Growth with AI",
+            description: "Build smarter, more resilient businesses with AI. Our program shows you where AI fits in your operations, helps you innovate, and prepares your company to scale in an AI-first world.",
             backgroundImage: "public/exambg.png",
             mainImage: "public/ExamsCard.png",
             imagePosition: "left",
@@ -173,117 +173,117 @@ class LandingPage {
 
 
 
-        this.components.nightStudySection = new SectionComponent({
-            type: 'cards',
-            layout: 'cards',
-            title: "Midnight, Study Buddy",
-            description: "When everyone else is asleep, Bildup AI stays awake-ready to explain, quiz, or help you catch up at any hour. Bildup AI is ready-no noise, no pressure, just focused learning.",
-            backgroundImage: "public/studyanywherebg.png",
-            mainImage: "public/bildipphone.png",
-            imagePosition: "left",
-            titleColor: "linear-gradient(97.17deg, #185A9D 10.8%, #43CEA2 43.73%)",
-            descriptionColor: "#696969",
-            cards: [
-                {
-                    image: "public/anywherevid.png"
-                },
-                {
+        // this.components.nightStudySection = new SectionComponent({
+        //     type: 'cards',
+        //     layout: 'cards',
+        //     title: "Midnight, Study Buddy",
+        //     description: "When everyone else is asleep, Bildup AI stays awake-ready to explain, quiz, or help you catch up at any hour. Bildup AI is ready-no noise, no pressure, just focused learning.",
+        //     backgroundImage: "public/studyanywherebg.png",
+        //     mainImage: "public/bildipphone.png",
+        //     imagePosition: "left",
+        //     titleColor: "linear-gradient(97.17deg, #185A9D 10.8%, #43CEA2 43.73%)",
+        //     descriptionColor: "#696969",
+        //     cards: [
+        //         {
+        //             image: "public/anywherevid.png"
+        //         },
+        //         {
 
-                    image: "public/nightnotes.png"
-                },
-                {
+        //             image: "public/nightnotes.png"
+        //         },
+        //         {
 
-                    image: "public/nightatoms.png"
-                }
-            ],
-            className: "exam-prep-section",
-            mobileTopImage: "public/nightvidsmall.png"
-        });
-
-
-        this.components.earlyMorningSection = new SectionComponent({
-            type: 'cards',
-            layout: 'cards',
-            title: "Early Morning, Fresh Start",
-            description: "Begin your day with clarity. From quick recaps to guided warm-ups, Bildup AI gets your brain moving before the world even wakes up.",
-            backgroundImage: "public/athomebg.png",
-            mainImage: "public/bildtrig.png",
-            imagePosition: "left",
-            titleColor: "radial-gradient(18.27% 145.21% at 23.31% 58.65%, #46B83D 0%, #111E0B 100%) ",
-            descriptionColor: "#696969",
-            cards: [
-                {
-
-                    image: "public/bildrecap.png"
-                },
-                {
-                    image: "public/bildhelp.png"
-                },
-                {
-                    image: "public/bildaVisual.png"
-                }
-            ],
-            className: "at-home-section",
-            mobileTopImage: "public/recapsmall.png"
-        });
+        //             image: "public/nightatoms.png"
+        //         }
+        //     ],
+        //     className: "exam-prep-section",
+        //     mobileTopImage: "public/nightvidsmall.png"
+        // });
 
 
-        this.components.inSchoolSection = new SectionComponent({
-            type: 'cards',
-            layout: 'cards',
-            title: "In School, Before or After Lectures",
-            description: "Ace your exams with confidence. Bildup AI helps you revise smarter, practice with personalized quizzes, track weak spots, and stay consistent-so you're always ready when exams come around.",
-            backgroundImage: "public/exambg.png",
-            mainImage: "public/ExamsCard.png",
-            imagePosition: "left",
-            titleColor: "radial-gradient(18.27% 145.21% at 23.31% 58.65%, #EEAECA 0%, #94BBE9 100%) ",
-            descriptionColor: "#696969",
-            cards: [
-                {
+        // this.components.earlyMorningSection = new SectionComponent({
+        //     type: 'cards',
+        //     layout: 'cards',
+        //     title: "Early Morning, Fresh Start",
+        //     description: "Begin your day with clarity. From quick recaps to guided warm-ups, Bildup AI gets your brain moving before the world even wakes up.",
+        //     backgroundImage: "public/athomebg.png",
+        //     mainImage: "public/bildtrig.png",
+        //     imagePosition: "left",
+        //     titleColor: "radial-gradient(18.27% 145.21% at 23.31% 58.65%, #46B83D 0%, #111E0B 100%) ",
+        //     descriptionColor: "#696969",
+        //     cards: [
+        //         {
 
-                    image: "public/examvid.png"
-                },
-                {
-
-                    image: "public/exammath.png"
-                },
-                {
-
-                    image: "public/examrevision.png"
-                }
-            ],
-            className: "at-home-section",
-            mobileTopImage: "public/mathsmall.png"
-        });
+        //             image: "public/bildrecap.png"
+        //         },
+        //         {
+        //             image: "public/bildhelp.png"
+        //         },
+        //         {
+        //             image: "public/bildaVisual.png"
+        //         }
+        //     ],
+        //     className: "at-home-section",
+        //     mobileTopImage: "public/recapsmall.png"
+        // });
 
 
-        this.components.personalTutorSection = new SectionComponent({
-            type: 'cards',
-            layout: 'cards',
-            title: "Your Personal Tutor",
-            description: "Bildup AI doesn't just answer-it understands. It adapts to how you learn, tracks your progress, and gives the right help at the right time. Like a real tutor but always available.",
-            backgroundImage: "public/studyanywherebg.png",
-            mainImage: "public/iphone.png",
-            imagePosition: "left",
-            titleColor: "linear-gradient(97.17deg, #185A9D 10.8%, #43CEA2 43.73%)",
-            descriptionColor: "#696969",
-            cards: [
-                {
+        // this.components.inSchoolSection = new SectionComponent({
+        //     type: 'cards',
+        //     layout: 'cards',
+        //     title: "In School, Before or After Lectures",
+        //     description: "Ace your exams with confidence. Bildup AI helps you revise smarter, practice with personalized quizzes, track weak spots, and stay consistent-so you're always ready when exams come around.",
+        //     backgroundImage: "public/exambg.png",
+        //     mainImage: "public/ExamsCard.png",
+        //     imagePosition: "left",
+        //     titleColor: "radial-gradient(18.27% 145.21% at 23.31% 58.65%, #EEAECA 0%, #94BBE9 100%) ",
+        //     descriptionColor: "#696969",
+        //     cards: [
+        //         {
 
-                    image: "public/tutorvid.png"
-                },
-                {
+        //             image: "public/examvid.png"
+        //         },
+        //         {
 
-                    image: "public/tutorprep.png"
-                },
-                {
+        //             image: "public/exammath.png"
+        //         },
+        //         {
 
-                    image: "public/tutorsolve.png"
-                }
-            ],
-            className: "study-anywhere-section",
-            mobileTopImage: "public/tutorvidsmall.png"
-        });
+        //             image: "public/examrevision.png"
+        //         }
+        //     ],
+        //     className: "at-home-section",
+        //     mobileTopImage: "public/mathsmall.png"
+        // });
+
+
+        // this.components.personalTutorSection = new SectionComponent({
+        //     type: 'cards',
+        //     layout: 'cards',
+        //     title: "Your Personal Tutor",
+        //     description: "Bildup AI doesn't just answer-it understands. It adapts to how you learn, tracks your progress, and gives the right help at the right time. Like a real tutor but always available.",
+        //     backgroundImage: "public/studyanywherebg.png",
+        //     mainImage: "public/iphone.png",
+        //     imagePosition: "left",
+        //     titleColor: "linear-gradient(97.17deg, #185A9D 10.8%, #43CEA2 43.73%)",
+        //     descriptionColor: "#696969",
+        //     cards: [
+        //         {
+
+        //             image: "public/tutorvid.png"
+        //         },
+        //         {
+
+        //             image: "public/tutorprep.png"
+        //         },
+        //         {
+
+        //             image: "public/tutorsolve.png"
+        //         }
+        //     ],
+        //     className: "study-anywhere-section",
+        //     mobileTopImage: "public/tutorvidsmall.png"
+        // });
 
 
         this.components.footer = new Footer();
@@ -296,36 +296,41 @@ class LandingPage {
             return;
         }
 
-
+        console.log('Starting to render page...');
         main.innerHTML = '';
 
         // Render Header
+        console.log('Rendering header...');
         document.body.insertBefore(this.components.header.render(), document.body.firstChild);
 
         // Render Hero Section
+        console.log('Rendering hero...');
         main.appendChild(this.components.hero.render());
 
         // Render Intro Section
+        console.log('Rendering intro...');
         main.appendChild(this.components.intro.render());
 
         // Render Bildup Section
+        console.log('Rendering bildup...');
         main.appendChild(this.components.bildup.render());
 
-        // Render Custom Sections
-
+        // Render Custom Sections 
+        console.log('Rendering study anywhere section...');
         main.appendChild(this.components.studyAnywhereSection.render());
+
+        console.log('Rendering at home section...');
         main.appendChild(this.components.atHomeSection.render());
+
+        console.log('Rendering exam prep section...');
         main.appendChild(this.components.examPrepSection.render());
-        main.appendChild(this.components.nightStudySection.render());
-        main.appendChild(this.components.earlyMorningSection.render());
-        main.appendChild(this.components.inSchoolSection.render());
-        main.appendChild(this.components.personalTutorSection.render());
 
         //Render Final Bildup Section with button
+        console.log('Rendering final bildup section...');
         const finalBildupSection = new BildupSection({
-            subtitle: "Bildup AI for Schools, Teachers and Parents",
+            subtitle: "Bildup AI is designed for every path and everyone",
             title: "Empowering Every Role",
-            description: "Bildup AI unlocks a smarter way to teach, learn, and support education. Whether you’re a school managing performance, a teacher guiding students, or a parent tracking progress-Bildup AI gives you the tools to connect, collaborate, and thrive.",
+            description: "From mastering AI fundamentals, to building workforce skills, to driving business growth-Bildup AI adapts to your goals and empowers you to grow, compete, lead and thrive in an AI-driven world.",
             image: "public/herosection.png",
             imageAlt: "Bildup AI Platform",
             showButton: true,
@@ -335,10 +340,17 @@ class LandingPage {
         main.appendChild(finalBildupSection.render());
 
         // Render Final CTA Section before Footer
+        console.log('Rendering final CTA section...');
         main.appendChild(new FinalCTASection().render());
 
         // Render Footer
-        document.body.appendChild(this.components.footer.render());
+        console.log('Rendering footer...');
+        const footerElement = this.components.footer.render();
+        console.log('Footer element:', footerElement);
+        document.body.appendChild(footerElement);
+
+        console.log('Page rendering complete. Main children count:', main.children.length);
+        console.log('Body children count:', document.body.children.length);
 
         // Setup animations for all sections
         this.setupAnimations();
@@ -363,10 +375,10 @@ class LandingPage {
         // Ensure CSS animations are initialized
         setTimeout(() => {
             if (this.animations) {
-          
+
                 this.animations.setupAnimations();
             } else {
-             
+
                 this.animations = new Animations();
             }
         }, 100);

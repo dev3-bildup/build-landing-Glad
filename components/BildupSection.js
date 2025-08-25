@@ -1,9 +1,9 @@
 class BildupSection {
     constructor(config = {}) {
         this.config = {
-            subtitle: "Bildup AI - Built for Smarter Learning",
+            // subtitle: "Bildup AI - Built for Smarter Learning",
             title: "Powering the Future of Education",
-            description: "Bildup AI is your all-in-one intelligent learning companion. Built to help students learn better, teachers teach smarter, and schools grow stronger. With adaptive learning, voice-enabled learning lessons, instant feedback, and personalized progress tracking, Bildup AI makes education more connected, and more accessible than ever before.",
+            description: "Bildup AI is your all-in-one intelligent learning companion. Built for beginners to professionals and industry leaders. Bildup AI adapts to your learning journey, making learning more impactful. Our AI powered platform delivers personalized lessons, real-time feedback and practical insights designed to prepare you for an AI-driven future.",
             image: "public/herosection.png",
             imageAlt: "Bildup AI Platform",
             className: "bildup-section",

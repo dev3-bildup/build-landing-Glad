@@ -39,10 +39,11 @@ class Hero {
 
     createDesktopLayout() {
         const formattedTitle = `
-            <span class="hero-black">Your</span> <span class="hero-black">AI</span> <span class="hero-blue">Tutor,</span><br>Built Just for <span class="hero-blue">You</span>
+            <span class="hero-black">Empowered to <br/> make a <br/> <span class="hero-blue">Difference</span>
         `;
         this.hero.innerHTML = `
             <div class="hero-content">
+                <img src="${this.config.logo}" class="hero-logo" alt="Bildup AI Logo" loading="lazy" />
                 <h1 class="hero-title">${formattedTitle}</h1>
                 <a href="${this.config.ctaLink || 'https://www.bildup.ai/'}" class="cta-button" style="text-decoration: none;">${this.config.ctaText}</a>
                 <p class="hero-subheadline">${this.config.subtitle}</p>
@@ -56,10 +57,11 @@ class Hero {
 
     createMobileLayout() {
         const mobileFormattedTitle = `
-            <span class="hero-black">Your</span> <span class="hero-black">AI</span> <span class="hero-blue">Tutor,</span><br>Built Just for <span class="hero-blue">You</span>
+            <span class="hero-black">Empowered to make <br>a <span class="hero-blue">Difference</span>
         `;
         this.hero.innerHTML = `
             <div class="hero-content hero-content-mobile">
+                <img src="${this.config.logo}" class="hero-logo hero-logo-mobile" alt="Bildup AI Logo" loading="lazy" />
                 <h1 class="hero-title hero-title-mobile">${mobileFormattedTitle}</h1>
                 <a href="${this.config.ctaLink || 'https://www.bildup.ai/'}" class="cta-button cta-button-mobile" style="text-decoration: none;">${this.config.ctaText}</a>
                 <p class="hero-subheadline hero-subheadline-mobile">Seamlessly Connected Learning Ecosystem</p>

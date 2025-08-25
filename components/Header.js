@@ -22,14 +22,13 @@ class Header {
                     <div class="logo">
                         <img src="public/logo.png" alt="Bildup AI Logo" loading="lazy">
                     </div>
-                        <ul class="nav-menu">
+                
+                    <ul class="nav-menu">
                         <div class="mobile-menu-header">
                                        
                         </div>
                         <li><a href="index.html" style="text-decoration: none;">Home</a></li>
-                        <li><a href="learner.html" style="text-decoration: none;">Students</a></li>
-                        <li><a href="career.html" style="text-decoration: none;">Careers</a></li>
-                        <li><a href="apprenticeship.html" style="text-decoration: none;">Apprenticeship</a></li>
+                        <li><a href="learner.html" style="text-decoration: none;">Get started with Bildup AI</a></li>
                         <li><a href="contact.html" style="text-decoration: none;">Contact Us</a></li>
                         </ul>
                     <div class="hamburger">
@@ -37,7 +36,7 @@ class Header {
                         <span></span>
                         <span></span>
                     </div>
-
+                    
                  <a href="https://www.bildup.ai/" class="header-cta-button" style="text-decoration: none;">Get Started</a>
                 </div>
             </nav>
