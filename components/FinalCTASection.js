@@ -14,13 +14,13 @@ class FinalCTASection {
         this.section.innerHTML = `
             <div class="final-cta-container">
                 <img src="public/bildupicon.png" alt="Bildup AI Logo" class="final-cta-logo" loading="lazy" />
-                <h2 class="final-cta-title">The ultimate<br>study companion</h2>
-                <p class="final-cta-desc">
-                    Bildup isn't just powerful-it's personal. It learns how <em>you learn</em>, what you struggle with, and where you shine-without ever needing you to be perfect.<br>
-                    From voice interaction to visual explanations, everything Bildup AI does is designed to make studying easier, smarter and just for you. No pressure. No judgement. Just progress–one topic at a time.
-                </p>
+                <h2 class="final-cta-title">The ultimate <br/> intelligent study <br> companion.</h2>
+                <div class="final-cta-desc">
+                  <p>  Bildup isn't just powerful-it's personal. It learns how <em>you learn</em>, what you struggle with, and where you shine-without ever needing you to be perfect.</p>
+                    <p> From voice interaction to visual explanations, everything Bildup AI does is designed to make studying easier, smarter and just for you. No pressure. No judgement. Just progress–one topic at a time.</p>
+                </div>
                 <div class="final-cta-sub">Ready to learn your way?</div>
-                <button class="final-cta-btn"><a href="https://www.bildup.ai/" class="final-cta-btn-link" style="text-decoration: none;">Get started with Bildup AI</a></button>
+                <button class="final-cta-btn"><a href="https://edu.bildup.ai/" class="final-cta-btn-link" style="text-decoration: none;">Get started with Bildup AI</a></button>
             </div>
         `;
     }

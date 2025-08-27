@@ -272,13 +272,22 @@ class SectionComponent {
         const card = document.createElement('div');
         card.className = 'feature-card';
 
-        // Just display the image directly
+        // Create image container
         if (cardConfig.image) {
             const img = document.createElement('img');
             img.src = cardConfig.image;
             img.alt = cardConfig.imageAlt || 'Feature Image';
-            img.className = 'card-image';
+            img.className = 'card-image desktop-image';
             card.appendChild(img);
+        }
+
+        // Add mobile image if provided
+        if (cardConfig.mobileImage) {
+            const mobileImg = document.createElement('img');
+            mobileImg.src = cardConfig.mobileImage;
+            mobileImg.alt = cardConfig.imageAlt || 'Feature Image';
+            mobileImg.className = 'card-image mobile-image';
+            card.appendChild(mobileImg);
         }
 
         return card;

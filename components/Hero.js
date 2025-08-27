@@ -45,7 +45,7 @@ class Hero {
             <div class="hero-content">
                 <img src="${this.config.logo}" class="hero-logo" alt="Bildup AI Logo" loading="lazy" />
                 <h1 class="hero-title">${formattedTitle}</h1>
-                <a href="${this.config.ctaLink || 'https://www.bildup.ai/'}" class="cta-button" style="text-decoration: none;">${this.config.ctaText}</a>
+                <a href="${'https://edu.bildup.ai/'}" class="cta-button" style="text-decoration: none;">${this.config.ctaText}</a>
                 <p class="hero-subheadline">${this.config.subtitle}</p>
             </div>
             <img src="public/hero-up-left.png" class="hero-img hero-img-1" alt="MacBook dashboard" loading="lazy" />
@@ -63,7 +63,7 @@ class Hero {
             <div class="hero-content hero-content-mobile">
                 <img src="${this.config.logo}" class="hero-logo hero-logo-mobile" alt="Bildup AI Logo" loading="lazy" />
                 <h1 class="hero-title hero-title-mobile">${mobileFormattedTitle}</h1>
-                <a href="${this.config.ctaLink || 'https://www.bildup.ai/'}" class="cta-button cta-button-mobile" style="text-decoration: none;">${this.config.ctaText}</a>
+                <a href="${'https://edu.bildup.ai/'}" class="cta-button cta-button-mobile" style="text-decoration: none;">${this.config.ctaText}</a>
                 <p class="hero-subheadline hero-subheadline-mobile">Seamlessly Connected Learning Ecosystem</p>
             </div>
             <img src="public/up-mobile-left.png" class="hero-img hero-img-mobile-1" alt="Mobile dashboard top left" loading="lazy" />

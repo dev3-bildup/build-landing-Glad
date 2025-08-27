@@ -2,10 +2,7 @@ class IntroSection {
     constructor(config = {}) {
         this.config = {
             paragraphs: [
-                "Master concepts effortlessly with a personal AI tutor that understands how you learn.",
-                // "Aligned with your school curriculum, it adapts continuously to meet your evolving needs—making studying smarter, faster and more effective.",
-                // "Say goodbye to frustration and hello to personalized learning designed just for you.",
-                // "Let's make learning easier, together."
+                "Master concepts effortlessly with a personal AI facilitator that understands how you learn.",
             ],
             className: "intro-section",
             ...config

@@ -1,14 +1,13 @@
 class BildupSection {
     constructor(config = {}) {
         this.config = {
-            // subtitle: "Bildup AI - Built for Smarter Learning",
             title: "Powering the Future of Education",
             description: "Bildup AI is your all-in-one intelligent learning companion. Built for beginners to professionals and industry leaders. Bildup AI adapts to your learning journey, making learning more impactful. Our AI powered platform delivers personalized lessons, real-time feedback and practical insights designed to prepare you for an AI-driven future.",
             image: "public/herosection.png",
             imageAlt: "Bildup AI Platform",
             className: "bildup-section",
             showButton: false,
-            buttonText: "Get Started",
+            buttonText: "Get Started with Bildup AI",
             buttonClass: "cta-button",
             ...config
         };
@@ -54,13 +53,24 @@ class BildupSection {
         title.className = 'bildup-title';
         title.textContent = this.config.title;
 
-        const description = document.createElement('p');
-        description.className = 'bildup-description';
-        description.textContent = this.config.description;
-
         textDiv.appendChild(subtitle);
         textDiv.appendChild(title);
-        textDiv.appendChild(description);
+
+        if (Array.isArray(this.config.description)) {
+            // If description is an array, create multiple paragraphs
+            this.config.description.forEach((paragraph, index) => {
+                const description = document.createElement('p');
+                description.className = 'bildup-description';
+                description.textContent = paragraph;
+                textDiv.appendChild(description);
+            });
+        } else {
+            // If description is a string, create single paragraph
+            const description = document.createElement('p');
+            description.className = 'bildup-description';
+            description.textContent = this.config.description;
+            textDiv.appendChild(description);
+        }
 
         return textDiv;
     }
@@ -72,7 +82,7 @@ class BildupSection {
 
         if (this.config.showButton) {
             const link = document.createElement('a');
-            link.href = 'learner.html';
+            link.href = 'https://edu.bildup.ai';
             link.className = this.config.buttonClass;
             link.textContent = this.config.buttonText;
             link.style.display = 'block';

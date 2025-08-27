@@ -1,0 +1,39 @@
+{
+    "name": "Bildup AI - Your Personal AI Learning Companion",
+    "short_name": "Bildup AI",
+    "description": "Bildup AI is a fully AI-powered learning ecosystem where every aspect of the learning journey is intelligently designed for impact, optimized for real-world outcomes, and personalized to each learner's goals.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#0071E3",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "en",
+    "categories": [
+        "education",
+        "productivity",
+        "utilities"
+    ],
+    "icons": [
+        {
+            "src": "public/bildupicon.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "public/bildupicon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "public/bildupicon.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide"
+        }
+    ]
+}

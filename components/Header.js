@@ -28,16 +28,19 @@ class Header {
                                        
                         </div>
                         <li><a href="index.html" style="text-decoration: none;">Home</a></li>
-                        <li><a href="learner.html" style="text-decoration: none;">Get started with Bildup AI</a></li>
+                        <li><a href="https://edu.bildup.ai/" style="text-decoration: none;">Get started with Bildup AI</a></li>
                         <li><a href="contact.html" style="text-decoration: none;">Contact Us</a></li>
                         </ul>
-                    <div class="hamburger">
+                        <div class="mobile-hamburger">
+                        <a href="https://edu.bildup.ai/" class="header-cta-button-mobile" style="text-decoration: none;">Get Started</a>
+                        <div class="hamburger">  
                         <span></span>
                         <span></span>
                         <span></span>
+                        </div>
                     </div>
                     
-                 <a href="https://www.bildup.ai/" class="header-cta-button" style="text-decoration: none;">Get Started</a>
+                 <a href="https://edu.bildup.ai/" class="header-cta-button" style="text-decoration: none;">Get Started</a>
                 </div>
             </nav>
             <div class="mobile-menu-backdrop"></div>

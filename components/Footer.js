@@ -8,13 +8,13 @@ class Footer {
                 // { text: "Students", href: "learner.html" },
                 // { text: "Apprenticeship", href: "apprenticeship.html" },
                 // { text: "Careers", href: "careers.html" },
-                { text: "Get started with Bildup AI", href: "careers.html" },
+                { text: "Get started with Bildup AI", href: "https://edu.bildup.ai/" },
                 { text: "Contact us", href: "contact.html" }
             ],
             socialLinks: [
                 { platform: "X", icon: "public/X.png", href: "https://x.com/BildupAi" },
                 { platform: "Instagram", icon: "public/instagram.png", href: "https://www.instagram.com/bildup.ai/" },
-                { platform: "Facebook", icon: "public/facebook.png", href: "https://www.facebook.com/share/16Sb71KQof/" },
+                { platform: "Facebook", icon: "public/facebook.png", href: "https://www.facebook.com/BildupAI" },
                 { platform: "LinkedIn", icon: "public/linkedIn.png", href: "https://www.linkedin.com/company/bildupai" },
                 { platform: "TikTok", icon: "public/tiktok.png", href: "https://www.tiktok.com/@bildupai?_t=ZS-8zB2ttKDgyV&_r=1" }
             ],
