@@ -403,7 +403,7 @@ body {
 
     .hero-img-1 {
         top: 12vh;
-        left: 8vw;
+        left: 24vw;
         width: clamp(120px, 18vh, 220px);
         transform: rotate(-15deg);
         z-index: 1;
@@ -450,7 +450,7 @@ body {
 
     .hero-title-mobile {
         font-size: clamp(1.8rem, 6vw, 2.8rem);
-        margin-bottom: 1rem;
+        margin-bottom: 2rem !important;
         line-height: 1.1;
         font-weight: 600;
     }
@@ -467,6 +467,7 @@ body {
         transition: all 0.3s ease;
         white-space: nowrap;
         margin-bottom: 1.5rem;
+        margin-top: 1rem;
     }
 
     .cta-button-mobile:hover {
@@ -511,7 +512,7 @@ body {
     }
 
     .hero-img-mobile-3 {
-        bottom: 12.5vh;
+        bottom: 12vh;
         left: -9vw;
         width: clamp(20px, 23vh, 340px);
         transform: rotate(-8deg);
@@ -523,7 +524,7 @@ body {
     }
 
     .hero-img-mobile-4 {
-        bottom: 16vh;
+        bottom: 11vh;
         right: -5vw;
         width: clamp(140px, 21vh, 280px);
         transform: rotate(12deg);
@@ -1157,7 +1158,7 @@ section[class*="section"],
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 1rem;
+    /* gap: 1rem; */
     padding: 1rem 0;
 }
 
@@ -2057,10 +2058,12 @@ section[class*="section"],
 }
 
 .footer-logo {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
+    width: 24px;
+    height: 24px;
     margin-left: 0;
+    background-color: black;
+    border-radius: 50px;
+    padding: 1.5px;
     margin: 0;
 }
 
@@ -2601,6 +2604,18 @@ section[class*="section"],
     }
 }
 
+@keyframes slideInFromBottomLeft {
+    from {
+        opacity: 0;
+        transform: translate(-50vw, 50vh) scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+}
+
 @keyframes scaleIn {
     from {
         opacity: 0;
@@ -2675,36 +2690,36 @@ section[class*="section"],
 }
 
 .hero-img-bottom-left {
-    animation: fadeIn 1s ease-in-out forwards;
+    animation: slideInFromBottomLeft 1s ease-in-out forwards;
 }
 
 .hero-img-top-right {
-    animation: fadeIn 1s ease-in-out forwards;
+    animation: slideInFromTopRight 1s ease-in-out forwards;
 }
 
 .hero-img-top-left {
-    animation: fadeIn 1s ease-in-out forwards;
+    animation: slideInFromTopLeft 1s ease-in-out forwards;
 }
 
 .hero-img-bottom-right {
-    animation: fadeIn 1s ease-in-out forwards;
+    animation: slideInFromBottomRight 1s ease-in-out forwards;
 }
 
 /* Mobile hero image animations */
 .hero-img-mobile-1.hero-img-animate {
-    animation: fadeIn 1s ease-in-out forwards;
+    animation: slideInFromBottomLeft 1s ease-in-out forwards;
 }
 
 .hero-img-mobile-2.hero-img-animate {
-    animation: fadeIn 1s ease-in-out forwards;
+    animation: slideInFromTopRight 1s ease-in-out forwards;
 }
 
 .hero-img-mobile-3.hero-img-animate {
-    animation: fadeIn 1s ease-in-out forwards;
+    animation: slideInFromTopLeft 1s ease-in-out forwards;
 }
 
 .hero-img-mobile-4.hero-img-animate {
-    animation: fadeIn 1s ease-in-out forwards;
+    animation: slideInFromBottomRight 1s ease-in-out forwards;
 }
 
 .hero-title-animate {
