@@ -20,7 +20,7 @@ class Header {
             <nav class="nav">
                 <div class="nav-container">
                     <div class="logo">
-                        <img src="public/logo.png" alt="Bildup AI Logo" loading="lazy">
+                      <a href="index.html"><img src="public/logo.png" alt="Bildup AI Logo" loading="lazy"></a>
                     </div>
                 
                     <ul class="nav-menu">

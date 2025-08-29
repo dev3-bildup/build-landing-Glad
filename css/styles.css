@@ -23,7 +23,7 @@ body {
 .container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 clamp(1rem, 3vw, 2rem);
+    /* padding: 0 clamp(1rem, 3vw, 2rem); */
     box-sizing: border-box;
 }
 
@@ -130,6 +130,7 @@ body {
 /* Hero Section */
 .hero {
     height: 100vh;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -254,7 +255,7 @@ body {
 
 
 .hero-img-3 {
-    bottom: 0;
+    bottom: 4vh;
     left: 0;
     transform: rotate(-8deg);
     width: clamp(260px, 32vw, 500px);
@@ -359,7 +360,7 @@ body {
 /* Mobile Hero Section (less than 700px) */
 @media (max-width: 700px) {
     .hero {
-        height: 110vh;
+        /* height: 110vh; */
         position: relative;
         display: flex;
         align-items: center;
@@ -477,15 +478,15 @@ body {
     }
 
     .hero-subheadline-mobile {
-        position: absolute;
-        bottom: 5.8vh;
+        position: fixed;
+        bottom: 0;
         left: 50%;
         transform: translateX(-50%);
         margin: 0;
         font-size: clamp(0.9rem, 2.2vw, 1rem);
         text-align: center;
         width: 90%;
-        z-index: 3;
+        z-index: 1000;
         font-weight: 400;
     }
 
@@ -512,7 +513,7 @@ body {
     }
 
     .hero-img-mobile-3 {
-        bottom: 12vh;
+        bottom: 4vh;
         left: -9vw;
         width: clamp(20px, 23vh, 340px);
         transform: rotate(-8deg);
@@ -617,7 +618,7 @@ main {
 }
 
 section {
-    padding: 2rem 0;
+    padding: 0 0.5rem;
 }
 
 .hero {
@@ -627,6 +628,8 @@ section {
 
 .intro-section {
     background: white;
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .intro-content {
@@ -634,13 +637,13 @@ section {
     font-size: clamp(1.5rem, 4vw, 2rem);
     max-width: 700px;
     font-weight: 600;
-    margin: 2rem auto;
+    margin: 0 auto;
     color: linear-gradient(245.34deg, #0071E3 17.85%, #3AA0F3 64.46%, #0071E3 83.74%);
     background: linear-gradient(245.34deg, #0071E3 17.85%, #3AA0F3 64.46%, #0071E3 83.74%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    padding: 0 2rem;
+    padding: 0 2rem 2rem 2rem;
     align-items: center;
 }
 
@@ -667,7 +670,7 @@ section {
 
     .intro-content p {
         font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-        margin-bottom: 1.3rem;
+        /* margin-bottom: 1.3rem; */
     }
 }
 
@@ -675,17 +678,22 @@ section {
     .intro-content {
         font-size: clamp(1.6rem, 3vw, 2.2rem);
         max-width: 700px;
-        padding: 0 1.5rem;
+        /* padding: 0 1.5rem; */
     }
 
     .intro-content p {
         font-size: clamp(1.6rem, 3vw, 2.2rem);
-        margin-bottom: 1.2rem;
+        /* margin-bottom: 1.2rem; */
         line-height: 1.5;
     }
 }
 
 @media (max-width: 767px) and (min-width: 368px) {
+    .intro-section {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
     .intro-content {
         font-size: clamp(1.4rem, 4vw, 1.8rem);
         max-width: 600px;
@@ -694,12 +702,17 @@ section {
 
     .intro-content p {
         font-size: clamp(1.4rem, 4vw, 1.8rem);
-        margin-bottom: 1rem;
+        /* margin-bottom: 1rem; */
         line-height: 1.4;
     }
 }
 
 @media (max-width: 480px) {
+    .intro-section {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
     .intro-content {
         font-size: clamp(1.2rem, 5vw, 1.5rem);
         max-width: 500px;
@@ -708,12 +721,17 @@ section {
 
     .intro-content p {
         font-size: clamp(1.2rem, 5vw, 1.5rem);
-        margin-bottom: 0.8rem;
+        /* margin-bottom: 0.8rem; */
         line-height: 1.3;
     }
 }
 
 @media (max-width: 368px) {
+    .intro-section {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
     .intro-content {
         font-size: clamp(1rem, 6vw, 1.3rem);
         max-width: 400px;
@@ -722,7 +740,7 @@ section {
 
     .intro-content p {
         font-size: clamp(1rem, 6vw, 1.3rem);
-        margin-bottom: 0.6rem;
+        /* margin-bottom: 0.6rem; */
         line-height: 1.2;
     }
 }
@@ -764,7 +782,7 @@ section {
 }
 
 .bildup-title {
-    font-size: clamp(4.5rem, 9vw, 7.5rem);
+    font-size: clamp(5.5rem, 9vw, 7.5rem);
     margin-bottom: 1.5rem;
     line-height: 0.9;
     font-weight: 500;
@@ -883,10 +901,14 @@ section {
 @media (max-width: 768px) {
     .final-bildup-section .bildup-image .cta-button {
         padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
-        opacity: 1;
-        width: 100%;
+        font-size: 1rem;
+        /* opacity: 1; */
+        width: 120%;
+        margin-left: -2%;
         align-self: center;
+        text-align: center;
+        justify-content: center;
+        /* display: block; */
     }
 
     .final-bildup-section .bildup-content {
@@ -953,7 +975,7 @@ section {
     }
 
     .bildup-title {
-        font-size: clamp(2.5rem, 5vw, 3rem);
+        font-size: clamp(2.5rem, 5vw, 4rem);
         margin-bottom: 1rem;
         text-align: left;
     }
@@ -989,7 +1011,7 @@ section {
     }
 
     .bildup-title {
-        font-size: clamp(2rem, 6vw, 2.5rem);
+        font-size: clamp(3.5rem, 6vw, 4.5rem);
         margin-bottom: 0.8rem;
         text-align: left;
     }
@@ -1025,7 +1047,7 @@ section {
     }
 
     .bildup-title {
-        font-size: clamp(1.8rem, 7vw, 2.2rem);
+        font-size: clamp(2.5rem, 7vw, 3.5rem);
         margin-bottom: 0.6rem;
         text-align: left;
     }
@@ -1191,6 +1213,10 @@ section[class*="section"],
 
 /* FEATURE COMPONENT */
 /* Cards Layout */
+.feature-section {
+    padding-top: 3rem;
+}
+
 .cards-content {
     padding: 2rem 0;
     max-width: 1200px;
@@ -1209,8 +1235,11 @@ section[class*="section"],
     font-size: clamp(2.5rem, 8.5vw, 9rem);
     font-weight: 600;
     margin-bottom: 1rem;
+    padding-top: 2rem;
     text-align: left;
     line-height: 1;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
 }
 
 /* Gradient text support */
@@ -1377,6 +1406,12 @@ section[class*="section"],
     .mobile-image {
         display: block;
     }
+
+    /* .card-image {
+        width: 120%;
+        margin-left: -6%;
+        margin-right: -6%;
+    } */
 }
 
 /* Gradient Layout */
@@ -1449,8 +1484,8 @@ section[class*="section"],
 }
 
 .section-description {
-    font-size: clamp(1.4rem, 1.8vw, 1.8rem);
-    max-width: 650px;
+    font-size: clamp(1.5rem, 2vw, 1.5rem);
+    max-width: 550px;
     padding-top: 1rem;
     text-align: start;
     line-height: 1.2 !important;
@@ -1503,7 +1538,7 @@ section[class*="section"],
     }
 
     .section-description {
-        font-size: clamp(1.3rem, 2.5vw, 1.5rem);
+        font-size: clamp(1.6rem, 2.5vw, 1.6rem);
         line-height: 1.2 !important;
     }
 
@@ -1539,10 +1574,10 @@ section[class*="section"],
         min-height: 250px;
     }
 
-    .card-image {
+    /* .card-image {
         width: 85%;
         max-height: none;
-    }
+    } */
 
     .custom-section {
         padding: 3rem 0;
@@ -1577,7 +1612,7 @@ section[class*="section"],
     }
 
     .section-description {
-        font-size: clamp(1.2rem, 3.5vw, 1.4rem);
+        font-size: clamp(1.5rem, 3.5vw, 1.5rem);
         line-height: 1.2 !important;
     }
 
@@ -1620,10 +1655,11 @@ section[class*="section"],
         min-height: 200px;
     }
 
-    .card-image {
-        width: 90%;
+    /* .card-image {
+        width: 120%;
+        margin-left: -10%;
         max-height: none;
-    }
+    } */
 
     .custom-section {
         padding: 2.5rem 0;
@@ -1660,8 +1696,10 @@ section[class*="section"],
     }
 
     .section-description {
-        font-size: clamp(1.1rem, 4vw, 1.3rem);
+        font-size: clamp(1.3rem, 4vw, 1.3rem);
         line-height: 1.2 !important;
+        padding: 0 0.8rem;
+
     }
 
     .cards-grid {
@@ -1677,12 +1715,13 @@ section[class*="section"],
     }
 
     .feature-card {
-        padding: 1.2rem;
+        padding: 1rem;
         min-height: 180px;
     }
 
     .card-image {
-        width: 95%;
+        width: 100%;
+        /* margin-left: -10%; */
         max-height: none;
     }
 
@@ -1730,8 +1769,9 @@ section[class*="section"],
     }
 
     .section-description {
-        font-size: clamp(1.2rem, 4.5vw, 1.3rem) !important;
+        font-size: clamp(1.5rem, 4.5vw, 1.5rem) !important;
         line-height: 1.2 !important;
+        padding: 0 1rem;
     }
 
     .cards-grid {
@@ -1752,7 +1792,8 @@ section[class*="section"],
     }
 
     .card-image {
-        width: 100%;
+        width: 120%;
+        margin-left: -10%;
         max-height: none;
     }
 
@@ -1838,7 +1879,8 @@ section[class*="section"],
     }
 
     .card-image {
-        width: 100%;
+        width: 120%;
+        margin-left: -10%;
         max-height: none;
     }
 }
@@ -2534,7 +2576,7 @@ section[class*="section"],
     }
 
     .bildup-title {
-        font-size: 2rem;
+        font-size: 3.5rem;
     }
 
     .section-text h2 {

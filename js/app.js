@@ -85,7 +85,7 @@ class LandingPage {
                 {
                     title: "Voice-Enabled Learning",
                     description: "Bildup AI, read my notes out loud",
-                    image: "public/anywherevid.png",
+                    image: "public/studybig.png",
 
                 },
                 {
@@ -102,7 +102,7 @@ class LandingPage {
                 }
             ],
             className: "study-anywhere-section",
-            mobileTopImage: "public/quizmewhile.png"
+            mobileTopImage: "public/studysmall.png"
         });
 
         this.components.atHomeSection = new SectionComponent({
@@ -118,7 +118,7 @@ class LandingPage {
             cards: [
                 {
                     image: "public/bildrecap.png",
-                    mobileImage: "public/recapsmall.png"
+                    mobileImage: "public/masterbig.png"
                 },
                 {
                     image: "public/bildhelp.png",
@@ -130,7 +130,7 @@ class LandingPage {
                 }
             ],
             className: "at-home-section",
-            mobileTopImage: "public/recapsmall.png"
+            mobileTopImage: "public/mastersmall.png"
         });
 
         this.components.examPrepSection = new SectionComponent({
@@ -147,7 +147,7 @@ class LandingPage {
                 {
                     description: "Bildup AI, read my notes out loud",
                     image: "public/examvid.png",
-                    mobileImage: "public/examvid.png"
+                    mobileImage: "public/growthbig.png"
                 },
                 {
                     description: "Bildup AI, quiz me while i wait",
@@ -161,7 +161,7 @@ class LandingPage {
                 }
             ],
             className: "exam-prep-section",
-            mobileTopImage: "public/mathsmall.png"
+            mobileTopImage: "public/growthsmall.png"
         });
 
 

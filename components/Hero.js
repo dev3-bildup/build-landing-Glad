@@ -64,7 +64,7 @@ class Hero {
                 <img src="${this.config.logo}" class="hero-logo hero-logo-mobile" alt="Bildup AI Logo" loading="lazy" />
                 <h1 class="hero-title hero-title-mobile">${mobileFormattedTitle}</h1>
                 <a href="${'https://edu.bildup.ai/'}" class="cta-button cta-button-mobile" style="text-decoration: none;">${this.config.ctaText}</a>
-                <p class="hero-subheadline hero-subheadline-mobile">Seamlessly Connected Learning Ecosystem</p>
+                 <p class="hero-subheadline hero-subheadline-mobile">Seamlessly Connected Learning Ecosystem</p>
             </div>
             <img src="public/up-mobile-left.png" class="hero-img hero-img-mobile-1" alt="Mobile dashboard top left" loading="lazy" />
             <img src="public/up-mobile-right.png" class="hero-img hero-img-mobile-2" alt="Mobile dashboard top right" loading="lazy" />
