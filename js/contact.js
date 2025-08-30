@@ -178,7 +178,7 @@ class ContactPage {
         submitButton.classList.add('opacity-75');
 
       
-        const endpoint = 'https://api-dev.bildup.ai/contact-us'; 
+        const endpoint = 'https://api-prod.bildup.ai/contact-us'; 
 
         fetch(endpoint, {
             method: 'POST',
