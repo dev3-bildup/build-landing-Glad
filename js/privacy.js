@@ -153,6 +153,19 @@ class PrivacyPage {
                         behavior: 'smooth',
                         block: 'start'
                     });
+
+                    // If the target is an accordion item, open it automatically
+                    if (target.classList.contains('accordion-item')) {
+                        // Find the accordion item and open it
+                        const accordionItem = target;
+                        if (!accordionItem.classList.contains('active')) {
+                            // Trigger the accordion toggle
+                            const toggle = accordionItem.querySelector('.accordion-toggle');
+                            if (toggle) {
+                                toggle.click();
+                            }
+                        }
+                    }
                 }
             });
         });
@@ -229,7 +242,7 @@ class PrivacyPage {
     }
 
     showNotification(message, type = 'info') {
-      
+
         const existingNotifications = document.querySelectorAll('.notification');
         existingNotifications.forEach(notification => notification.remove());
 
@@ -238,7 +251,7 @@ class PrivacyPage {
         notification.className = `notification notification-${type}`;
         notification.textContent = message;
 
-     
+
         notification.className = `
             fixed top-5 right-5 px-5 py-3 rounded-lg text-white font-medium z-50 
             transform translate-x-full transition-transform duration-300 max-w-xs 

@@ -117,8 +117,8 @@ class LandingPage {
             descriptionColor: "#696969",
             cards: [
                 {
-                    image: "public/bildrecap.png",
-                    mobileImage: "public/masterbig.png"
+                    image: "public/masterbig.png",
+                    mobileImage: "public/mastersmall.png"
                 },
                 {
                     image: "public/bildhelp.png",
@@ -146,8 +146,8 @@ class LandingPage {
             cards: [
                 {
                     description: "Bildup AI, read my notes out loud",
-                    image: "public/examvid.png",
-                    mobileImage: "public/growthbig.png"
+                    image: "public/growthbig.png",
+                    mobileImage: "public/growthsmall.png"
                 },
                 {
                     description: "Bildup AI, quiz me while i wait",
